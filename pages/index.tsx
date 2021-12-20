@@ -27,7 +27,7 @@ export default function Home() {
           .
         </h1>
         <div className="w-4/5 lg:h-24 mt-10 h-28">
-          <div className="bg-purple-500 w-full h-full">
+          <div className="bg-purple-500 w-full h-full flex flex-col justify-center">
             <h1 className="text-white font-bold text-4xl text-center lg:pt-3">
               Still not convinced ? Check our bestsellers below
             </h1>
@@ -36,9 +36,31 @@ export default function Home() {
             </h2>
           </div>
         </div>
-        <div>
-          <p>Best sellers here</p>
+        <div className="mt-10 grid grid-cols-4 gap-4">
           <GameCard game={games[0]} />
+          <GameCard game={games[1]} />
+          <GameCard game={games[0]} />
+          <GameCard game={games[1]} />
+        </div>
+        <div className="mt-10 grid grid-cols-4 gap-4">
+          <GameCard game={games[0]} />
+          <GameCard game={games[1]} />
+          <GameCard game={games[0]} />
+          <GameCard game={games[1]} />
+        </div>
+        <div className="w-4/5 lg:h-24 mt-10 h-32">
+          <div className="bg-purple-500 w-full h-full flex flex-col justify-center">
+            <h1 className="text-white font-bold text-4xl text-center lg:pt-3">
+              Not convinced again ? you're hard{" "}
+              <span className="text-red-600 uppercase hover:animate-pulse cursor-crosshair">
+                boss
+              </span>{" "}
+              check our reviews below
+            </h1>
+            <h2 className="text-white text-base text-center italic">
+              (They should convince yout this time)
+            </h2>
+          </div>
         </div>
         <div>
           <p>User reviews here</p>
