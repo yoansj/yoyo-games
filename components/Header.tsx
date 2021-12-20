@@ -103,7 +103,7 @@ export default function Header() {
   return (
     <Popover className="relative bg-purple-500">
       <div className="max-w-8xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-purple-800 py-6 md:justify-start md:space-x-10">
+        <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
               <span className="sr-only">Yoyo Games</span>
@@ -124,17 +124,14 @@ export default function Header() {
             <Popover className="relative">
               {({ open }) => (
                 <>
-                  <Popover.Button
-                    className={classNames(
-                      open ? "text-gray-900" : "text-gray-500",
-                      "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
-                    )}
-                  >
-                    <span>Games</span>
+                  <Popover.Button className="group inline-flex items-center text-base text-white font-medium">
+                    <span className="text-white hover:text-slate-100">
+                      Games
+                    </span>
                     <ChevronDownIcon
                       className={classNames(
-                        open ? "text-gray-600" : "text-gray-400",
-                        "ml-2 h-5 w-5 group-hover:text-gray-500"
+                        open ? "text-slate-100" : "text-white",
+                        "ml-2 h-5 w-5"
                       )}
                       aria-hidden="true"
                     />
@@ -198,30 +195,30 @@ export default function Header() {
 
             <a
               href="#"
-              className="text-base font-medium text-gray-500 hover:text-gray-900"
+              className="text-base font-medium text-white hover:text-slate-100"
             >
               Consoles
             </a>
             <a
               href="#"
-              className="text-base font-medium text-gray-500 hover:text-gray-900"
+              className="text-base font-medium text-white hover:text-slate-100"
             >
-              About us
+              Search
             </a>
             <a
               href="#"
-              className="text-base font-medium text-gray-500 hover:text-gray-900"
+              className="text-base font-medium text-white hover:text-slate-100"
             >
-              Search
+              About us
             </a>
           </Popover.Group>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             <a
               href="#"
-              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-white hover:bg-slate-100"
             >
               <ShoppingCartIcon
-                className="flex-shrink-0 h-6 w-6 text-white"
+                className="flex-shrink-0 h-6 w-6 text-purple-500"
                 aria-hidden="true"
               />
             </a>

@@ -19,31 +19,47 @@ export default function GameCard({ game }: IProps) {
 
   const displayStars = () => {
     let arr = [];
+
+    const color = (l: number) => {
+      if (l === 5) return "text-yellow-500";
+      if (l === 4) return "text-orange-500";
+      if (l === 3) return "text-orange-700";
+      if (l === 2) return "text-red-800";
+      if (l === 1) return "text-red-900";
+    };
+
     for (let i = 0; i !== game.stars; i++) arr.push(i);
     return arr.map((r, index) => (
-      <StarIcon key={index} className="text-yellow-500 last:mr-3 h-7" />
+      <StarIcon key={index} className={"last:mr-3 h-6 " + color(arr.length)} />
     ));
   };
 
+  // Position relative
+  // https://www.youtube.com/watch?v=jx5jmI0UlXU
   return (
-    <div className="flex flex-col border-solid border border-purple-500 rounded-xl text-white">
-      <div className="max-w-xs">
+    <div className="group flex flex-col border-solid border border-purple-500 hover:border-purple-800 text-white max-w-xs cursor-pointer relative">
+      <div className="max-w-xs lg:h-80">
         <img src={game.thumbnail} />
       </div>
       <div
-        className="group bg-purple-500 h-16 hover:h-20 rounded-b-xl pl-3 cursor-pointer"
+        className="bg-purple-500 h-16 group-hover:invisible pl-3 cursor-pointer"
         onClick={handleOpenGamePage}
       >
         <h1 className="font-bold text-lg">$ {game.price}</h1>
         <h2 className="font-medium">{game.name}</h2>
+      </div>
+      <div className="invisible pl-3 group-hover:visible bg-purple-800 absolute bottom-0 w-80">
+        <h1 className="font-bold text-lg">$ {game.price}</h1>
+        <h2 className="font-medium">{game.name}</h2>
         <div className="flex flex-row align-middle justify-between">
           <h3 className="invisible group-hover:visible">
-            {game.avaiableOn.map((c) => c.name + " ")}
+            For: {game.avaiableOn.map((c) => c.name + " ")}
           </h3>
           <span className="stars-displayer invisible group-hover:visible flex flex-row text-xs">
             {displayStars()}
           </span>
         </div>
+        <p>{game.description}</p>
       </div>
     </div>
   );
