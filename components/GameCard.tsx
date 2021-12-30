@@ -15,7 +15,7 @@ interface IProps {
 export default function GameCard({ game }: IProps) {
   const router = useRouter();
 
-  const handleOpenGamePage = () => router.push(`/game/${game.id}`);
+  const handleOpenGamePage = () => router.push(`/games/${game.id}`);
 
   const displayStars = () => {
     let arr = [];
@@ -37,7 +37,10 @@ export default function GameCard({ game }: IProps) {
   // Position relative
   // https://www.youtube.com/watch?v=jx5jmI0UlXU
   return (
-    <div className="group flex flex-col border-solid border border-purple-500 hover:border-purple-800 text-white max-w-xs cursor-pointer relative">
+    <div
+      onClick={handleOpenGamePage}
+      className="group flex flex-col border-solid border border-purple-500 hover:border-purple-800 text-white max-w-xs cursor-pointer relative"
+    >
       <div className="max-w-xs lg:h-80">
         <img src={game.thumbnail} />
       </div>

@@ -3,6 +3,21 @@ import consoles, { getConsole } from "./consoles";
 
 const games: Array<IGame> = [
   {
+    name: "Missing game",
+    avaiableOn: [getConsole("PS5")],
+    description: "Like MissingNo but it's missing game",
+    extendedDescription: "There is no game.",
+    images: [
+      "https://sm.ign.com/ign_me/gallery/r/ratchet-cl/ratchet-clank-rift-apart-key-art-box-art-pre-order-bonuses-d_dz8f.jpg",
+    ],
+    price: 42.69,
+    releaseDate: "Never released",
+    stars: 5,
+    thumbnail:
+      "https://culturedvultures.com/wp-content/uploads/2021/02/Rift-Apart-Box-Art.jpg",
+    id: "nogame",
+  },
+  {
     name: "Ratchet & Clank: Rift Apart",
     avaiableOn: [getConsole("PS5")],
     description: "Blast your way through an interdimensional adventure.",
