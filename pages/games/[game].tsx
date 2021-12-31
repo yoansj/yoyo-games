@@ -116,15 +116,26 @@ export default function GameInspect() {
             <h1 className="text-3xl font-bold">{gameObject.name}</h1>
             <h1>{gameObject.avaiableOn[0].name}</h1>
           </div>
-          <div className="relative max-w-xl flex gap-6 snap-x overflow-x-auto border border-red-700">
-            {gameObject.images.map((url) => (
-              <div className="snap-center shrink-0">
-                <img
-                  className="shrink-0 w-[576px] rounded-lg shadow-xl bg-white"
-                  src={url}
-                />
-              </div>
+          <div className="slider-root">
+            {gameObject.images.map((url, index) => (
+              <a key={index} href={"#img-" + index}>
+                Image {index + 1}
+              </a>
             ))}
+            <div className="black-scrollbar relative max-w-xl flex gap-6 snap-x overflow-x-auto scroll-smooth border border-red-700">
+              {gameObject.images.map((url, index) => (
+                <div
+                  key={index}
+                  id={"img-" + index}
+                  className="snap-center shrink-0"
+                >
+                  <img
+                    className="shrink-0 w-[576px] rounded-lg shadow-xl bg-white"
+                    src={url}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           {/* <div className="slider-root max-w-[300px] bg-white border border-red-600">
             <div className="slider-slides flex overflow-x-auto snap-mandatory scroll-smooth">

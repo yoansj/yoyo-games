@@ -25,3 +25,27 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(110, 4, 129);
 }
+
+/* Black scrollbar */
+.black-scrollbar::-webkit-scrollbar {
+  height: 10px;
+}
+
+/* Track */
+.black-scrollbar::-webkit-scrollbar-track {
+  background: #ffffff00;
+}
+
+/* Handle */
+.black-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+  max-width: 100px;
+  min-width: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.black-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgb(27, 27, 27);
+}
