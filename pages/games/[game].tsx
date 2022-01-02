@@ -1,9 +1,12 @@
 import { useRouter } from "next/router";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Head from "next/head";
 import { Dialog, Transition } from "@headlessui/react";
 import { getGameById } from "../../data/games";
 import Header from "../../components/Header";
+import MyCarousel from "../../components/MyCarousel";
+import ConsoleRenderer from "../../components/ConsoleRenderer";
+import StarsDisplayer from "../../components/StarsDisplayer";
 
 export default function GameInspect() {
   const router = useRouter();
@@ -11,7 +14,30 @@ export default function GameInspect() {
   const gameId: string = game as string;
   const gameObject = getGameById(gameId || "nothin");
 
+  const [picIndex, setPicIndex] = useState(0);
+
   const closeModal = () => router.push("/");
+
+  const handlePreviousPic = () => {
+    if (picIndex === 0) {
+      setPicIndex(0);
+    } else {
+      setPicIndex((p) => p - 1);
+    }
+  };
+
+  const handleNextPic = () => {
+    if (picIndex === 0) {
+      setPicIndex(0);
+    } else {
+      setPicIndex((p) => p - 1);
+    }
+  };
+
+  useEffect(() => {
+    console.log(router.query);
+    console.log(router.route);
+  }, []);
 
   if (gameObject.id === "nogame") {
     return (
@@ -106,47 +132,63 @@ export default function GameInspect() {
     return (
       <div>
         <Head>
-          <title>Yoyo Games</title>
+          <title>{gameObject.name}</title>
           <meta name="description" content="Get your favorite video games" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Header />
-        <div className="mt-20 mx-20 max-w-8xl bg-purple-500">
-          <div>
-            <h1 className="text-3xl font-bold">{gameObject.name}</h1>
-            <h1>{gameObject.avaiableOn[0].name}</h1>
-          </div>
-          <div className="slider-root">
-            {gameObject.images.map((url, index) => (
-              <a key={index} href={"#img-" + index}>
-                Image {index + 1}
-              </a>
-            ))}
-            <div className="black-scrollbar relative max-w-xl flex gap-6 snap-x overflow-x-auto scroll-smooth border border-red-700">
-              {gameObject.images.map((url, index) => (
-                <div
-                  key={index}
-                  id={"img-" + index}
-                  className="snap-center shrink-0"
-                >
-                  <img
-                    className="shrink-0 w-[576px] rounded-lg shadow-xl bg-white"
-                    src={url}
-                  />
+        <div className="my-20 mx-20 p-10 bg-purple-500">
+          <h1 className="text-3xl font-bold mb-5">{gameObject.name}</h1>
+          <div className="flex flex-col lg:flex-row justify-between">
+            <div className="left-div">
+              <div className="carousel-wrapper-div">
+                <MyCarousel
+                  loop
+                  renderButtons
+                  images={gameObject.images}
+                  uuid="games-carousel"
+                />
+              </div>
+              <div className="cart-div p-6 m-10 mt-10 bg-white flex justify-between items-center text-purple-500 rounded-xl border-2 border-black">
+                <h1 className="font-bold text-3xl">{gameObject.price} $</h1>
+                <button className="bg-purple-500 p-3 rounded-xl shadow-lg shadow-purple-800">
+                  <h1 className="text-white font-bold">
+                    Add this game to cart
+                  </h1>
+                </button>
+              </div>
+            </div>
+            <div className="right-div">
+              <div className="flex flex-col ml-10 items-center border border-white p-10">
+                {gameObject.avaiableOn.length === 1 ? (
+                  <ConsoleRenderer console={gameObject.avaiableOn[0].name} />
+                ) : (
+                  []
+                )}
+                <h1 className="mt-6 text-xl font-bold">
+                  {gameObject.description}
+                </h1>
+                <h2 className="mt-3 text-lg font-semibold text-left underline underline-offset-4 decoration-slate-100">
+                  Description
+                </h2>
+                <p className="mt-3 text-base text-center">
+                  {gameObject.extendedDescription}
+                </p>
+                <h2 className="mt-3 text-lg font-semibold text-left underline underline-offset-4 decoration-slate-100">
+                  Release date
+                </h2>
+                <p className="mt-3 text-base text-center">
+                  {gameObject.releaseDate}
+                </p>
+                <h2 className="mt-3 text-lg font-semibold text-left underline underline-offset-4 decoration-slate-100">
+                  Yoyo Games Gamers Note
+                </h2>
+                <div className="mt-3">
+                  <StarsDisplayer stars={gameObject.stars} />
                 </div>
-              ))}
+              </div>
             </div>
           </div>
-          {/* <div className="slider-root max-w-[300px] bg-white border border-red-600">
-            <div className="slider-slides flex overflow-x-auto snap-mandatory scroll-smooth">
-              <div className="slide snap-start flex-shrink-0 w-[300px] h-[300px] mr-12 bg-blue-500 relative scale-[1] origin-center">
-                1
-              </div>
-              <div className="slide snap-start flex-shrink-0 w-[300px] h-[300px] mr-12 bg-blue-900">
-                2
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     );

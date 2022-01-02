@@ -26,6 +26,10 @@ html {
   background: rgb(110, 4, 129);
 }
 
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Black scrollbar */
 .black-scrollbar::-webkit-scrollbar {
   height: 10px;
