@@ -26,7 +26,7 @@ const games: Array<IGame> = [
     images: [
       "https://sm.ign.com/ign_me/gallery/r/ratchet-cl/ratchet-clank-rift-apart-key-art-box-art-pre-order-bonuses-d_dz8f.jpg",
       "https://cdn.arstechnica.net/wp-content/uploads/2021/06/Ratchet-_-Clank_-Rift-Apart_20210526113947.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgugMBLHOMpD-UxPzGdJtupEX_dlamppcgMw&usqp=CAU",
+      "https://s.yimg.com/uu/api/res/1.2/lG.phnLVe1DNmhRNCbaLog--~B/aD0xMTI1O3c9MjAwMDthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2021-06/976a6e51-cded-11eb-afbe-8677d96619ae.cf.jpg",
       "https://cdn.mos.cms.futurecdn.net/Gfq3B4WT8gwNyJRQPw3nW4.jpg",
     ],
     price: 69.99,
@@ -43,10 +43,11 @@ const games: Array<IGame> = [
     extendedDescription:
       "After crash-landing on this shape-shifting world, Selene must search through the barren landscape of an ancient civilization for her escape. Isolated and alone, she finds herself fighting tooth and nail for survival. Again and again, she’s defeated – forced to restart her journey every time she dies.",
     images: [
-      "https://sm.ign.com/ign_me/gallery/r/ratchet-cl/ratchet-clank-rift-apart-key-art-box-art-pre-order-bonuses-d_dz8f.jpg",
-      "https://cdn.arstechnica.net/wp-content/uploads/2021/06/Ratchet-_-Clank_-Rift-Apart_20210526113947.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgugMBLHOMpD-UxPzGdJtupEX_dlamppcgMw&usqp=CAU",
-      "https://cdn.mos.cms.futurecdn.net/Gfq3B4WT8gwNyJRQPw3nW4.jpg",
+      "https://gmedia.playstation.com/is/image/SIEPDC/returnal-screen-03-ps5-15jun20-en?$native--t$",
+      "https://cdn.mos.cms.futurecdn.net/77TyTqqSCMtcWqFoaAFMjk.jpg",
+      "https://static.actugaming.net/media/2021/04/returnal-test-screenshot-5.jpg",
+      "https://techcrunch.com/wp-content/uploads/2021/04/returnal-ps5-4.jpg",
+      "https://img.game-news24.com/2021/10/The-new-PlayStation5-Update-on-the-Returnal-PS5-appears-to-be-coming-quickly.jpeg",
     ],
     price: 49.99,
     releaseDate: "Already released",
