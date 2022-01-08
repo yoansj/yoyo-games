@@ -1,5 +1,5 @@
 import Head from "next/head";
-import CommonHead from "../../components/CommonHead";
+import MyMetaTags from "../../components/MyMetaTags";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <CommonHead />
+        <MyMetaTags />
         <title>About Us</title>
         <meta property="og:title" content="About Us" />
         <meta

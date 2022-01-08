@@ -1,5 +1,5 @@
 import Head from "next/head";
-import CommonHead from "../components/CommonHead";
+import MyMetaTags from "../components/MyMetaTags";
 import Footer from "../components/Footer";
 import GameCard from "../components/GameCard";
 import Header from "../components/Header";
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <CommonHead />
+        <MyMetaTags />
         <title>Yoyo Games</title>
         <meta property="og:title" content="Yoyo Games" />
         <meta

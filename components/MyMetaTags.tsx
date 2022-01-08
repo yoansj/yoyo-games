@@ -1,4 +1,8 @@
-export default function CommonHead() {
+/**
+ * Common Meta Tags used across the website
+ * @returns
+ */
+export default function MyMetaTags() {
   return (
     <>
       <link
