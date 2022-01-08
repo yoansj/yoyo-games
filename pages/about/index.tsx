@@ -14,8 +14,10 @@ export default function Home() {
           property="og:description"
           content="This page explains our mentality at Yoyo Games and gives further information about the background of our website"
         />
-
-        <meta property="og:image" content="url" />
+        <meta
+          property="og:image"
+          content="https://raw.githubusercontent.com/yoansj/yoyo-games/main/public/Facebook-cover.png"
+        />
         <meta
           name="description"
           content="This page explains our mentality at Yoyo Games and gives further information about the background of our website"
