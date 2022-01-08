@@ -17,13 +17,13 @@ export default function Header() {
       <div className="max-w-8xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="/">
-              <span className="sr-only">Yoyo Games</span>
+            <a href="/" className="flex items-center justify-center">
               <img
-                className="h-auto w-auto sm:h-10 pt-3"
-                src="/yoyogames.png"
+                className="h-20 pt-3"
+                src="/yoyogames-transparent.png"
                 alt="Yoyo Games"
               />
+              <span className="sr-only">Yoyo Games</span>
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
@@ -127,7 +127,7 @@ export default function Header() {
               Search
             </a>
             <a
-              href="#"
+              href="/about"
               className="text-base font-medium text-white hover:text-slate-100"
             >
               About us

@@ -39,15 +39,15 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-10 grid grid-cols-4 gap-4">
-          <GameCard game={games[0]} />
+          <GameCard game={games[2]} />
           <GameCard game={games[1]} />
-          <GameCard game={games[0]} />
+          <GameCard game={games[2]} />
           <GameCard game={games[1]} />
         </div>
         <div className="mt-10 grid grid-cols-4 gap-4">
-          <GameCard game={games[0]} />
+          <GameCard game={games[2]} />
           <GameCard game={games[1]} />
-          <GameCard game={games[0]} />
+          <GameCard game={games[2]} />
           <GameCard game={games[1]} />
         </div>
         <div className="w-4/5 lg:h-24 mt-10 h-32">
