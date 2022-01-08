@@ -20,6 +20,8 @@ export default function CommonHead() {
       />
       <link rel="manifest" href="/site.webmanifest" />
       <meta property="og:site_name" content="Yoyo Games" />
+      <meta property="og:type" content="website" />
+      <meta name="theme-color" content="#A855F7" />
     </>
   );
 }

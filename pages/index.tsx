@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import CommonHead from "../components/CommonHead";
 import Footer from "../components/Footer";
 import GameCard from "../components/GameCard";
 import Header from "../components/Header";
@@ -10,9 +10,19 @@ export default function Home() {
   return (
     <div>
       <Head>
+        <CommonHead />
         <title>Yoyo Games</title>
-        <meta name="description" content="Get your favorite video games" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Yoyo Games" />
+        <meta
+          property="og:description"
+          content="Here at Yoyo Games we provide the best games for the best players"
+        />
+        <meta property="og:image" content="/Facebook-cover.png" />
+        <meta
+          name="description"
+          content="Here at Yoyo Games we provide the best games for the best players"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Header />
       <main className="flex flex-col justify-center items-center mt-10">

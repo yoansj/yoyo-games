@@ -12,7 +12,7 @@ export default function Home() {
         <meta property="og:title" content="About Us" />
         <meta
           property="og:description"
-          content="This page explains our mentality at Yoyo Games and gives further information about the background of our website"
+          content="This page explains our mentality at Yoyo Games and gives further information about the background of our website. Feel free to visit this page if you are curious about our project :)"
         />
         <meta
           property="og:image"
