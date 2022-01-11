@@ -16,6 +16,7 @@ const games: Array<IGame> = [
     thumbnail:
       "https://culturedvultures.com/wp-content/uploads/2021/02/Rift-Apart-Box-Art.jpg",
     id: "nogame",
+    typehint: "game",
   },
   {
     name: "Ratchet & Clank: Rift Apart",
