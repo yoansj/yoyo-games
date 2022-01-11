@@ -61,6 +61,7 @@ export default class Cart {
   /* Item management */
 
   getItems(): Array<[number, IItem]> {
+    console.log("got items: ", this.items);
     return this.items;
   }
 
@@ -76,6 +77,28 @@ export default class Cart {
     }
     this.saveCart();
     this.getCartData();
+  }
+
+  /**
+   * Adds +1 quantity to an existing item in the cart
+   * @param index - Index of the item to be incremented
+   */
+  incrementItem(index: number) {
+    if (this.items[index]) {
+      this.items[index][0] += 1;
+      this.saveCart();
+    }
+  }
+
+  /**
+   * Removes -1 quantity to an existing item in the cart
+   * @param index - Index of the item to be decremented
+   */
+  decrementItem(index: number) {
+    if (this.items[index]) {
+      this.items[index][0] -= 1;
+      this.saveCart();
+    }
   }
 
   /**

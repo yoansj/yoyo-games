@@ -20,6 +20,7 @@ const consoles: Array<IConsole> = [
       "https://media.direct.playstation.com/is/image/psdglobal/PS5-console-front",
     type: "Stationnary",
     id: "cons-sony-ps5",
+    typehint: "console",
   },
 ];
 

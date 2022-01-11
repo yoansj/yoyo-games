@@ -49,7 +49,7 @@ export default function Footer() {
             />
             <img
               src="/github.svg"
-              alt="LinkedIn"
+              alt="GitHub"
               className="flex-none w-14 h-14 rounded-full object-cover"
               loading="lazy"
             />

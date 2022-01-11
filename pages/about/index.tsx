@@ -3,9 +3,9 @@ import MyMetaTags from "../../components/MyMetaTags";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
-export default function Home() {
+export default function About() {
   return (
-    <div>
+    <div className="w-full">
       <Head>
         <MyMetaTags />
         <title>About Us</title>

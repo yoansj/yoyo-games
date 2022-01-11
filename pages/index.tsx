@@ -8,7 +8,7 @@ import games from "../data/games";
 
 export default function Home() {
   return (
-    <div>
+    <div className="w-full">
       <Head>
         <MyMetaTags />
         <title>Yoyo Games</title>

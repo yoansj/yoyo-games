@@ -35,6 +35,7 @@ const games: Array<IGame> = [
     thumbnail:
       "https://culturedvultures.com/wp-content/uploads/2021/02/Rift-Apart-Box-Art.jpg",
     id: "g4me-rat-ps5",
+    typehint: "game",
   },
   {
     name: "Returnal",
@@ -55,6 +56,7 @@ const games: Array<IGame> = [
     thumbnail:
       "https://media.direct.playstation.com/is/image/sierialto/returnal-ps5-game-box-front",
     id: "g4me-ret-ps5",
+    typehint: "game",
   },
 ];
 

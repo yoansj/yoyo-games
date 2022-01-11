@@ -25,7 +25,7 @@ export default interface IItem {
   /**
    * Price of the item
    */
-  price: string | number;
+  price: number;
 
   /**
    * Release date of the item
@@ -36,4 +36,6 @@ export default interface IItem {
    * Unique ID for the item
    */
   id: string;
+
+  typehint: "game" | "console";
 }
