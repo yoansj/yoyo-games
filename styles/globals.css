@@ -9,17 +9,19 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  --tw-border-opacity: 1;
+  background-color: rgb(168 85 247 / var(--tw-border-opacity));
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(173, 15, 200);
+  background-color: rgb(106, 52, 156);
+
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(110, 4, 129);
+  background-color: rgb(73, 37, 107);
 }
 
 .hidden-scrollbar::-webkit-scrollbar {

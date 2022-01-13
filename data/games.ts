@@ -34,7 +34,7 @@ const games: Array<IGame> = [
     releaseDate: "Already released",
     stars: 5,
     thumbnail:
-      "https://culturedvultures.com/wp-content/uploads/2021/02/Rift-Apart-Box-Art.jpg",
+      "https://media.direct.playstation.com/is/image/sierialto/ps5-ratchet-clank-rift-apart-game-box-front?$Background_Large$",
     id: "g4me-rat-ps5",
     typehint: "game",
   },
@@ -55,7 +55,7 @@ const games: Array<IGame> = [
     releaseDate: "Already released",
     stars: 4,
     thumbnail:
-      "https://media.direct.playstation.com/is/image/sierialto/returnal-ps5-game-box-front",
+      "https://media.direct.playstation.com/is/image/sierialto/returnal-ps5-game-box-front?$Background_Large$",
     id: "g4me-ret-ps5",
     typehint: "game",
   },

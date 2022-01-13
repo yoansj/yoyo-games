@@ -102,6 +102,17 @@ export default class Cart {
   }
 
   /**
+   * Removes an item from the cart using its index
+   * @param index - Index of the item to be removed
+   */
+  deleteItemByIndex(index: number) {
+    if (this.items[index]) {
+      this.items.splice(index, 1);
+      this.saveCart();
+    }
+  }
+
+  /**
    * Deletes an item by Id
    * @param itemId Id of the item
    * @param quantity If quantity is undefined or zero deletes all the items

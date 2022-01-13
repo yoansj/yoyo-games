@@ -82,9 +82,8 @@ export default function AddToCartModal({
                 <button
                   type="button"
                   className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-purple-500 border border-transparent rounded-md hover:bg-purple-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-purple-900"
-                  onClick={onClose}
                 >
-                  Go to the cart page
+                  <a href="/cart">Go to the cart page</a>
                 </button>
               </div>
             </div>

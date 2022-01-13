@@ -4,8 +4,8 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { useEffect, useMemo, useState } from "react";
 import Cart from "../../utils/Cart";
-import IGame from "../../types/IGame";
-import IConsole from "../../types/IConsole";
+import NoTitem from "../../components/NoItem";
+import CartItem from "../../components/CartItem";
 
 export default function CartPage() {
   const [cart, setCart] = useState<Cart>();
@@ -23,19 +23,7 @@ export default function CartPage() {
     return [];
   }, [cart, refresh]);
 
-  const incrementItem = (index: number) => {
-    if (cart) {
-      cart.incrementItem(index);
-      setRefresh((r) => !r);
-    }
-  };
-
-  const decrementItem = (index: number) => {
-    if (cart) {
-      cart.decrementItem(index);
-      setRefresh((r) => !r);
-    }
-  };
+  const refreshFunction = () => setRefresh((r) => !r);
 
   return (
     <div className="w-full">
@@ -56,89 +44,45 @@ export default function CartPage() {
       <Header />
       <main className="flex flex-col my-10 mx-20 mb-96">
         <h1 className="text-4xl font-bold max-w-4xl mb-8">Your cart</h1>
-        <div>
-          {cartItems.map(([quantity, item], i) => {
-            const game = item as IGame;
-            const console = item as IConsole;
-            if (item.typehint === "game") {
-              return (
-                <div key={i} className="border border-purple-500 flex flex-row">
-                  <a className="max-w-xs lg:h-80" href={"games/" + item.id}>
-                    <img src={item.thumbnail} />
-                  </a>
-                  <div className="flex flex-col w-full justify-around">
-                    <div id="name-description">
-                      <h1 className="text-3xl font-bold">{item.name}</h1>
-                      <p className="text-xl">{game.description}</p>
-                    </div>
-                    <div id="stats">
-                      <h2 className="text-xl">
-                        For:{" "}
-                        {game.avaiableOn.map((console) => console.name + " ")}
-                      </h2>
-                      <h2 className="text-xl">
-                        Release date: {game.releaseDate}
-                      </h2>
-                      <h2 className="text-xl">Price: {game.price} $</h2>
-                    </div>
-                    <div id="actions">
-                      <div className="flex justify-between">
-                        <div className="flex flex-row justify-around">
-                          <button
-                            disabled={quantity <= 1}
-                            onClick={() => decrementItem(i)}
-                            className="bg-white p-3 rounded-xl border-2 border-red-500 hover:bg-red-600 disabled:border-gray-500 disabled:text-gray-500 disabled:hover:bg-white text-red-500"
-                          >
-                            <h1 className="font-bold">-</h1>
-                          </button>
-                          <div className="border-2 border-black rounded-xl p-3 mx-4 text-center">
-                            <h1 className="font-bold inline-block m-2">
-                              Quantity: {quantity}
-                            </h1>
-                          </div>
-                          <button
-                            onClick={() => incrementItem(i)}
-                            className="bg-white p-3 rounded-xl border-2 border-green-500 hover:bg-green-600"
-                          >
-                            <h1 className="text-green-500 font-bold">+</h1>
-                          </button>
-                        </div>
-                        <div className="flex flex-row justify-around">
-                          <button className="bg-purple-500 p-3 rounded-xl shadow-lg shadow-purple-800 hover:bg-purple-700 mr-4">
-                            <h1 className="text-white font-bold">
-                              Remove item
-                            </h1>
-                          </button>
-                          <button className="bg-purple-500 p-3 rounded-xl shadow-lg shadow-purple-800 hover:bg-purple-700">
-                            <h1 className="text-white font-bold">Item page</h1>
-                          </button>
-                        </div>
-                        <div className="mr-4">
-                          <h1 className="font-bold text-xl">Total price</h1>
-                          <h1 className="font-bold text-3xl text-purple-500">
-                            {(quantity * item.price).toFixed(2)} $
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            } else {
-              return (
-                <div key={i} className="border border-purple-500 flex flex-row">
-                  <a className="max-w-xs h-80" href={"games/" + item.id}>
-                    <img src={item.thumbnail} />
-                  </a>
-                  <div className="flex flex-col">
-                    <h1 className="text-3xl font-bold mt-4">{item.name}</h1>
-                    <h2 className="text-xl mt-4">For: {}</h2>
-                  </div>
-                </div>
-              );
-            }
-          })}
-          {cartItems.length === 0 ? <div>No item booo</div> : []}
+        <div className="flex flex-row">
+          {cartItems.length === 0 ? <NoTitem /> : []}
+          <div className="w-[75%]">
+            {cartItems.map(([quantity, item], i) => (
+              <CartItem
+                index={i}
+                quantity={quantity}
+                item={item}
+                refreshFunction={refreshFunction}
+                cart={cart}
+              />
+            ))}
+          </div>
+          <div className="ml-10 w-[25%] mt-10">
+            <div className="bg-purple-500 p-6 flex flex-col text-white">
+              <h1 className=" text-2xl font-extrabold mb-1 text-center">
+                Order summary
+              </h1>
+              <h2 className=" text-xl font-extrabold">
+                Items: {cartItems.length}
+              </h2>
+              <h2 className=" text-xl font-extrabold">
+                Total: $
+                {cartItems
+                  .map(([q, i]) => i.price * q)
+                  .reduce((a, b) => a + b, 0)
+                  .toFixed(2)}{" "}
+              </h2>
+              <h2 className=" text-xl font-extrabold">Taxes: At checkout</h2>
+              <p className=" text-lg text-center mt-5">
+                Ready to get your articles ?
+              </p>
+              <button className="bg-white rounded-lg  hover:bg-slate-300 mt-1 p-3">
+                <a href={"games/"} className="text-purple-500 font-bold">
+                  GO TO CHECKOUT
+                </a>
+              </button>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />

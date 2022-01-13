@@ -35,7 +35,7 @@ export default function Header() {
           <Popover.Group as="nav" className="hidden md:flex space-x-10">
             <Popover className="relative">
               <>
-                <Popover.Button className="group inline-flex items-center text-base text-white font-medium">
+                <Popover.Button className="group inline-flex items-center text-lg text-white font-medium">
                   <span className="text-white hover:text-slate-100">Games</span>
                   <ChevronDownIcon
                     className={"text-white ml-2 h-5 w-5"}
@@ -116,19 +116,19 @@ export default function Header() {
 
             <a
               href="#"
-              className="text-base font-medium text-white hover:text-slate-100"
+              className="text-lg font-medium text-white hover:text-slate-100"
             >
               Consoles
             </a>
             <a
               href="#"
-              className="text-base font-medium text-white hover:text-slate-100"
+              className="text-lg font-medium text-white hover:text-slate-100"
             >
               Search
             </a>
             <a
               href="/about"
-              className="text-base font-medium text-white hover:text-slate-100"
+              className="text-lg font-medium text-white hover:text-slate-100"
             >
               About us
             </a>
