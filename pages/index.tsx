@@ -8,7 +8,7 @@ import games from "../data/games";
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <>
       <Head>
         <MyMetaTags />
         <title>Yoyo Games</title>
@@ -25,8 +25,8 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Header />
-      <main className="flex flex-col justify-center items-center mt-10">
-        <h1 className="text-3xl text-center whitespace-pre-line max-w-4xl font-mono">
+      <main className="flex flex-1 flex-col justify-center items-center mt-10 w-full">
+        <h1 className="text-3xl text-center whitespace-pre-line font-mono">
           Here at Yoyo Games we provide the best games for the best players.{" "}
           <br />
           Want the lastest best selling game ? <br />
@@ -38,7 +38,7 @@ export default function Home() {
           </span>
           .
         </h1>
-        <div className="w-4/5 lg:h-24 mt-10 h-28">
+        <div className="w-4/5 lg:h-24 mt-10">
           <div className="bg-purple-500 w-full h-full flex flex-col justify-center">
             <h1 className="text-white font-bold text-4xl text-center lg:pt-3">
               Still not convinced ? Check our bestsellers below
@@ -129,8 +129,7 @@ export default function Home() {
           </ul>
         </div>
       </main>
-
       <Footer />
-    </div>
+    </>
   );
 }

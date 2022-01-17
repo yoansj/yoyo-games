@@ -14,7 +14,7 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 export default function Header() {
   return (
     <Popover className="relative bg-purple-500">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-10 lg:mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="/" className="flex items-center justify-center">
