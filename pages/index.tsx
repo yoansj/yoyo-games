@@ -50,13 +50,13 @@ export default function Home() {
             :)
           </h2>
         </div>
-        <div className="mt-10 grid grid-rows-1 lg:grid-cols-4 gap-4">
+        <div className="mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <GameCard game={games[2]} />
           <GameCard game={games[1]} />
           <GameCard game={games[2]} />
           <GameCard game={games[1]} />
         </div>
-        <div className="mt-10 grid grid-rows-1 lg:grid-cols-4 gap-4">
+        <div className="mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <GameCard game={games[2]} />
           <GameCard game={games[1]} />
           <GameCard game={games[2]} />
@@ -75,7 +75,7 @@ export default function Home() {
           </h2>
         </div>
         <div>
-          <ul className="mt-8 lg:mt-10 flex flex-col lg:flex-row justify-center align-middle">
+          <ul className="mt-8 lg:mt-10 flex flex-col md:flex-row md:flex-wrap lg:flex-row justify-center align-middle">
             <UserReview
               imageUrl="https://i.kym-cdn.com/entries/icons/facebook/000/017/539/captain_falcon.jpg"
               name="Captain Falcon"
@@ -101,7 +101,7 @@ export default function Home() {
               title="VOCALOID"
             />
           </ul>
-          <ul className="lg:mt-9 mb-20 flex flex-col lg:flex-row justify-center align-middle">
+          <ul className="lg:mt-9 mb-20 flex flex-col md:flex-row md:flex-wrap lg:flex-row justify-center align-middle">
             <UserReview
               imageUrl="https://avatars.githubusercontent.com/u/48960798?v=4"
               name="Yoan Saint Juste"
