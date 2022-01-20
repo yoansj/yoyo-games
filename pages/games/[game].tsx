@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import { getGameById } from "../../data/games";
 import Header from "../../components/Header";
-import MyCarousel from "../../components/MyCarousel";
 import ConsoleRenderer from "../../components/ConsoleRenderer";
 import StarsDisplayer from "../../components/StarsDisplayer";
 import GameNotFoundModal from "../../components/GameNotFoundModal";
 import AddToCartModal from "../../components/AddedToCartModal";
 import Cart from "../../utils/Cart";
+import MyResponsiveCarousel from "../../components/MyResponsiveCarousel";
+import Footer from "../../components/Footer";
 
 export default function GameInspect() {
   const router = useRouter();
@@ -65,19 +66,19 @@ export default function GameInspect() {
           itemName={gameObject.name}
           onClose={handleCloseAddModal}
         />
-        <div className="my-20 mx-20 p-10 bg-purple-500">
+        <div className="px-4 p-2 mt-20 mb-20 md:mx-20 md:p-10 bg-purple-500">
           <h1 className="text-3xl font-bold mb-5">{gameObject.name}</h1>
-          <div className="flex flex-col lg:flex-row justify-between">
-            <div className="left-div">
-              <div className="carousel-wrapper-div">
-                <MyCarousel
+          <div className="flex flex-col lg:flex-row justify-between flex-wrap">
+            <div className="left-div flex-1 flex flex-col">
+              <div className="carousel-wrapper-div self-center">
+                <MyResponsiveCarousel
                   loop
                   renderButtons
                   images={gameObject.images}
                   uuid="games-carousel"
                 />
               </div>
-              <div className="cart-div p-6 m-10 mt-10 bg-white flex justify-between items-center text-purple-500 rounded-xl border-2 border-black">
+              <div className="cart-div p-3 lg:p-6 lg:m-10 mt-10 bg-white flex flex-col lg:flex-row justify-between items-center text-purple-500 rounded-xl border-2 border-black">
                 <h1 className="font-bold text-3xl">{gameObject.price} $</h1>
                 <button
                   className="bg-purple-500 p-3 rounded-xl shadow-lg shadow-purple-800 hover:bg-purple-700"
@@ -89,8 +90,8 @@ export default function GameInspect() {
                 </button>
               </div>
             </div>
-            <div className="right-div">
-              <div className="flex flex-col ml-10 items-center border-2 border-black p-10">
+            <div className="right-div flex-1">
+              <div className="flex flex-col mt-10 lg:mt-0 lg:ml-10 items-center border-2 border-black p-10">
                 {gameObject.avaiableOn.length === 1 ? (
                   <ConsoleRenderer console={gameObject.avaiableOn[0].name} />
                 ) : (
@@ -121,6 +122,7 @@ export default function GameInspect() {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

@@ -39,7 +39,7 @@ interface IProps {
  * @param param0
  * @returns
  */
-export default function MyCarousel({
+export default function MyResponsiveCarousel({
   images,
   renderLinks,
   loop,
@@ -80,9 +80,9 @@ export default function MyCarousel({
   };
 
   return (
-    <div className="carousel-root relative group w-[384px] md:w-[576px] lg:w-[896px]">
+    <div className="carousel-root relative group">
       {renderLinks ? (
-        <div className="carousel-links flex flex-row justify-center absolute z-10 text-white w-[384px] md:w-[576px] lg:w-[896px] bottom-0">
+        <div className="carousel-links flex flex-row justify-center absolute z-10 text-white bottom-0">
           {images.map((url, index) => (
             <a key={index} href={"#" + (uuid || "img-") + index}>
               <MinusIcon className={"h-8 w-8 ml-3"} />
@@ -93,7 +93,7 @@ export default function MyCarousel({
         []
       )}
       {renderButtons ? (
-        <div className="carousel-buttons absolute z-10 top-32 lg:top-48 text-white flex justify-between w-[384px] md:w-[576px] lg:w-[896px] opacity-30 group-hover:opacity-100 group-hover:animate-pulse">
+        <div className="carousel-buttons absolute z-10 top-16 sm:top-20 md:top-24 lg:top-28 xl:top-[10rem] 2xl:top-[11rem] w-80 sm:w-96 md:w-[28rem] lg:w-[42rem] xl:w-[48rem] 2xl:w-[56rem] text-white flex justify-between opacity-30 group-hover:opacity-100 group-hover:animate-pulse">
           <a
             href={"#" + (uuid || "img-") + previousIndex}
             onClick={handlePreviousImage}
@@ -110,15 +110,15 @@ export default function MyCarousel({
       ) : (
         []
       )}
-      <div className="hidden-scrollbar relative w-[384px] md:w-[576px] lg:w-[896px] flex snap-x overflow-x-auto scroll-smooth border-2 border-black">
+      <div className="hidden-scrollbar relative max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl  flex snap-x overflow-x-auto scroll-smooth border-2 border-black">
         {images.map((url, index) => (
           <div
             key={index}
             id={(uuid || "img-") + index}
-            className="snap-center shrink-0"
+            className="snap-center"
           >
             <img
-              className="shrink-0 w-[384px] md:w-[576px] lg:w-[896px] shadow-xl bg-white"
+              className="aspect-video max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl shadow-xl bg-white"
               src={url}
             />
           </div>
