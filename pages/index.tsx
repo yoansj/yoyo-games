@@ -25,8 +25,8 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Header />
-      <main className="flex flex-1 flex-col justify-center items-center mt-10 w-full">
-        <h1 className="text-3xl text-center whitespace-pre-line font-mono">
+      <main className="flex flex-col justify-center items-center mt-10 w-full px-4 lg:px-0">
+        <h1 className="text-lg lg:text-xl xl:text-3xl text-center whitespace-pre-line font-mono">
           Here at Yoyo Games we provide the best games for the best players.{" "}
           <br />
           Want the lastest best selling game ? <br />
@@ -38,44 +38,44 @@ export default function Home() {
           </span>
           .
         </h1>
-        <div className="w-4/5 lg:h-24 mt-10">
-          <div className="bg-purple-500 w-full h-full flex flex-col justify-center">
-            <h1 className="text-white font-bold text-4xl text-center lg:pt-3">
-              Still not convinced ? Check our bestsellers below
-            </h1>
-            <h2 className="text-white text-base text-center italic">
-              (Dont worry they will convince you)
-            </h2>
-          </div>
+        <div className="bg-purple-500 mt-10 flex flex-col justify-center p-4 lg:p-7 lg:px-[10%]">
+          <h1 className="text-white font-bold text-2xl lg:text-4xl text-center lg:pt-3">
+            Still not convinced ? Check our bestsellers below
+          </h1>
+          <h2 className="text-white text-base text-center italic">
+            (Dont worry they will convince you)
+          </h2>
+          <h2 className="text-yellow-400 text-sm text-center italic mt-5">
+            Pro-tip: Hover or long press the games to see more infos about them
+            :)
+          </h2>
         </div>
-        <div className="mt-10 grid grid-cols-4 gap-4">
-          <GameCard game={games[2]} />
-          <GameCard game={games[1]} />
-          <GameCard game={games[2]} />
-          <GameCard game={games[1]} />
-        </div>
-        <div className="mt-10 grid grid-cols-4 gap-4">
+        <div className="mt-10 grid grid-rows-1 lg:grid-cols-4 gap-4">
           <GameCard game={games[2]} />
           <GameCard game={games[1]} />
           <GameCard game={games[2]} />
           <GameCard game={games[1]} />
         </div>
-        <div className="w-4/5 lg:h-24 mt-10 h-32">
-          <div className="bg-purple-500 w-full h-full flex flex-col justify-center">
-            <h1 className="text-white font-bold text-4xl text-center lg:pt-3">
-              Not convinced again ? you're hard{" "}
-              <span className="text-red-600 uppercase hover:animate-pulse cursor-crosshair">
-                boss
-              </span>{" "}
-              check our reviews below
-            </h1>
-            <h2 className="text-white text-base text-center italic">
-              (They should convince yout this time)
-            </h2>
-          </div>
+        <div className="mt-10 grid grid-rows-1 lg:grid-cols-4 gap-4">
+          <GameCard game={games[2]} />
+          <GameCard game={games[1]} />
+          <GameCard game={games[2]} />
+          <GameCard game={games[1]} />
+        </div>
+        <div className="bg-purple-500 mt-10 flex flex-col justify-center p-4 lg:p-7 lg:px-[10%]">
+          <h1 className="text-white font-bold text-lg lg:text-xl xl:text-3xl text-center lg:pt-3">
+            Not convinced again ? you're hard{" "}
+            <span className="text-red-600 uppercase hover:animate-pulse cursor-crosshair">
+              boss
+            </span>{" "}
+            check our reviews below
+          </h1>
+          <h2 className="text-white text-base text-center italic">
+            (They should convince yout this time)
+          </h2>
         </div>
         <div>
-          <ul className="mt-10 flex flex-col lg:flex-row justify-center align-middle">
+          <ul className="mt-8 lg:mt-10 flex flex-col lg:flex-row justify-center align-middle">
             <UserReview
               imageUrl="https://i.kym-cdn.com/entries/icons/facebook/000/017/539/captain_falcon.jpg"
               name="Captain Falcon"
@@ -101,7 +101,7 @@ export default function Home() {
               title="VOCALOID"
             />
           </ul>
-          <ul className="mt-9 mb-20 flex flex-col lg:flex-row justify-center align-middle">
+          <ul className="lg:mt-9 mb-20 flex flex-col lg:flex-row justify-center align-middle">
             <UserReview
               imageUrl="https://i.kym-cdn.com/entries/icons/facebook/000/017/539/captain_falcon.jpg"
               name="Captain Falcon"
