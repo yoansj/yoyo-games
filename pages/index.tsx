@@ -13,51 +13,38 @@ export default function Home() {
         <MyMetaTags />
         <title>Yoyo Games</title>
         <meta property="og:title" content="Yoyo Games" />
-        <meta
-          property="og:description"
-          content="Here at Yoyo Games we provide the best games for the best players"
-        />
+        <meta property="og:description" content="Here at Yoyo Games we provide the best games for the best players" />
         <meta property="og:image" content="/Facebook-cover.png" />
-        <meta
-          name="description"
-          content="Here at Yoyo Games we provide the best games for the best players"
-        />
+        <meta name="description" content="Here at Yoyo Games we provide the best games for the best players" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Header />
       <main className="flex flex-col justify-center items-center mt-10 w-full px-4 lg:px-0">
         <h1 className="text-lg lg:text-xl xl:text-3xl text-center whitespace-pre-line font-mono">
-          Here at Yoyo Games we provide the best games for the best players.{" "}
-          <br />
+          Here at Yoyo Games we provide the best games for the best players. <br />
           Want the lastest best selling game ? <br />
           Check below or use our buttons on top ! <br />
           Need that hardware to play ? We sell it too ! <br />
           At Yoyo Games you're the{" "}
-          <span className="text-red-600 uppercase hover:animate-pulse cursor-crosshair">
-            boss
-          </span>
-          .
+          <span className="text-red-600 uppercase hover:animate-pulse cursor-crosshair">boss</span>.
         </h1>
         <div className="bg-purple-500 mt-10 flex flex-col justify-center p-4 lg:p-7 lg:px-[10%]">
           <h1 className="text-white font-bold text-2xl lg:text-4xl text-center lg:pt-3">
             Still not convinced ? Check our bestsellers below
           </h1>
-          <h2 className="text-white text-base text-center italic">
-            (Dont worry they will convince you)
-          </h2>
+          <h2 className="text-white text-base text-center italic">(Dont worry they will convince you)</h2>
           <h2 className="text-yellow-400 text-sm text-center italic mt-5">
-            Pro-tip: Hover or long press the games to see more infos about them
-            :)
+            Pro-tip: Hover or long press the games to see more infos about them :)
           </h2>
         </div>
         <div className="mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <GameCard game={games[2]} />
           <GameCard game={games[1]} />
           <GameCard game={games[2]} />
-          <GameCard game={games[1]} />
+          <GameCard game={games[3]} />
+          <GameCard game={games[4]} />
         </div>
         <div className="mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <GameCard game={games[2]} />
+          <GameCard game={games[5]} />
           <GameCard game={games[1]} />
           <GameCard game={games[2]} />
           <GameCard game={games[1]} />
@@ -65,14 +52,10 @@ export default function Home() {
         <div className="bg-purple-500 mt-10 flex flex-col justify-center p-4 lg:p-7 lg:px-[10%]">
           <h1 className="text-white font-bold text-lg lg:text-xl xl:text-3xl text-center lg:pt-3">
             Not convinced again ? you're hard{" "}
-            <span className="text-red-600 uppercase hover:animate-pulse cursor-crosshair">
-              boss
-            </span>{" "}
-            check our reviews below
+            <span className="text-red-600 uppercase hover:animate-pulse cursor-crosshair">boss</span> check our reviews
+            below
           </h1>
-          <h2 className="text-white text-base text-center italic">
-            (They should convince yout this time)
-          </h2>
+          <h2 className="text-white text-base text-center italic">(They should convince yout this time)</h2>
         </div>
         <div>
           <ul className="mt-8 lg:mt-10 flex flex-col md:flex-row md:flex-wrap lg:flex-row justify-center align-middle">

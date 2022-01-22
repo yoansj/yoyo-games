@@ -29,9 +29,7 @@ export default function GameCard({ game }: IProps) {
     };
 
     for (let i = 0; i !== game.stars; i++) arr.push(i);
-    return arr.map((r, index) => (
-      <StarIcon key={index} className={"last:mr-3 h-6 " + color(arr.length)} />
-    ));
+    return arr.map((r, index) => <StarIcon key={index} className={"last:mr-3 h-6 " + color(arr.length)} />);
   };
 
   // Position relative
@@ -44,23 +42,16 @@ export default function GameCard({ game }: IProps) {
       <div className="max-w-xs lg:h-80">
         <img src={game.thumbnail} />
       </div>
-      <div
-        className="bg-purple-500 h-16 group-hover:invisible pl-3 cursor-pointer"
-        onClick={handleOpenGamePage}
-      >
+      <div className="bg-purple-500 h-full group-hover:invisible pl-3 cursor-pointer" onClick={handleOpenGamePage}>
         <h1 className="font-bold text-lg">$ {game.price}</h1>
         <h2 className="font-medium">{game.name}</h2>
       </div>
-      <div className="invisible pl-3 group-hover:visible bg-purple-800 absolute bottom-0 w-80">
+      <div className="invisible pl-3 group-hover:visible bg-purple-800 absolute bottom-0 w-full">
         <h1 className="font-bold text-lg">$ {game.price}</h1>
         <h2 className="font-medium">{game.name}</h2>
         <div className="flex flex-row align-middle justify-between">
-          <h3 className="invisible group-hover:visible">
-            For: {game.avaiableOn.map((c) => c.name + " ")}
-          </h3>
-          <span className="stars-displayer invisible group-hover:visible flex flex-row text-xs">
-            {displayStars()}
-          </span>
+          <h3 className="invisible group-hover:visible">For: {game.avaiableOn.map((c) => c.name + " ")}</h3>
+          <span className="stars-displayer invisible group-hover:visible flex flex-row text-xs">{displayStars()}</span>
         </div>
         <p>{game.description}</p>
       </div>

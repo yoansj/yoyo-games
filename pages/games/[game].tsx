@@ -97,7 +97,7 @@ export default function GameInspect() {
                 ) : (
                   []
                 )}
-                <h1 className="mt-6 text-xl font-bold">
+                <h1 className="mt-6 text-xl font-bold text-center">
                   {gameObject.description}
                 </h1>
                 <h2 className="mt-3 text-lg font-semibold text-left underline underline-offset-4 decoration-slate-100">
