@@ -17,6 +17,7 @@ const games: Array<IGame> = [
     id: "nogame",
     typehint: "game",
   },
+  /* ----- PS5 GAMES ----- */
   {
     name: "Ratchet & Clank: Rift Apart",
     avaiableOn: [getConsole("PS5")],
@@ -65,10 +66,10 @@ const games: Array<IGame> = [
     extendedDescription:
       "Experience the original brutal challenge, completely remade from the ground up. All presented in stunning visual quality with enhanced performance, this is the world of Boletaria as you have never seen it before.",
     images: [
-      "https://media.direct.playstation.com/is/image/sierialto/ps5-demons-souls-game-castle?$Background_Large$",
-      "https://media.direct.playstation.com/is/image/sierialto/ps5-demons-souls-game-vanguard?$Background_Large$",
-      "https://media.direct.playstation.com/is/image/sierialto/ps5-demons-souls-game-old-hero?$Background_Large$",
-      "https://media.direct.playstation.com/is/image/sierialto/ps5-demons-souls-game-altar?$Background_Large$",
+      "https://gmedia.playstation.com/is/image/SIEPDC/demons-souls-screenshot-05-disclaimer-en-30sept20?$native$",
+      "https://techcrunch.com/wp-content/uploads/2020/11/demons-souls-2.jpg",
+      "https://www.indiewire.com/wp-content/uploads/2020/11/k5BrowgBk7pAyNZzM2iQ5a.jpg",
+      "https://www.lifewire.com/thmb/8SH4M0lFTC0aVLD6ue3YOrO_th8=/1500x1000/filters:fill(auto,1)/Demons_Souls_HeroHoriz-c20445163c3a41d1a3cc903b397f80c0.jpg",
     ],
     price: 59.99,
     releaseDate: "November 12, 2020",
@@ -86,9 +87,9 @@ const games: Array<IGame> = [
     extendedDescription:
       "In the latest adventure in the Marvel’s Spider-Man universe, teenager Miles Morales is adjusting to his new home while following in the footsteps of his mentor, Peter Parker, as a new Spider-Man. But when a fierce power struggle threatens to destroy his new home, the aspiring hero realizes that with great power, there must also come great responsibility. To save all of Marvel’s New York, Miles must take up the mantle of Spider-Man and own it.",
     images: [
-      "https://media.direct.playstation.com/is/image/sierialto/ps5-spider-man-miles-morales-ult-game-web-strike-2021?$Background_Large$",
-      "https://media.direct.playstation.com/is/image/sierialto/ps5-spider-man-miles-morales-ult-game-watch-out-2021?$Background_Large$",
-      "https://media.direct.playstation.com/is/image/sierialto/ps5-spider-man-miles-morales-ult-game-miles-ganke-2021?$Background_Large$",
+      "https://www.nme.com/wp-content/uploads/2020/11/spider-man-miles-morale-credit-insomniac-games@2000x1270-3.jpg",
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spiderman-1604616315.jpg",
+      "https://static.onecms.io/wp-content/uploads/sites/6/2020/11/12/MSM_MilesMorales_PS5_Spider-Men.jpg",
       "https://media.direct.playstation.com/is/image/sierialto/ps5-spider-man-miles-morales-ult-game-tinkerer-2021?$Background_Large$",
     ],
     price: 69.99,
@@ -107,9 +108,9 @@ const games: Array<IGame> = [
     extendedDescription:
       "Roam vast countryside and expansive terrain to encounter rich characters, discover ancient landmarks and uncover the hidden beauty of Tsushima in this open-world action adventure. Seek support from old friends and new unlikely allies to reclaim Tsushima. Break away from tradition, become a new kind of warrior, and protect what’s left of your home and people at all costs.",
     images: [
-      "https://media.direct.playstation.com/is/image/sierialto/ghostoftsushima-directorscut-game-young-jin?$Background_Large$",
-      "https://media.direct.playstation.com/is/image/sierialto/ghostoftsushima-directorscut-game-jin-flute?$Background_Large$",
-      "https://media.direct.playstation.com/is/image/sierialto/ghostoftsushima-directorscut-game-jin-on-bridge?$Background_Large$",
+      "https://chocobonplan.com/wp-content/uploads/2021/09/test-ghost-of-tsushima-ps5-visuel-5-paysage-scaled.jpg",
+      "https://cdn.mos.cms.futurecdn.net/w3Q8iACu8FeAPKhgBPpmDC.jpg",
+      "https://gamingbolt.com/wp-content/uploads/2021/07/ghost-of-tsushima-directors-cut-image-1.jpg",
     ],
     price: 69.99,
     releaseDate: "August 20, 2021",
@@ -117,6 +118,69 @@ const games: Array<IGame> = [
     thumbnail:
       "https://media.direct.playstation.com/is/image/sierialto/ps5-ghostoftsushima-directorscut-game-box-front?$Background_Large$",
     id: "g4me-gho-ps5",
+    typehint: "game",
+  },
+  {
+    name: "Gran Turismo 7 – 25th Anniversary Edition",
+    avaiableOn: [getConsole("PS5")],
+    description: "Gran Turismo® 7 brings together the very best features of the Real Driving Simulator.",
+    extendedDescription: `The best of Gran Turismo
+      With the return of classic cars, iconic tracks, and fan-favourite modes like GT Simulation* and Sport Mode* – Gran Turismo® 7 is the complete Real Driving Simulator, 25 years in the making.
+      Find your line
+      Whether you’re a racer, collector, tuner, designer, photographer or arcade fan – immerse yourself in the facets of automotive culture that matter most to you.
+      Connect and compete
+      Join an international community of drivers to share race strategies, tuning tips, livery designs and photos, before taking to the track to go head-to-head.`,
+    images: [
+      "https://d1ztkyjcxhkkyv.cloudfront.net/wp-content/uploads/2021/09/Gran-Turismo-7-25th-Anniversary-Edition-and-pre-order-bonuses-detailed-02.jpg",
+      "https://asset.vg247.com/gran_turismo%207.jpg/BROK/resize/1920x1920%3E/format/jpg/quality/80/gran_turismo%207.jpg",
+      "https://www.spelochsant.se/uploads/images/product_images/351105_original.jpg",
+    ],
+    price: 89.99,
+    releaseDate: "March 04, 2022",
+    stars: 5,
+    thumbnail:
+      "https://media.direct.playstation.com/is/image/sierialto/gran-turismo-7-ps5-25thanniversary-box-front?$Background_Large$",
+    id: "g4me-gran-ps5",
+    typehint: "game",
+  },
+  /* ----- NINTENDO SWITCH GAMES ----- */
+  {
+    name: "Mario Kart 8 Deluxe",
+    avaiableOn: [getConsole("Nintendo Switch")],
+    description: "Race and battle your friends in the definitive version of Mario Kart 8.",
+    extendedDescription: `The best of Gran Turismo
+Hit the road with the definitive version of Mario Kart 8 and play anytime, anywhere! Race your friends or battle them in a revised battle mode on new and returning battle courses. Play locally in up to 4-player multiplayer in 1080p while playing in TV Mode. Every track from the Wii U version, including DLC, makes a glorious return. Plus, the Inklings appear as all-new guest characters, along with returning favorites, such as King Boo, Dry Bones, and Bowser Jr.!`,
+    images: [
+      "https://images.gnwcdn.com/2017/usgamer/Mario-Kart-8-Deluxe-Review-Shot-01.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/18-12-2017-mario-kart-8-deluxe-best-kartcharacter-build-combo.jpg",
+      "https://d3isma7snj3lcx.cloudfront.net/images/news/30/3050807621/mario-kart-8-deluxe-roule-a-la-mode-breath-of-the-wild-c37023c2.jpg",
+      "https://d3isma7snj3lcx.cloudfront.net/images/gallery/10/108081/mario-kart-8-switch-2df796ab.jpg",
+    ],
+    price: 39.99,
+    releaseDate: "April 27 2017",
+    stars: 5,
+    thumbnail:
+      "https://img.g2a.com/1080x1080/1x1x0/mario-kart-8-deluxe-nintendo-switch-nintendo-key-europe/5d15d34946177c06b06c1042",
+    id: "g4me-mk8d-ps5",
+    typehint: "game",
+  },
+  {
+    name: "Super Smash Bros Ultimate",
+    avaiableOn: [getConsole("Nintendo Switch")],
+    description: "Gaming icons clash in the ultimate brawl you can play anytime, anywhere!",
+    extendedDescription: `Gaming icons clash in the ultimate brawl you can play anytime, anywhere! Smash rivals off the stage as new characters Simon Belmont and King K. Rool join Inkling, Ridley, and every fighter in Super Smash Bros. history. Enjoy enhanced speed and combat at new stages based on the Castlevania series, Super Mario Odyssey, and more!
+
+Having trouble choosing a stage? Then select the Stage Morph option to transform one stage into another while battling—a series first! Plus, new echo fighters Dark Samus, Richter Belmont, and Chrom join the battle. Whether you play locally or online, savor the faster combat, new attacks, and new defensive options, like a perfect shield. Jam out to 900 different music compositions and go 1-on-1 with a friend, hold a 4-player free-for-all, kick it up to 8-player battles and more! Feel free to bust out your GameCube controllers—legendary couch competitions await—or play together anytime, anywhere!`,
+    images: [
+      "https://assets.nintendo.com/image/upload/c_limit,f_auto,q_auto,w_1920/ncom/en_US/games/switch/s/super-smash-bros-ultimate-switch/screenshot-gallery/screenshot01?v=2021120417",
+      "https://assets.nintendo.com/image/upload/c_limit,f_auto,q_auto,w_1920/ncom/en_US/games/switch/s/super-smash-bros-ultimate-switch/screenshot-gallery/screenshot02?v=2021120417",
+      "https://assets.nintendo.com/image/upload/c_limit,f_auto,q_auto,w_1920/ncom/en_US/games/switch/s/super-smash-bros-ultimate-switch/screenshot-gallery/screenshot03?v=2021120417",
+    ],
+    price: 49.99,
+    releaseDate: "April 27 2017",
+    stars: 5,
+    thumbnail:
+      "https://g-h.sgp1.digitaloceanspaces.com/wp-content/uploads/2018/04/19123851/Super-Smash-Bros.-Ultimate.jpg",
+    id: "g4me-ssbu-ps5",
     typehint: "game",
   },
 ];

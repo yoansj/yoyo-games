@@ -4,15 +4,14 @@ import games from "../data/games";
 import IItem from "../types/IItem";
 import ClickAwayListener from "react-click-away-listener";
 
-const searchableItems: Array<IItem> = [...games, ...consoles];
+const searchableItems: Array<IItem> = [...games, ...consoles].filter((i) => i.name !== "Missing game");
 
 export default function SearchBar() {
   const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
   const searchResults = useMemo(() => {
-    if (search === "**" || search.toLocaleLowerCase().includes("all"))
-      return searchableItems.filter((i) => i.name !== "Missing game");
+    if (search === "**" || search.toLocaleLowerCase().includes("all")) return searchableItems;
     if (search.toLocaleLowerCase().includes("consoles") || search.toLocaleLowerCase().includes("console"))
       return consoles;
     if (search.toLocaleLowerCase().includes("games") || search.toLocaleLowerCase().includes("game"))

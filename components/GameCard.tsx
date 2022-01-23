@@ -1,21 +1,29 @@
 import { StarIcon } from "@heroicons/react/solid";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import games, { getGameById } from "../data/games";
+import React from "react";
+import IConsole from "../types/IConsole";
 import IGame from "../types/IGame";
+import IItem from "../types/IItem";
 
 interface IProps {
   /**
-   * Uses the game object to fill the card content
+   * Uses the item object to fill the card content
    */
-  game: IGame;
+  item: IItem;
 }
 
-export default function GameCard({ game }: IProps) {
+/**
+ * Item card that allows shows an item from the store
+ * @param param0 Item data
+ * @returns React.Component
+ */
+export default function ItemCard({ item }: IProps) {
   const router = useRouter();
 
-  const handleOpenGamePage = () => router.push(`/games/${game.id}`);
+  const gameData = item as IGame;
+  const consoleData = item as IConsole;
+
+  const handleOpenGamePage = () => router.push(`/games/${item.id}`);
 
   const displayStars = () => {
     let arr = [];
@@ -28,11 +36,11 @@ export default function GameCard({ game }: IProps) {
       if (l === 1) return "text-red-900";
     };
 
-    for (let i = 0; i !== game.stars; i++) arr.push(i);
+    for (let i = 0; i !== gameData.stars; i++) arr.push(i);
     return arr.map((r, index) => <StarIcon key={index} className={"last:mr-3 h-6 " + color(arr.length)} />);
   };
 
-  // Position relative
+  // Relative position thingy
   // https://www.youtube.com/watch?v=jx5jmI0UlXU
   return (
     <div
@@ -40,20 +48,28 @@ export default function GameCard({ game }: IProps) {
       className="group flex flex-col border-solid border border-purple-500 hover:border-purple-800 text-white max-w-xs cursor-pointer relative"
     >
       <div className="max-w-xs lg:h-80">
-        <img src={game.thumbnail} />
+        <img src={item.thumbnail} />
       </div>
       <div className="bg-purple-500 h-full group-hover:invisible pl-3 cursor-pointer" onClick={handleOpenGamePage}>
-        <h1 className="font-bold text-lg">$ {game.price}</h1>
-        <h2 className="font-medium">{game.name}</h2>
+        <h1 className="font-bold text-lg">$ {item.price}</h1>
+        <h2 className="font-medium">{item.name}</h2>
       </div>
       <div className="invisible pl-3 group-hover:visible bg-purple-800 absolute bottom-0 w-full">
-        <h1 className="font-bold text-lg">$ {game.price}</h1>
-        <h2 className="font-medium">{game.name}</h2>
-        <div className="flex flex-row align-middle justify-between">
-          <h3 className="invisible group-hover:visible">For: {game.avaiableOn.map((c) => c.name + " ")}</h3>
-          <span className="stars-displayer invisible group-hover:visible flex flex-row text-xs">{displayStars()}</span>
-        </div>
-        <p>{game.description}</p>
+        <h1 className="font-bold text-lg">
+          {item.typehint === "console" ? "From: " : ""}$ {item.price}
+        </h1>
+        <h2 className="font-medium">{item.name}</h2>
+        {item.typehint === "game" ? (
+          <div className="flex flex-row align-middle justify-between">
+            <h3 className="invisible group-hover:visible">For: {gameData.avaiableOn.map((c) => c.name + " ")}</h3>
+            <span className="stars-displayer invisible group-hover:visible flex flex-row text-xs">
+              {displayStars()}
+            </span>
+          </div>
+        ) : (
+          []
+        )}
+        <p>{item.description}</p>
       </div>
     </div>
   );

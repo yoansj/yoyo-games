@@ -1,10 +1,11 @@
 import Head from "next/head";
 import MyMetaTags from "../components/MyMetaTags";
 import Footer from "../components/Footer";
-import GameCard from "../components/GameCard";
+import ItemCard from "../components/GameCard";
 import Header from "../components/Header";
 import UserReview from "../components/UserReview";
 import games from "../data/games";
+import consoles from "../data/consoles";
 
 export default function Home() {
   return (
@@ -38,16 +39,16 @@ export default function Home() {
           </h2>
         </div>
         <div className="mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <GameCard game={games[1]} />
-          <GameCard game={games[2]} />
-          <GameCard game={games[3]} />
-          <GameCard game={games[4]} />
+          <ItemCard item={games[1]} />
+          <ItemCard item={games[2]} />
+          <ItemCard item={games[3]} />
+          <ItemCard item={games[4]} />
         </div>
         <div className="mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <GameCard game={games[5]} />
-          <GameCard game={games[1]} />
-          <GameCard game={games[2]} />
-          <GameCard game={games[1]} />
+          <ItemCard item={games[8]} />
+          <ItemCard item={games[7]} />
+          <ItemCard item={consoles[0]} />
+          <ItemCard item={consoles[1]} />
         </div>
         <div className="bg-purple-500 mt-10 flex flex-col justify-center p-4 lg:p-7 lg:px-[10%]">
           <h1 className="text-white font-bold text-lg lg:text-xl xl:text-3xl text-center lg:pt-3">
