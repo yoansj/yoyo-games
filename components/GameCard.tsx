@@ -23,7 +23,8 @@ export default function ItemCard({ item }: IProps) {
   const gameData = item as IGame;
   const consoleData = item as IConsole;
 
-  const handleOpenGamePage = () => router.push(`/games/${item.id}`);
+  const handleOpenGamePage = () =>
+    item.typehint === "game" ? router.push(`/games/${item.id}`) : router.push(`/consoles/${item.id}`);
 
   const displayStars = () => {
     let arr = [];
@@ -67,7 +68,7 @@ export default function ItemCard({ item }: IProps) {
             </span>
           </div>
         ) : (
-          []
+          <div>{consoleData.options.length} options</div>
         )}
         <p>{item.description}</p>
       </div>

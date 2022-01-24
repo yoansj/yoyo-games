@@ -8,6 +8,7 @@ import {
   TruckIcon,
   GlobeAltIcon,
   DesktopComputerIcon,
+  InformationCircleIcon,
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import SearchBar from "./SearchBar";
@@ -55,7 +56,7 @@ export default function Header() {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right">
+        <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right max-w-md">
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
@@ -86,6 +87,10 @@ export default function Header() {
                   <a href="/consoles" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                     <DesktopComputerIcon className="flex-shrink-0 h-6 w-6 text-purple-500" aria-hidden="true" />
                     <span className="ml-3 text-base font-medium text-gray-900">Consoles</span>
+                  </a>
+                  <a href="/about" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                    <InformationCircleIcon className="flex-shrink-0 h-6 w-6 text-purple-500" aria-hidden="true" />
+                    <span className="ml-3 text-base font-medium text-gray-900">About us</span>
                   </a>
                 </nav>
               </div>

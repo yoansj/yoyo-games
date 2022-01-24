@@ -158,8 +158,7 @@ Hit the road with the definitive version of Mario Kart 8 and play anytime, anywh
     price: 39.99,
     releaseDate: "April 27 2017",
     stars: 5,
-    thumbnail:
-      "https://img.g2a.com/1080x1080/1x1x0/mario-kart-8-deluxe-nintendo-switch-nintendo-key-europe/5d15d34946177c06b06c1042",
+    thumbnail: "https://www.worldshop.eu/medias/sys_master/h3a/hd8/8906854432798.png",
     id: "g4me-mk8d-ps5",
     typehint: "game",
   },
@@ -175,12 +174,32 @@ Having trouble choosing a stage? Then select the Stage Morph option to transform
       "https://assets.nintendo.com/image/upload/c_limit,f_auto,q_auto,w_1920/ncom/en_US/games/switch/s/super-smash-bros-ultimate-switch/screenshot-gallery/screenshot02?v=2021120417",
       "https://assets.nintendo.com/image/upload/c_limit,f_auto,q_auto,w_1920/ncom/en_US/games/switch/s/super-smash-bros-ultimate-switch/screenshot-gallery/screenshot03?v=2021120417",
     ],
-    price: 49.99,
+    price: 39.99,
     releaseDate: "April 27 2017",
     stars: 5,
     thumbnail:
       "https://g-h.sgp1.digitaloceanspaces.com/wp-content/uploads/2018/04/19123851/Super-Smash-Bros.-Ultimate.jpg",
     id: "g4me-ssbu-ps5",
+    typehint: "game",
+  },
+  {
+    name: "Zelda Breath Of The Wild",
+    avaiableOn: [getConsole("Nintendo Switch")],
+    description:
+      "No kingdom. No memories. After a 100-year slumber, Link wakes up alone in a world he no longer remembers.",
+    extendedDescription: `The Legend of Zelda: Breath of the Wild[b] is a 2017 action-adventure game developed and published by Nintendo for the Nintendo Switch and Wii U consoles. Breath of the Wild is the nineteenth installment of The Legend of Zelda franchise and is set at the end of the Zelda timeline. The player controls Link, who awakens from a hundred-year slumber to defeat Calamity Ganon and restore the kingdom of Hyrule.
+
+Similar to the original 1986 The Legend of Zelda game, players are given little instruction and can explore the world freely. Tasks include collecting various items and gear to aid in objectives such as puzzle-solving or side quests. The world is unstructured and designed to encourage exploration and experimentation, and the main story quest can be completed in a nonlinear fashion.`,
+    images: [
+      "https://www.zelda.com/breath-of-the-wild/assets/media/wallpapers/desktop-1.jpg",
+      "https://www.zelda.com/breath-of-the-wild/assets/media/wallpapers/desktop-3.jpg",
+      "https://www.zelda.com/breath-of-the-wild/assets/media/wallpapers/desktop-5.jpg",
+    ],
+    price: 44.99,
+    releaseDate: "April 27 2017",
+    stars: 5,
+    thumbnail: "https://www.bhphotovideo.com/images/images2500x2500/nintendo_hacpaaaaa_the_legend_of_zelda_1311612.jpg",
+    id: "g4me-zbotw-ps5",
     typehint: "game",
   },
 ];

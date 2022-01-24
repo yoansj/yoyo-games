@@ -16,6 +16,11 @@ interface IOption {
    * Price of the option
    */
   price: string | number;
+
+  /**
+   * Description of the option
+   */
+  description: string;
 }
 
 /**
@@ -40,9 +45,4 @@ export default interface IConsole extends IItem {
    * Type of console
    */
   type: "Handheld" | "Stationnary";
-
-  /**
-   * Technical description of the console
-   */
-  technicalDescription: string;
 }
