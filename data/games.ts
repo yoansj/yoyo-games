@@ -159,7 +159,7 @@ Hit the road with the definitive version of Mario Kart 8 and play anytime, anywh
     releaseDate: "April 27 2017",
     stars: 5,
     thumbnail: "https://www.worldshop.eu/medias/sys_master/h3a/hd8/8906854432798.png",
-    id: "g4me-mk8d-ps5",
+    id: "g4me-mk8d-ns",
     typehint: "game",
   },
   {
@@ -179,7 +179,7 @@ Having trouble choosing a stage? Then select the Stage Morph option to transform
     stars: 5,
     thumbnail:
       "https://g-h.sgp1.digitaloceanspaces.com/wp-content/uploads/2018/04/19123851/Super-Smash-Bros.-Ultimate.jpg",
-    id: "g4me-ssbu-ps5",
+    id: "g4me-ssbu-ns",
     typehint: "game",
   },
   {
@@ -199,7 +199,7 @@ Similar to the original 1986 The Legend of Zelda game, players are given little 
     releaseDate: "April 27 2017",
     stars: 5,
     thumbnail: "https://www.bhphotovideo.com/images/images2500x2500/nintendo_hacpaaaaa_the_legend_of_zelda_1311612.jpg",
-    id: "g4me-zbotw-ps5",
+    id: "g4me-zbotw-ns",
     typehint: "game",
   },
 ];
