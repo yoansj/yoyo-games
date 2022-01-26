@@ -14,6 +14,12 @@ import IGame from "../../types/IGame";
 
 import { GetServerSideProps } from "next";
 
+/**
+ * Used to get the id of the game while the page loads
+ * ! https://nextjs.org/docs/api-reference/data-fetching/get-server-side-props
+ * @param context - Big object
+ * @returns Props for the page
+ */
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { game } = context.query;
   const gameObject = getGameById(game as string);
@@ -27,6 +33,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 };
 
+/**
+ * Props for the page
+ */
 interface IProps {
   /**
    * Data of the current game
@@ -35,8 +44,6 @@ interface IProps {
 }
 
 export default function GameInspect({ gameObject }: IProps) {
-  const router = useRouter();
-
   const [addModalOpen, setAddModalOpen] = useState(false);
   const [cart, setCart] = useState<Cart>();
 

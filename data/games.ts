@@ -202,6 +202,41 @@ Similar to the original 1986 The Legend of Zelda game, players are given little 
     id: "g4me-zbotw-ns",
     typehint: "game",
   },
+  {
+    name: "Pokemon Shield",
+    avaiableOn: [getConsole("Nintendo Switch")],
+    description: "Pokémon Sword and Pokémon Shield introduce the Galar region and more Pokémon to discover!",
+    extendedDescription: `A new generation of Pokémon is coming to the Nintendo Switch™ system. Begin your adventure as a Pokémon Trainer by choosing one of three new partner Pokémon: Grookey, Scorbunny, or Sobble. Then embark on a journey in the new Galar region, where you’ll challenge the troublemakers of Team Yell, while unraveling the mystery behind the Legendary Pokémon Zacian and Zamazenta! Explore the Wild Area, a vast expanse of land where the player can freely control the camera. Team up with three other players locally or online in the new multiplayer co-op Max Raid Battles* in which players will face off against gigantic and super-strong Pokémon known as Dynamax Pokémon.`,
+    images: [
+      "https://asset.vg247.com/pokemon_sword_shield_3.png/BROK/thumbnail/1600x900/quality/100/pokemon_sword_shield_3.png",
+      "https://www.nme.com/wp-content/uploads/2020/06/pokemon-isle-of-armor-expansion-credit-Ben-sledge-gigantamax@2000x1270-1.jpg",
+      "https://d28ipuewd7cdcq.cloudfront.net/assets/article/2020/11/13/pokemon-sword-shield-zarude_feature.png",
+      "https://www.nintendoenthusiast.com/wp-content/uploads/2020/01/isleofarmor.jpg",
+    ],
+    price: 44.99,
+    releaseDate: "November 15 2019",
+    stars: 3,
+    thumbnail: "https://www.pokemoncenter.com/products/images/P5698/716-52781/P5698_716-52781_01.jpg",
+    id: "g4me-pkmnsh-ns",
+    typehint: "game",
+  },
+  {
+    name: "Pokemon Sword",
+    avaiableOn: [getConsole("Nintendo Switch")],
+    description: "Pokémon Sword and Pokémon Shield introduce the Galar region and more Pokémon to discover!",
+    extendedDescription: `A new generation of Pokémon is coming to the Nintendo Switch™ system. Begin your adventure as a Pokémon Trainer by choosing one of three new partner Pokémon: Grookey, Scorbunny, or Sobble. Then embark on a journey in the new Galar region, where you’ll challenge the troublemakers of Team Yell, while unraveling the mystery behind the Legendary Pokémon Zacian and Zamazenta! Explore the Wild Area, a vast expanse of land where the player can freely control the camera. Team up with three other players locally or online in the new multiplayer co-op Max Raid Battles* in which players will face off against gigantic and super-strong Pokémon known as Dynamax Pokémon.`,
+    images: [
+      "https://www.zelda.com/breath-of-the-wild/assets/media/wallpapers/desktop-1.jpg",
+      "https://www.zelda.com/breath-of-the-wild/assets/media/wallpapers/desktop-3.jpg",
+      "https://www.zelda.com/breath-of-the-wild/assets/media/wallpapers/desktop-5.jpg",
+    ],
+    price: 44.99,
+    releaseDate: "November 15 2019",
+    stars: 3,
+    thumbnail: "https://g-h.sgp1.digitaloceanspaces.com/wp-content/uploads/2020/12/23154640/Pokemon-Sword.jpg",
+    id: "g4me-pkmnsw-ns",
+    typehint: "game",
+  },
 ];
 
 export const getGameByName = (name: string) => {

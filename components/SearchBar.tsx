@@ -4,7 +4,9 @@ import games from "../data/games";
 import IItem from "../types/IItem";
 import ClickAwayListener from "react-click-away-listener";
 
-const searchableItems: Array<IItem> = [...games, ...consoles].filter((i) => i.name !== "Missing game");
+const searchableItems: Array<IItem> = [...games, ...consoles].filter(
+  (i) => i.name !== "Missing game" && i.id !== "noconsole"
+);
 
 export default function SearchBar() {
   const [search, setSearch] = useState("");

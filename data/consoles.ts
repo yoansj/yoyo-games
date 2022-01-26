@@ -2,6 +2,22 @@ import IConsole from "../types/IConsole";
 
 const consoles: Array<IConsole> = [
   {
+    fabricant: "Missing game",
+    description: "This console does not exist boo",
+    images: [],
+    name: "PS5",
+    options: [
+      { name: "Non existing", price: 450, description: "na" },
+      { name: "Non existing", price: 500, description: "na" },
+    ],
+    price: 469.42,
+    releaseDate: "--",
+    thumbnail: "https://media.direct.playstation.com/is/image/psdglobal/PS5-console-front",
+    type: "Stationnary",
+    id: "noconsole",
+    typehint: "console",
+  },
+  {
     fabricant: "Sony",
     description: "The new hard to get console from Sony here at Yoyo Games",
     images: [
@@ -24,8 +40,9 @@ const consoles: Array<IConsole> = [
     fabricant: "Nintendo",
     description: "The hybrid portable stationnary console from the big N",
     images: [
-      "https://img-4.linternaute.com/tVw3haBudzmX4ULtRq_afj5-rNk=/1500x/smart/b9b47fd4897e434892d4e576e9196f44/ccmcms-linternaute/30328908.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbNQQQ1ozR75y2TJFUhH1e4bn2BBfe9S9diTV0dMe7PZdCe3TqjVQRcAI330YPk9VymGU&usqp=CAU",
+      "https://i.ytimg.com/vi/0qjGn_AunuA/maxresdefault.jpg",
+      "https://mynintendostore.nintendo.fr/media/catalog/product/cache/b4cb1f58b4f6fb6dd00a79cd43d6b8db/1/0/10002207-1-nswitchhwneonbluered-h2x1.jpg",
+      "https://www.cnet.com/a/img/lEZLLPtpD6-J39WGSQUfgqd7sVE=/2021/10/05/1fe02b0e-2baa-49f2-93c6-72acb0c47a70/switch-oled-solo.jpg",
     ],
     name: "Nintendo Switch",
     options: [

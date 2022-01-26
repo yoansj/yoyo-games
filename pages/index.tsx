@@ -39,16 +39,16 @@ export default function Home() {
           </h2>
         </div>
         <div className="mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <ItemCard item={games[1]} />
-          <ItemCard item={games[2]} />
-          <ItemCard item={games[3]} />
+          <ItemCard item={games[9]} />
+          <ItemCard item={games[10]} />
+          <ItemCard item={games[11]} />
           <ItemCard item={games[4]} />
         </div>
         <div className="mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <ItemCard item={games[8]} />
           <ItemCard item={games[7]} />
-          <ItemCard item={consoles[0]} />
           <ItemCard item={consoles[1]} />
+          <ItemCard item={consoles[2]} />
         </div>
         <div className="bg-purple-500 mt-10 flex flex-col justify-center p-4 lg:p-7 lg:px-[10%]">
           <h1 className="text-white font-bold text-lg lg:text-xl xl:text-3xl text-center lg:pt-3">
