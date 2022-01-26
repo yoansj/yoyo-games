@@ -55,12 +55,24 @@ export default function ConsoleInspect() {
       <div>
         <Head>
           <MyMetaTags />
+          {/* <!-- Primary Meta Tags --> */}
           <title>Buy the {consoleObject.name}</title>
+          <meta name="title" content={"Buy the " + consoleObject.name} />
+          <meta name="description" content={consoleObject.description} />
+
+          {/* <!-- Open Graph / Facebook --> */}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={"https://yoyo-games.vercel.app/consoles/" + consoleObject.id} />
           <meta property="og:title" content={"Buy the " + consoleObject.name} />
           <meta property="og:description" content={consoleObject.description} />
-          <meta name="description" content={consoleObject.description} />
           <meta property="og:image" content={consoleObject.images[0]} />
-          <meta name="twitter:card" content="summary_large_image" />
+
+          {/* <!-- Twitter --> */}
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content={"https://yoyo-games.vercel.app/consoles/" + consoleObject.id} />
+          <meta property="twitter:title" content={"Buy the " + consoleObject.name} />
+          <meta property="twitter:description" content={consoleObject.description} />
+          <meta property="twitter:image" content={consoleObject.images[0]} />
         </Head>
         <Header />
         <AddToCartModal

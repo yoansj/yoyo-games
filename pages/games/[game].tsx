@@ -45,12 +45,24 @@ export default function GameInspect() {
     <div>
       <Head>
         <MyMetaTags />
+        {/* <!-- Primary Meta Tags --> */}
         <title>Buy {gameObject.name}</title>
-        <meta property="og:title" content={"Buy the " + gameObject.name} />
-        <meta property="og:description" content={gameObject.description} />
+        <meta name="title" content={"Buy " + gameObject.name} />
         <meta name="description" content={gameObject.description} />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={"https://yoyo-games.vercel.app/games/" + gameObject.id} />
+        <meta property="og:title" content={"Buy " + gameObject.name} />
+        <meta property="og:description" content={gameObject.description} />
         <meta property="og:image" content={gameObject.images[0]} />
-        <meta name="twitter:card" content="summary_large_image" />
+
+        {/* <!-- Twitter --> */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={"https://yoyo-games.vercel.app/games/" + gameObject.id} />
+        <meta property="twitter:title" content={"Buy " + gameObject.name} />
+        <meta property="twitter:description" content={gameObject.description} />
+        <meta property="twitter:image" content={gameObject.images[0]} />
       </Head>
       <Header />
       <AddToCartModal
