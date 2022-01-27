@@ -1,12 +1,7 @@
 import React, { useMemo, useState } from "react";
 import consoles from "../data/consoles";
-import games from "../data/games";
-import IItem from "../types/IItem";
+import games, { searchableItems } from "../data/games";
 import ClickAwayListener from "react-click-away-listener";
-
-const searchableItems: Array<IItem> = [...games, ...consoles].filter(
-  (i) => i.name !== "Missing game" && i.id !== "noconsole"
-);
 
 export default function SearchBar() {
   const [search, setSearch] = useState("");
@@ -56,8 +51,8 @@ export default function SearchBar() {
           <div
             className={
               search.length >= 2 && isOpen
-                ? "search-results bg-white absolute w-full flex flex-col visible rounded-b-md p-2 border-2 border-t-0 border-purple-700 z-30"
-                : "search-results bg-white absolute w-full flex flex-col invisible rounded-b-md p-2 border-2 border-t-0 border-purple-700 z-30"
+                ? "search-results bg-white absolute w-full flex flex-col visible rounded-b-md p-2 border-2 border-t-0 border-purple-700 z-30 max-h-60 overflow-y-scroll"
+                : "search-results bg-white absolute w-full flex flex-col invisible rounded-b-md p-2 border-2 border-t-0 border-purple-700 z-30 max-h-60 overflow-y-scroll"
             }
           >
             {searchResults.map((item, index) => (

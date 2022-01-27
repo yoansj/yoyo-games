@@ -1,4 +1,5 @@
 import IGame from "../types/IGame";
+import IItem from "../types/IItem";
 import consoles, { getConsole } from "./consoles";
 
 const games: Array<IGame> = [
@@ -226,15 +227,53 @@ Similar to the original 1986 The Legend of Zelda game, players are given little 
     description: "Pokémon Sword and Pokémon Shield introduce the Galar region and more Pokémon to discover!",
     extendedDescription: `A new generation of Pokémon is coming to the Nintendo Switch™ system. Begin your adventure as a Pokémon Trainer by choosing one of three new partner Pokémon: Grookey, Scorbunny, or Sobble. Then embark on a journey in the new Galar region, where you’ll challenge the troublemakers of Team Yell, while unraveling the mystery behind the Legendary Pokémon Zacian and Zamazenta! Explore the Wild Area, a vast expanse of land where the player can freely control the camera. Team up with three other players locally or online in the new multiplayer co-op Max Raid Battles* in which players will face off against gigantic and super-strong Pokémon known as Dynamax Pokémon.`,
     images: [
-      "https://www.zelda.com/breath-of-the-wild/assets/media/wallpapers/desktop-1.jpg",
-      "https://www.zelda.com/breath-of-the-wild/assets/media/wallpapers/desktop-3.jpg",
-      "https://www.zelda.com/breath-of-the-wild/assets/media/wallpapers/desktop-5.jpg",
+      "https://asset.vg247.com/pokemon_sword_shield_3.png/BROK/thumbnail/1600x900/quality/100/pokemon_sword_shield_3.png",
+      "https://www.nme.com/wp-content/uploads/2020/06/pokemon-isle-of-armor-expansion-credit-Ben-sledge-gigantamax@2000x1270-1.jpg",
+      "https://d28ipuewd7cdcq.cloudfront.net/assets/article/2020/11/13/pokemon-sword-shield-zarude_feature.png",
+      "https://www.nintendoenthusiast.com/wp-content/uploads/2020/01/isleofarmor.jpg",
     ],
     price: 44.99,
     releaseDate: "November 15 2019",
     stars: 3,
     thumbnail: "https://g-h.sgp1.digitaloceanspaces.com/wp-content/uploads/2020/12/23154640/Pokemon-Sword.jpg",
     id: "g4me-pkmnsw-ns",
+    typehint: "game",
+  },
+  {
+    name: "Metroid Dread",
+    avaiableOn: [getConsole("Nintendo Switch")],
+    description:
+      "Join bounty hunter Samus Aran as she tries to escape a deadly alien world plagued by a mechanical menace",
+    extendedDescription: `Upon investigating a mysterious transmission on Planet ZDR, Samus faces a mysterious foe that traps her in this dangerous world. The remote planet has been overrun by vicious alien lifeforms and murderous robots called E.M.M.I. Hunt or be hunted as you make your way through a labyrinth of enemies in Samus’ most intense side-scrolling adventure yet.`,
+    images: [
+      "https://assets.nintendo.com/image/upload/c_limit,f_auto,q_auto,w_1920/ncom/en_US/games/switch/m/metroid-dread-switch/screenshot-gallery/screenshot03?v=2021121623",
+      "https://assets.nintendo.com/image/upload/c_limit,f_auto,q_auto,w_1920/ncom/en_US/games/switch/m/metroid-dread-switch/screenshot-gallery/screenshot05?v=2021121623",
+      "https://assets.nintendo.com/image/upload/c_limit,f_auto,q_auto,w_1920/ncom/en_US/games/switch/m/metroid-dread-switch/screenshot-gallery/screenshot06?v=2021121623",
+    ],
+    price: 59.99,
+    releaseDate: "October 8 2021",
+    stars: 5,
+    thumbnail: "https://nintendoeverything.com/wp-content/uploads/Metroid-Dread_boxart.jpg",
+    id: "g4me-medr-ns",
+    typehint: "game",
+  },
+  {
+    name: "Super Mario Odyssey",
+    avaiableOn: [getConsole("Nintendo Switch")],
+    description: "Embark on a cap-tivating, globe-trotting adventure",
+    extendedDescription: `Explore incredible places far from the Mushroom Kingdom as you join Mario and his new ally Cappy on a massive, globe-trotting 3D adventure. Use amazing new abilities—like the power to capture and control objects, animals, and enemies—to collect Power Moons so you can power up the Odyssey airship and save Princess Peach from Bowser’s wedding plans!`,
+    images: [
+      "https://assets.nintendo.com/image/upload/c_limit,f_auto,q_auto,w_1920/ncom/en_US/games/switch/s/super-mario-odyssey-switch/screenshot-gallery/screenshot01?v=2021120301",
+      "https://assets.nintendo.com/image/upload/c_limit,f_auto,q_auto,w_1920/ncom/en_US/games/switch/s/super-mario-odyssey-switch/screenshot-gallery/screenshot03?v=2021120301",
+      "https://assets.nintendo.com/image/upload/c_limit,f_auto,q_auto,w_1920/ncom/en_US/games/switch/s/super-mario-odyssey-switch/screenshot-gallery/screenshot06?v=2021120301",
+      "https://assets.nintendo.com/image/upload/c_limit,f_auto,q_auto,w_1920/ncom/en_US/games/switch/s/super-mario-odyssey-switch/screenshot-gallery/screenshot02?v=2021120301",
+    ],
+    price: 49.99,
+    releaseDate: "October 27 2017",
+    stars: 5,
+    thumbnail:
+      "https://www.bhphotovideo.com/images/images2000x2000/nintendo_hacpaaaca_super_mario_odyssey_nintendo_1352884.jpg",
+    id: "g4me-marody-ns",
     typehint: "game",
   },
 ];
@@ -259,4 +298,9 @@ export const getGameById = (id: string) => {
   }
 };
 
+const searchableItems: Array<IItem> = [...games, ...consoles].filter(
+  (i) => i.name !== "Missing game" && i.id !== "noconsole"
+);
+
+export { searchableItems };
 export default games;

@@ -4,10 +4,44 @@ import Footer from "../components/Footer";
 import ItemCard from "../components/GameCard";
 import Header from "../components/Header";
 import UserReview from "../components/UserReview";
-import games from "../data/games";
+import games, { searchableItems } from "../data/games";
 import consoles from "../data/consoles";
+import { GetServerSideProps } from "next";
+import seedrandom from "seedrandom";
+import IItem from "../types/IItem";
+import getRandomInt from "../utils/getRandomInt";
 
-export default function Home() {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  /**
+   * Set random seed to todays date
+   */
+  seedrandom(new Date().toLocaleDateString(), { global: true });
+
+  const firstItemLine: IItem[] = [];
+  const secondItemLine: IItem[] = [];
+
+  // TODO: Remove dupmicates
+  for (let i = 0; i !== 4; i++) firstItemLine.push(searchableItems[getRandomInt(0, searchableItems.length - 1)]);
+  for (let i = 0; i !== 4; i++) secondItemLine.push(searchableItems[getRandomInt(0, searchableItems.length - 1)]);
+
+  return {
+    props: { firstItemLine, secondItemLine },
+  };
+};
+
+interface IProps {
+  /**
+   * Randomly generated best sellers
+   */
+  firstItemLine: IItem[];
+
+  /**
+   * Randomly generated best sellers (second line)
+   */
+  secondItemLine: IItem[];
+}
+
+export default function Home({ firstItemLine, secondItemLine }: IProps) {
   return (
     <>
       <Head>
@@ -31,7 +65,7 @@ export default function Home() {
         </h1>
         <div className="bg-purple-500 mt-10 flex flex-col justify-center p-4 lg:p-7 lg:px-[10%]">
           <h1 className="text-white font-bold text-2xl lg:text-4xl text-center lg:pt-3">
-            Still not convinced ? Check our bestsellers below
+            Still not convinced ? Check our daily bestsellers below
           </h1>
           <h2 className="text-white text-base text-center italic">(Dont worry they will convince you)</h2>
           <h2 className="text-yellow-400 text-sm text-center italic mt-5">
@@ -39,16 +73,14 @@ export default function Home() {
           </h2>
         </div>
         <div className="mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <ItemCard item={games[9]} />
-          <ItemCard item={games[10]} />
-          <ItemCard item={games[11]} />
-          <ItemCard item={games[4]} />
+          {firstItemLine.map((item, i) => (
+            <ItemCard item={item} key={i} />
+          ))}
         </div>
         <div className="mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <ItemCard item={games[8]} />
-          <ItemCard item={games[7]} />
-          <ItemCard item={consoles[1]} />
-          <ItemCard item={consoles[2]} />
+          {secondItemLine.map((item, i) => (
+            <ItemCard item={item} key={i} />
+          ))}
         </div>
         <div className="bg-purple-500 mt-10 flex flex-col justify-center p-4 lg:p-7 lg:px-[10%]">
           <h1 className="text-white font-bold text-lg lg:text-xl xl:text-3xl text-center lg:pt-3">
