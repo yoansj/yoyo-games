@@ -6,7 +6,7 @@ import IItem from "./IItem";
  * PS4 Pro 1Tto 700$
  * etc..
  */
-interface IOption {
+export interface IOption {
   /**
    * Name of the option
    */

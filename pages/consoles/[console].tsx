@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Header from "../../components/Header";
@@ -10,7 +9,8 @@ import { getConsoleById } from "../../data/consoles";
 import MyMetaTags from "../../components/MyMetaTags";
 
 import { GetServerSideProps } from "next";
-import IConsole from "../../types/IConsole";
+import IConsole, { IOption } from "../../types/IConsole";
+import { Listbox } from "@headlessui/react";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { console } = context.query;
@@ -35,13 +35,14 @@ interface IProps {
 export default function ConsoleInspect({ consoleObject }: IProps) {
   const [addModalOpen, setAddModalOpen] = useState(false);
   const [cart, setCart] = useState<Cart>();
+  const [consoleOption, setConsoleOption] = useState<IOption | undefined>(undefined);
 
   useEffect(() => {
     setCart(new Cart());
   }, []);
 
   const handleAddToCart = () => {
-    if (cart) {
+    if (cart && consoleOption !== undefined) {
       cart.addItem(consoleObject);
       setAddModalOpen(true);
     }
@@ -78,23 +79,56 @@ export default function ConsoleInspect({ consoleObject }: IProps) {
       <AddToCartModal
         open={addModalOpen}
         image={consoleObject.thumbnail}
-        itemName={consoleObject.name}
+        itemName={consoleObject.name + (consoleOption === undefined ? "" : ` : ${consoleOption.name}`)}
         onClose={handleCloseAddModal}
       />
       <div className="px-4 p-2 mt-20 mb-20 md:mx-20 md:p-10 bg-purple-500">
-        <h1 className="text-3xl font-bold mb-5">{consoleObject.name}</h1>
+        <h1 className="text-3xl font-bold mb-5">
+          {consoleObject.name} {consoleOption === undefined ? "" : ` : ${consoleOption.name}`}
+        </h1>
         <div className="flex flex-col lg:flex-row justify-between flex-wrap">
           <div className="left-div flex-1 flex flex-col">
             <div className="carousel-wrapper-div self-center">
               <MyResponsiveCarousel loop renderButtons images={consoleObject.images} uuid="games-carousel" />
             </div>
             <div className="cart-div p-3 lg:p-6 lg:m-10 mt-10 bg-white flex flex-col lg:flex-row justify-between items-center text-purple-500 rounded-xl border-2 border-black">
-              <h1 className="font-bold text-3xl">From: {consoleObject.price} $</h1>
+              <h1 className="font-bold text-3xl">
+                {consoleOption === undefined ? `From: $ ${consoleObject.price}` : `$ ${consoleOption.price}`}
+              </h1>
+              <Listbox value={consoleOption} onChange={setConsoleOption}>
+                {({ open }) => (
+                  <>
+                    <Listbox.Button
+                      className={
+                        open
+                          ? "bg-purple-500 p-3 rounded-xl shadow-lg shadow-purple-800 hover:bg-purple-700 text-white hidden"
+                          : "bg-purple-500 p-3 rounded-xl shadow-lg shadow-purple-800 hover:bg-purple-700 text-white"
+                      }
+                    >
+                      {consoleOption === undefined ? "Options" : consoleOption.name}
+                    </Listbox.Button>
+                    <Listbox.Options className="bg-purple-500 p-3 rounded-xl">
+                      {consoleObject.options.map((opt, index) => (
+                        <Listbox.Option key={index} value={opt} className="cursor-pointer text-white">
+                          {({ active, selected }) => (
+                            <li className={selected ? "cursor-pointer text-purple-800" : "cursor-pointer text-white"}>
+                              • {opt.name}
+                            </li>
+                          )}
+                        </Listbox.Option>
+                      ))}
+                    </Listbox.Options>
+                  </>
+                )}
+              </Listbox>
               <button
-                className="bg-purple-500 p-3 rounded-xl shadow-lg shadow-purple-800 hover:bg-purple-700"
+                className="bg-purple-500 p-3 rounded-xl shadow-lg shadow-purple-800 hover:bg-purple-700 disabled:bg-gray-500 disabled:shadow-gray-500"
+                disabled={consoleOption === undefined}
                 onClick={handleAddToCart}
               >
-                <h1 className="text-white font-bold">Add this console to the cart</h1>
+                <h1 className="text-white font-bold">
+                  {consoleOption === undefined ? "Select an option first" : "Add this console to the cart"}
+                </h1>
               </button>
             </div>
           </div>
@@ -105,9 +139,16 @@ export default function ConsoleInspect({ consoleObject }: IProps) {
                 Fabricant
               </h2>
               <p className="mt-3 text-base text-center">{consoleObject.fabricant}</p>
-              <h2 className="mt-3 text-lg font-semibold text-left underline underline-offset-4 decoration-slate-100">
-                Description
-              </h2>
+              {consoleOption !== undefined ? (
+                <>
+                  <h2 className="mt-3 text-lg font-semibold text-left underline underline-offset-4 decoration-slate-100">
+                    Description
+                  </h2>
+                  <p className="mt-3 text-base text-center whitespace-pre-line">{consoleOption.description}</p>
+                </>
+              ) : (
+                []
+              )}
               <h2 className="mt-3 text-lg font-semibold text-left underline underline-offset-4 decoration-slate-100">
                 Release date
               </h2>

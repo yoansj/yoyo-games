@@ -17,20 +17,10 @@ interface IProps {
   itemName: string;
 }
 
-export default function AddToCartModal({
-  onClose,
-  open,
-  image,
-  itemName,
-}: IProps) {
+export default function AddToCartModal({ onClose, open, image, itemName }: IProps) {
   return (
     <Transition appear={open} show={open} as={Fragment}>
-      <Dialog
-        as="div"
-        className="fixed inset-0 z-10 overflow-y-auto"
-        open={open}
-        onClose={onClose}
-      >
+      <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" open={open} onClose={onClose}>
         <div className="min-h-screen px-4 text-center">
           <Transition.Child
             as={Fragment}
@@ -45,10 +35,7 @@ export default function AddToCartModal({
           </Transition.Child>
 
           {/* This element is to trick the browser into centering the modal contents. */}
-          <span
-            className="inline-block h-screen align-middle"
-            aria-hidden="true"
-          >
+          <span className="inline-block h-screen align-middle" aria-hidden="true">
             &#8203;
           </span>
           <Transition.Child
@@ -61,27 +48,24 @@ export default function AddToCartModal({
             leaveTo="opacity-0 scale-95"
           >
             <div className="inline-block w-full max-w-xl p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-2xl rounded-2xl">
-              <Dialog.Title
-                as="h3"
-                className="text-lg font-bold leading-6 text-gray-900"
-              >
+              <Dialog.Title as="h3" className="text-lg text-center font-bold leading-6 text-gray-900">
                 {itemName} has been added to the cart
               </Dialog.Title>
-              <div className="mt-2">
+              <div className="mt-2 flex justify-center">
                 <img src={image} className="w-40" />
               </div>
-              <div className="mt-4">
-                <p className="text-base">What would you like to do now ?</p>
+              <div className="mt-4 flex flex-col justify-center">
+                <p className="text-base text-center">What would you like to do now ?</p>
                 <button
                   type="button"
-                  className="inline-flex mr-8 justify-center px-4 py-2 text-sm font-medium text-white bg-purple-500 border border-transparent rounded-md hover:bg-purple-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-purple-900"
+                  className="inline-flex mt-2 justify-center px-4 py-2 text-sm font-medium text-white bg-purple-500 border border-transparent rounded-md hover:bg-purple-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-purple-900"
                   onClick={onClose}
                 >
                   Keep shopping
                 </button>
                 <button
                   type="button"
-                  className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-purple-500 border border-transparent rounded-md hover:bg-purple-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-purple-900"
+                  className="inline-flex justify-center mt-2 px-4 py-2 text-sm font-medium text-white bg-purple-500 border border-transparent rounded-md hover:bg-purple-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-purple-900"
                 >
                   <a href="/cart">Go to the cart page</a>
                 </button>

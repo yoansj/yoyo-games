@@ -34,15 +34,15 @@ interface IProps {
 
 export default function UserReview({ name, title, quote, imageUrl, imageAlt, href }: IProps) {
   return (
-    <li className="text-sm leading-6 m-3">
-      <figure className="relative flex flex-col-reverse bg-purple-300 border border-purple-500 rounded-lg p-6">
+    <li className="m-3 text-sm leading-6">
+      <figure className="relative flex flex-col-reverse rounded-lg border border-purple-500 bg-purple-300 p-6">
         <blockquote className="mt-6 text-gray-700">
           <p className="max-w-xs">{quote}</p>
         </blockquote>
         <figcaption className="flex items-center space-x-4">
-          <img src={imageUrl} alt={imageAlt} className="flex-none w-14 h-14 rounded-full object-cover" loading="lazy" />
+          <img src={imageUrl} alt={imageAlt} className="h-14 w-14 flex-none rounded-full object-cover" />
           <div className="flex-auto">
-            <div className="text-base text-gray-900 font-semibold">
+            <div className="text-base font-semibold text-gray-900">
               <a href={href}>
                 <span className="absolute inset-0"></span>
                 {name}

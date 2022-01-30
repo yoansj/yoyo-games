@@ -61,14 +61,16 @@ export default class Cart {
   /* Item management */
 
   getItems(): Array<[number, IItem]> {
-    console.log("got items: ", this.items);
     return this.items;
   }
 
-  addItem(item: IItem) {
-    const index = this.items.findIndex(
-      ([quantity, oldItem]) => oldItem.id === item.id
-    );
+  /**
+   * Adds an item to the cart
+   * @param item - Actual item object added to the cart
+   * @param optionName - If an option is provided adds the item and take into account the option chosen
+   */
+  addItem(item: IItem, optionName?: string) {
+    const index = this.items.findIndex(([quantity, oldItem]) => oldItem.id === item.id);
 
     if (index !== -1) {
       this.items[index][0] += 1;
@@ -97,6 +99,18 @@ export default class Cart {
   decrementItem(index: number) {
     if (this.items[index]) {
       this.items[index][0] -= 1;
+      this.saveCart();
+    }
+  }
+
+  /**
+   * Sets the quantity of an item
+   * @param index - Index of the item to be decremented
+   * @param quantity - Quantity to be set (must be greater than zero)
+   */
+  setQuantity(index: number, quantity: number) {
+    if (this.items[index] && quantity >= 1) {
+      this.items[index][0] = quantity;
       this.saveCart();
     }
   }

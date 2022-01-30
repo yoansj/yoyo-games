@@ -91,7 +91,7 @@ export default function Home({ firstItemLine, secondItemLine }: IProps) {
           <h2 className="text-white text-base text-center italic">(They should convince yout this time)</h2>
         </div>
         <div>
-          <ul className="mt-8 lg:mt-10 flex flex-col md:flex-row md:flex-wrap lg:flex-row justify-center align-middle">
+          <ul className="mt-8 lg:mt-10 flex flex-col lg:flex-row justify-center align-middle">
             <UserReview
               imageUrl="https://i.kym-cdn.com/entries/icons/facebook/000/017/539/captain_falcon.jpg"
               name="Captain Falcon"
@@ -117,7 +117,7 @@ export default function Home({ firstItemLine, secondItemLine }: IProps) {
               title="VOCALOID"
             />
           </ul>
-          <ul className="lg:mt-9 mb-20 flex flex-col md:flex-row md:flex-wrap lg:flex-row justify-center align-middle">
+          <ul className="lg:mt-9 mb-20 flex flex-col lg:flex-row justify-center align-middle">
             <UserReview
               imageUrl="https://avatars.githubusercontent.com/u/48960798?v=4"
               name="Yoan Saint Juste"
