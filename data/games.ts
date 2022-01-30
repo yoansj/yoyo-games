@@ -276,6 +276,26 @@ Similar to the original 1986 The Legend of Zelda game, players are given little 
     id: "g4me-marody-ns",
     typehint: "game",
   },
+  {
+    name: "Pokémon Legends: Arceus",
+    avaiableOn: [getConsole("Nintendo Switch")],
+    description: "Discover the Hisui region, Jubilife Village, and the characters of Pokémon Legends: Arceus",
+    extendedDescription: `Your adventure is set in the expansive natural majesty of the Hisui region, in an age long ago when it was rare for people and Pokémon to live in close harmony. In time, this land of Hisui will come to be called Sinnoh—a region you may know well.
+
+Mount Coronet rises from the center of the Hisui region, surrounded on all sides by areas with distinct environments. Each area is rich in its own natural features and plays host to different Pokémon ecosystems. One such area is the Obsidian Fieldlands, which is resplendent with gorgeous flowers and verdant vegetation—what’s more, it appears to teem with Pokémon that favor meadows and forests.`,
+    images: [
+      "https://cdn1.dotesports.com/wp-content/uploads/2021/09/15000638/Pokemon-Legends-Arceus-keyart.jpg",
+      "https://cdn.mos.cms.futurecdn.net/PjkfnYZstSpBUqcsYDCAHf.jpg",
+      "https://nintendoeverything.com/wp-content/uploads/pokemon-legends-arceus-alpha-pokemon.jpg",
+      "https://cdn1.dotesports.com/wp-content/uploads/2021/09/28084310/Legends_Arceus_-_Screenshot_13.jpg",
+    ],
+    price: 49.99,
+    releaseDate: "January 28 2022",
+    stars: 4,
+    thumbnail: "https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/154/15493/15493203.jpg",
+    id: "g4me-pkmnbotw-ns",
+    typehint: "game",
+  },
 ];
 
 export const getGameByName = (name: string) => {
