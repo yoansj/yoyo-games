@@ -1,9 +1,6 @@
-import { Listbox } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/outline";
-import { MinusIcon, TrashIcon, XIcon } from "@heroicons/react/solid";
+import { MinusIcon, XIcon } from "@heroicons/react/solid";
 import React from "react";
-import IConsole from "../types/IConsole";
-import IGame from "../types/IGame";
 import IItem from "../types/IItem";
 import Cart from "../utils/Cart";
 
@@ -35,9 +32,6 @@ interface IProps {
 }
 
 export default function CartItem({ item, index, cart, refreshFunction, quantity }: IProps) {
-  const game = item as IGame;
-  const console = item as IConsole;
-
   const incrementItem = (index: number) => {
     if (cart) {
       cart.incrementItem(index);

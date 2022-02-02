@@ -2,6 +2,8 @@ import React, { useMemo, useState } from "react";
 import consoles from "../data/consoles";
 import games, { searchableItems } from "../data/games";
 import ClickAwayListener from "react-click-away-listener";
+import CartItem from "./CartItem";
+import SearchItem from "./SearchItem";
 
 export default function SearchBar() {
   const [search, setSearch] = useState("");
@@ -26,7 +28,7 @@ export default function SearchBar() {
   };
 
   return (
-    <form className="search-bar flex-1 group" onSubmit={(e) => e.preventDefault()}>
+    <form className="search-bar group w-full flex-1" onSubmit={(e) => e.preventDefault()}>
       <label className="relative block">
         <span className="absolute inset-y-0 left-0 flex items-center pl-2">
           <svg className="h-5 w-5 fill-purple-500" viewBox="0 0 20 20">
@@ -41,8 +43,8 @@ export default function SearchBar() {
         <input
           type="search"
           name="search"
-          className="block bg-white w-full border-2 py-2 pl-9 pr-3 shadow-sm placeholder:italic placeholder:text-slate-400 focus:outline-none focus:border-purple-700 focus:ring-purple-700 focus:ring-1 sm:text-sm"
-          placeholder="Search for anything..."
+          className="block w-full border-2 bg-white py-2 pl-9 pr-3 shadow-sm placeholder:italic placeholder:text-slate-400 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 sm:text-sm"
+          placeholder="Search for anything: try with 'games', 'game', 'consoles' or even '**' 😉"
           onChange={onSearchChange}
           autoComplete="off"
           autoCorrect="off"
@@ -51,14 +53,21 @@ export default function SearchBar() {
           <div
             className={
               search.length >= 2 && isOpen
-                ? "search-results bg-white absolute w-full flex flex-col visible rounded-b-md p-2 border-2 border-t-0 border-purple-700 z-30 max-h-60 overflow-y-scroll"
-                : "search-results bg-white absolute w-full flex flex-col invisible rounded-b-md p-2 border-2 border-t-0 border-purple-700 z-30 max-h-60 overflow-y-scroll"
+                ? "search-results visible absolute z-30 flex max-h-60 w-full flex-col overflow-y-scroll rounded-b-md border-2 border-t-0 border-purple-700 bg-white p-2 lg:max-h-96"
+                : "search-results invisible absolute z-30 flex max-h-60 w-full flex-col overflow-y-scroll rounded-b-md border-2 border-t-0 border-purple-700 bg-white p-2 lg:max-h-96"
             }
           >
             {searchResults.map((item, index) => (
-              <a key={index} href={item.typehint === "game" ? "/games/" + item.id : "/consoles/" + item.id}>
-                {item.typehint === "game" ? "Game: " : "Console: "} {item.name}
-              </a>
+              <>
+                <a
+                  key={index}
+                  className="lg:hidden"
+                  href={item.typehint === "game" ? "/games/" + item.id : "/consoles/" + item.id}
+                >
+                  {item.typehint === "game" ? "Game: " : "Console: "} {item.name}
+                </a>
+                <SearchItem item={item} />
+              </>
             ))}
             {searchResults.length === 0 && search.length >= 2 ? <p>No result found for "{search}"</p> : []}
           </div>
