@@ -82,17 +82,17 @@ export default function ConsoleInspect({ consoleObject }: IProps) {
         itemName={consoleObject.name + (consoleOption === undefined ? "" : ` : ${consoleOption.name}`)}
         onClose={handleCloseAddModal}
       />
-      <div className="px-4 p-2 mt-20 mb-20 md:mx-20 md:p-10 bg-purple-500">
-        <h1 className="text-3xl font-bold mb-5">
+      <div className="mt-20 mb-20 bg-purple-500 p-2 px-4 md:mx-20 md:p-10">
+        <h1 className="mb-5 text-3xl font-bold">
           {consoleObject.name} {consoleOption === undefined ? "" : ` : ${consoleOption.name}`}
         </h1>
-        <div className="flex flex-col lg:flex-row justify-between flex-wrap">
-          <div className="left-div flex-1 flex flex-col">
+        <div className="flex flex-col flex-wrap justify-between lg:flex-row">
+          <div className="left-div flex flex-1 flex-col">
             <div className="carousel-wrapper-div self-center">
               <MyResponsiveCarousel loop renderButtons images={consoleObject.images} uuid="games-carousel" />
             </div>
-            <div className="cart-div p-3 lg:p-6 lg:m-10 mt-10 bg-white flex flex-col lg:flex-row justify-between items-center text-purple-500 rounded-xl border-2 border-black">
-              <h1 className="font-bold text-3xl">
+            <div className="cart-div mt-10 flex flex-col items-center justify-between rounded-xl border-2 border-black bg-white p-3 text-purple-500 lg:m-10 lg:flex-row lg:p-6">
+              <h1 className="text-3xl font-bold">
                 {consoleOption === undefined ? `From: $ ${consoleObject.price}` : `$ ${consoleOption.price}`}
               </h1>
               <Listbox value={consoleOption} onChange={setConsoleOption}>
@@ -101,13 +101,13 @@ export default function ConsoleInspect({ consoleObject }: IProps) {
                     <Listbox.Button
                       className={
                         open
-                          ? "bg-purple-500 p-3 rounded-xl shadow-lg shadow-purple-800 hover:bg-purple-700 text-white hidden"
-                          : "bg-purple-500 p-3 rounded-xl shadow-lg shadow-purple-800 hover:bg-purple-700 text-white"
+                          ? "my-3 hidden rounded-xl bg-purple-500 p-3 text-white shadow-lg shadow-purple-800 hover:bg-purple-700 lg:my-0"
+                          : "my-3 rounded-xl bg-purple-500 p-3 text-white shadow-lg shadow-purple-800 hover:bg-purple-700 lg:my-0"
                       }
                     >
                       {consoleOption === undefined ? "Options" : consoleOption.name}
                     </Listbox.Button>
-                    <Listbox.Options className="bg-purple-500 p-3 rounded-xl">
+                    <Listbox.Options className="my-3 rounded-xl bg-purple-500 p-3 lg:my-0">
                       {consoleObject.options.map((opt, index) => (
                         <Listbox.Option key={index} value={opt} className="cursor-pointer text-white">
                           {({ active, selected }) => (
@@ -122,37 +122,37 @@ export default function ConsoleInspect({ consoleObject }: IProps) {
                 )}
               </Listbox>
               <button
-                className="bg-purple-500 p-3 rounded-xl shadow-lg shadow-purple-800 hover:bg-purple-700 disabled:bg-gray-500 disabled:shadow-gray-500"
+                className="rounded-xl bg-purple-500 p-3 shadow-lg shadow-purple-800 hover:bg-purple-700 disabled:bg-gray-500 disabled:shadow-gray-500"
                 disabled={consoleOption === undefined}
                 onClick={handleAddToCart}
               >
-                <h1 className="text-white font-bold">
+                <h1 className="font-bold text-white">
                   {consoleOption === undefined ? "Select an option first" : "Add this console to the cart"}
                 </h1>
               </button>
             </div>
           </div>
           <div className="right-div flex-1">
-            <div className="flex flex-col mt-10 lg:mt-0 lg:ml-10 items-center border-2 border-black p-10">
-              <h1 className="mt-6 text-xl font-bold text-center">{consoleObject.description}</h1>
-              <h2 className="mt-3 text-lg font-semibold text-left underline underline-offset-4 decoration-slate-100">
+            <div className="mt-10 flex flex-col items-center border-2 border-black p-10 lg:mt-0 lg:ml-10">
+              <h1 className="mt-6 text-center text-xl font-bold">{consoleObject.description}</h1>
+              <h2 className="mt-3 text-left text-lg font-semibold underline decoration-slate-100 underline-offset-4">
                 Fabricant
               </h2>
-              <p className="mt-3 text-base text-center">{consoleObject.fabricant}</p>
+              <p className="mt-3 text-center text-base">{consoleObject.fabricant}</p>
               {consoleOption !== undefined ? (
                 <>
-                  <h2 className="mt-3 text-lg font-semibold text-left underline underline-offset-4 decoration-slate-100">
+                  <h2 className="mt-3 text-left text-lg font-semibold underline decoration-slate-100 underline-offset-4">
                     Description
                   </h2>
-                  <p className="mt-3 text-base text-center whitespace-pre-line">{consoleOption.description}</p>
+                  <p className="mt-3 whitespace-pre-line text-center text-base">{consoleOption.description}</p>
                 </>
               ) : (
                 []
               )}
-              <h2 className="mt-3 text-lg font-semibold text-left underline underline-offset-4 decoration-slate-100">
+              <h2 className="mt-3 text-left text-lg font-semibold underline decoration-slate-100 underline-offset-4">
                 Release date
               </h2>
-              <p className="mt-3 text-base text-center">{consoleObject.releaseDate}</p>
+              <p className="mt-3 text-center text-base">{consoleObject.releaseDate}</p>
             </div>
           </div>
         </div>

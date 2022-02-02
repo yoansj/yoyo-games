@@ -299,7 +299,7 @@ Mount Coronet rises from the center of the Hisui region, surrounded on all sides
 ];
 
 export const getGameByName = (name: string) => {
-  const index = games.findIndex((g) => g.name === name);
+  const index = games.findIndex((g) => g.name.toLowerCase() === name.toLowerCase());
 
   if (index !== -1) {
     return games[index];
