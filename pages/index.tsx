@@ -4,8 +4,7 @@ import Footer from "../components/Footer";
 import ItemCard from "../components/GameCard";
 import Header from "../components/Header";
 import UserReview from "../components/UserReview";
-import games, { searchableItems } from "../data/games";
-import consoles from "../data/consoles";
+import { searchableItems } from "../data/games";
 import { GetServerSideProps } from "next";
 import seedrandom from "seedrandom";
 import IItem from "../types/IItem";
@@ -14,15 +13,26 @@ import getRandomInt from "../utils/getRandomInt";
 export const getServerSideProps: GetServerSideProps = async (context) => {
   /**
    * Set random seed to todays date
+   * So people with the same localeDate should have the same result
    */
   seedrandom(new Date().toLocaleDateString(), { global: true });
 
-  const firstItemLine: IItem[] = [];
-  const secondItemLine: IItem[] = [];
+  let firstItemLine: IItem[] = [];
+  let secondItemLine: IItem[] = [];
+  let items: IItem[] = [];
 
-  // TODO: Remove dupmicates
-  for (let i = 0; i !== 4; i++) firstItemLine.push(searchableItems[getRandomInt(0, searchableItems.length - 1)]);
-  for (let i = 0; i !== 4; i++) secondItemLine.push(searchableItems[getRandomInt(0, searchableItems.length - 1)]);
+  /**
+   * Shameful and kinda slow technique to fill the array and get rid of duplicates at the same time
+   * But it works, even tho I would usually avoid while loops
+   * ...sometimes you gotta be lazy
+   */
+  while (items.length !== 8) {
+    items.push(searchableItems[getRandomInt(0, searchableItems.length - 1)]);
+    items = items.filter((item, i, arr) => arr.indexOf(item) === i);
+  }
+
+  firstItemLine = items.slice(0, 4);
+  secondItemLine = items.slice(4, 8);
 
   return {
     props: { firstItemLine, secondItemLine },
@@ -54,44 +64,44 @@ export default function Home({ firstItemLine, secondItemLine }: IProps) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Header />
-      <main className="flex flex-col justify-center items-center mt-10 w-full px-4 lg:px-0">
-        <h1 className="text-lg lg:text-xl xl:text-3xl text-center whitespace-pre-line font-mono">
+      <main className="mt-10 flex w-full flex-col items-center justify-center px-4 lg:px-0">
+        <h1 className="whitespace-pre-line text-center font-mono text-lg lg:text-xl xl:text-3xl">
           Here at Yoyo Games we provide the best games for the best players. <br />
           Want the lastest best selling game ? <br />
           Check below or use our buttons on top ! <br />
           Need that hardware to play ? We sell it too ! <br />
           At Yoyo Games you're the{" "}
-          <span className="text-red-600 uppercase hover:animate-pulse cursor-crosshair">boss</span>.
+          <span className="cursor-crosshair uppercase text-red-600 hover:animate-pulse">boss</span>.
         </h1>
-        <div className="bg-purple-500 mt-10 flex flex-col justify-center p-4 lg:p-7 lg:px-[10%]">
-          <h1 className="text-white font-bold text-2xl lg:text-4xl text-center lg:pt-3">
+        <div className="mt-10 flex flex-col justify-center bg-purple-500 p-4 lg:p-7 lg:px-[10%]">
+          <h1 className="text-center text-2xl font-bold text-white lg:pt-3 lg:text-4xl">
             Still not convinced ? Check our daily bestsellers below
           </h1>
-          <h2 className="text-white text-base text-center italic">(Dont worry they will convince you)</h2>
-          <h2 className="text-yellow-400 text-sm text-center italic mt-5">
+          <h2 className="text-center text-base italic text-white">(Dont worry they will convince you)</h2>
+          <h2 className="mt-5 text-center text-sm italic text-yellow-400">
             Pro-tip: Hover or long press the games to see more infos about them :)
           </h2>
         </div>
-        <div className="mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-10 grid grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {firstItemLine.map((item, i) => (
             <ItemCard item={item} key={i} />
           ))}
         </div>
-        <div className="mt-10 grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-10 grid grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {secondItemLine.map((item, i) => (
             <ItemCard item={item} key={i} />
           ))}
         </div>
-        <div className="bg-purple-500 mt-10 flex flex-col justify-center p-4 lg:p-7 lg:px-[10%]">
-          <h1 className="text-white font-bold text-lg lg:text-xl xl:text-3xl text-center lg:pt-3">
+        <div className="mt-10 flex flex-col justify-center bg-purple-500 p-4 lg:p-7 lg:px-[10%]">
+          <h1 className="text-center text-lg font-bold text-white lg:pt-3 lg:text-xl xl:text-3xl">
             Not convinced again ? you're hard{" "}
-            <span className="text-red-600 uppercase hover:animate-pulse cursor-crosshair">boss</span> check our reviews
+            <span className="cursor-crosshair uppercase text-red-600 hover:animate-pulse">boss</span> check our reviews
             below
           </h1>
-          <h2 className="text-white text-base text-center italic">(They should convince yout this time)</h2>
+          <h2 className="text-center text-base italic text-white">(They should convince yout this time)</h2>
         </div>
         <div>
-          <ul className="mt-8 lg:mt-10 flex flex-col lg:flex-row justify-center align-middle">
+          <ul className="mt-8 flex flex-col justify-center align-middle lg:mt-10 lg:flex-row">
             <UserReview
               imageUrl="https://i.kym-cdn.com/entries/icons/facebook/000/017/539/captain_falcon.jpg"
               name="Captain Falcon"
@@ -117,7 +127,7 @@ export default function Home({ firstItemLine, secondItemLine }: IProps) {
               title="VOCALOID"
             />
           </ul>
-          <ul className="lg:mt-9 mb-20 flex flex-col lg:flex-row justify-center align-middle">
+          <ul className="mb-20 flex flex-col justify-center align-middle lg:mt-9 lg:flex-row">
             <UserReview
               imageUrl="https://avatars.githubusercontent.com/u/48960798?v=4"
               name="Yoan Saint Juste"
