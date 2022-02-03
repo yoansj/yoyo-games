@@ -12,7 +12,7 @@ export default function SearchBar() {
   const searchResults = useMemo(() => {
     if (search === "**" || search.toLocaleLowerCase().includes("all")) return searchableItems;
     if (search.toLocaleLowerCase().includes("consoles") || search.toLocaleLowerCase().includes("console"))
-      return consoles;
+      return consoles.filter((c) => c.id !== "noconsole");
     if (search.toLocaleLowerCase().includes("games") || search.toLocaleLowerCase().includes("game"))
       return games.filter((g) => g.name !== "Missing game");
     if (search.length >= 2) {
