@@ -318,7 +318,7 @@ export const getGameById = (id: string) => {
   }
 };
 
-const searchableItems: Array<IItem> = [...games, ...consoles].filter(
+const searchableItems: Array<IItem> = [...consoles, ...games].filter(
   (i) => i.name !== "Missing game" && i.id !== "noconsole"
 );
 
