@@ -51,11 +51,14 @@ export default function ItemCard({ item }: IProps) {
       <div className="max-w-xs lg:h-80">
         <img src={item.thumbnail} />
       </div>
-      <div className="h-full cursor-pointer bg-purple-500 pl-3 group-hover:invisible" onClick={handleOpenGamePage}>
+      <div
+        className="h-full origin-bottom cursor-pointer bg-purple-500 pl-3 transition-all duration-1000 group-hover:scale-y-0"
+        onClick={handleOpenGamePage}
+      >
         <h1 className="text-lg font-bold">$ {item.price}</h1>
         <h2 className="font-medium">{item.name}</h2>
       </div>
-      <div className="invisible absolute bottom-0 w-full bg-purple-800 pl-3 group-hover:visible">
+      <div className="invisible absolute bottom-0 w-full origin-bottom scale-y-0 bg-purple-800 pl-3 transition-all duration-300 group-hover:visible group-hover:scale-y-100">
         <h1 className="text-lg font-bold">
           {item.typehint === "console" ? "From: " : ""}$ {item.price}
         </h1>

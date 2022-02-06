@@ -30,7 +30,7 @@ export default function SearchBar() {
   return (
     <form className="search-bar group w-full flex-1" onSubmit={(e) => e.preventDefault()}>
       <label className="relative block">
-        <span className="absolute inset-y-0 left-0 flex items-center pl-2">
+        <span className="absolute inset-y-0 left-0 flex items-center pl-2 hover:animate-bounce">
           <svg className="h-5 w-5 fill-purple-500" viewBox="0 0 20 20">
             <path
               fillRule="evenodd"
@@ -43,7 +43,7 @@ export default function SearchBar() {
         <input
           type="search"
           name="search"
-          className="block w-full border-2 bg-white py-2 pl-9 pr-3 shadow-sm placeholder:italic placeholder:text-slate-400 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 sm:text-sm"
+          className="block w-full border-2 bg-white py-2 pl-9 pr-3 shadow-sm placeholder:text-slate-400 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 focus:placeholder:text-purple-500 sm:text-sm"
           placeholder="Search for anything: try with 'games', 'game', 'consoles' or even '**' 😉"
           onChange={onSearchChange}
           autoComplete="off"

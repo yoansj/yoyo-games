@@ -19,14 +19,21 @@ export default function Header() {
       <div className=" mx-auto flex max-w-7xl flex-col px-4 sm:px-6">
         <div className="flex items-center justify-between space-x-3 py-6 ">
           <div className="menu-button">
-            <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-purple-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-600">
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
+            <Popover.Button className="group inline-flex items-center justify-center rounded-md bg-white p-2 text-purple-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-600">
+              <MenuIcon
+                className="h-6 w-6 transition-all duration-150 group-hover:h-8 group-hover:w-8"
+                aria-hidden="true"
+              />
               <p className="hidden lg:visible">Open menu</p>
             </Popover.Button>
           </div>
           <div className="flex justify-start">
             <a href="/" className="flex items-center justify-center">
-              <img className="h-14 pt-3 pb-4 md:h-20" src="/yoyogames-transparent.png" alt="Yoyo Games" />
+              <img
+                className="h-14 pt-3 pb-4 duration-500 hover:animate-pulse md:h-20"
+                src="/yoyogames-transparent.png"
+                alt="Yoyo Games"
+              />
               <span className="sr-only">Yoyo Games</span>
             </a>
           </div>
@@ -35,9 +42,12 @@ export default function Header() {
           </div>
           <a
             href="/cart"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-white p-2 text-base font-medium text-white shadow-sm hover:bg-slate-100 md:px-4"
+            className="group inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-white p-2 text-base font-medium shadow-sm md:px-4"
           >
-            <ShoppingCartIcon className="h-6 w-6 flex-shrink-0 text-purple-500" aria-hidden="true" />
+            <ShoppingCartIcon
+              className="h-6 w-6 flex-shrink-0 text-purple-500 transition-all duration-150 group-hover:h-8 group-hover:w-8"
+              aria-hidden="true"
+            />
           </a>
         </div>
         <div className="mobile-below-search-bar -mt-4 mb-4 md:hidden">

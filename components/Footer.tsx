@@ -36,10 +36,18 @@ export default function Footer() {
           <h1 className="py-2 text-xl font-bold">BUTTONS AND LOGOS</h1>
           <div className="flex flex-row">
             <a href="https://www.linkedin.com/in/ysjtek/">
-              <img src="/linkedin.svg" alt="LinkedIn" className="mr-6 h-14 w-14 flex-none rounded-full object-cover" />
+              <img
+                src="/linkedin.svg"
+                alt="LinkedIn"
+                className="mr-6 h-14 w-14 flex-none rounded-full object-cover hover:bg-purple-500"
+              />
             </a>
             <a href="https://github.com/yoansj">
-              <img src="/github.svg" alt="GitHub" className="h-14 w-14 flex-none rounded-full object-cover" />
+              <img
+                src="/github.svg"
+                alt="GitHub"
+                className="h-14 w-14 flex-none rounded-full object-cover hover:bg-purple-500"
+              />
             </a>
           </div>
         </div>

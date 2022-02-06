@@ -3,7 +3,6 @@ import MyMetaTags from "../../components/MyMetaTags";
 import Footer from "../../components/Footer";
 import ItemCard from "../../components/GameCard";
 import Header from "../../components/Header";
-import { getGameByName } from "../../data/games";
 import { ArrowCircleDownIcon } from "@heroicons/react/outline";
 import consoles from "../../data/consoles";
 
@@ -23,14 +22,14 @@ export default function Consoles() {
       <main id="main" className="mt-10 flex w-full flex-col items-center justify-center px-4 lg:px-0">
         <div className="banner-div flex flex-col justify-center space-y-2 bg-purple-500 p-6 px-[10%] text-white">
           <h1 className="text-center text-3xl font-extrabold">Our consoles</h1>
-          <p className="text-center text-xl font-semibold">
+          <p className="text-center text-3xl font-semibold">
             Below you can find the finest pieces of hardware sold by Yoyo Games !
           </p>
           <ArrowCircleDownIcon className="h-10 animate-bounce self-center" />
         </div>
         <div className="group relative my-10">
           <img className="lg:h-96" src="https://mp1st.com/wp-content/uploads/2020/12/ms-sony-ninty.jpg" />
-          <div className="absolute top-0 flex h-full w-full scale-0 flex-col items-center justify-center bg-purple-500 align-middle transition-all delay-150 duration-300 group-hover:scale-100">
+          <div className="absolute top-0 flex h-full w-full scale-0 flex-col items-center justify-center bg-purple-500 align-middle transition-all delay-150 duration-500 group-hover:scale-100">
             <h1 className="text-center text-3xl font-black text-white md:text-8xl">The big three</h1>
             <h2 className="text-center text-xl font-semibold text-white md:text-3xl">
               Nintendo, Sony, Microsoft ? <br />

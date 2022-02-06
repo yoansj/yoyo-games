@@ -56,12 +56,26 @@ export default function Home({ firstItemLine, secondItemLine }: IProps) {
     <>
       <Head>
         <MyMetaTags />
+        {/* New meta tags */}
         <title>Yoyo Games</title>
+        <meta name="title" content="Yoyo Games" />
+        <meta name="description" content="Here at Yoyo Games we provide the best games for the best players" />
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={"https://yoyo-games.vercel.app"} />
         <meta property="og:title" content="Yoyo Games" />
         <meta property="og:description" content="Here at Yoyo Games we provide the best games for the best players" />
         <meta property="og:image" content="/Facebook-cover.png" />
-        <meta name="description" content="Here at Yoyo Games we provide the best games for the best players" />
-        <meta name="twitter:card" content="summary_large_image" />
+
+        {/* <!-- Twitter --> */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={"https://yoyo-games.vercel.app"} />
+        <meta property="twitter:title" content="Yoyo Games" />
+        <meta
+          property="twitter:description"
+          content="Here at Yoyo Games we provide the best games for the best players"
+        />
+        <meta property="twitter:image" content="/Facebook-cover.png" />
       </Head>
       <Header />
       <main className="mt-10 flex w-full flex-col items-center justify-center px-4 lg:px-0">
@@ -78,7 +92,7 @@ export default function Home({ firstItemLine, secondItemLine }: IProps) {
             Still not convinced ? Check our daily bestsellers below
           </h1>
           <h2 className="text-center text-base italic text-white">(Dont worry they will convince you)</h2>
-          <h2 className="mt-5 text-center text-sm italic text-yellow-400">
+          <h2 className="mt-1 text-center text-sm italic text-yellow-400">
             Pro-tip: Hover or long press the games to see more infos about them :)
           </h2>
         </div>
