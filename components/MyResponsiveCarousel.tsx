@@ -1,5 +1,6 @@
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon, MinusIcon } from "@heroicons/react/solid";
 import React, { useEffect, useState } from "react";
+import ImageLoader from "./ImageLoader";
 
 interface IProps {
   /**
@@ -70,12 +71,12 @@ export default function MyResponsiveCarousel({ images, renderLinks, loop, render
   };
 
   return (
-    <div className="carousel-root relative group scroll-smooth">
+    <div className="carousel-root group relative scroll-smooth">
       {renderLinks ? (
-        <div className="carousel-links flex flex-row justify-center absolute z-10 text-white bottom-0">
+        <div className="carousel-links absolute bottom-0 z-10 flex flex-row justify-center text-white">
           {images.map((url, index) => (
             <a key={index} href={"#" + (uuid || "img-") + index}>
-              <MinusIcon className={"h-8 w-8 ml-3"} />
+              <MinusIcon className={"ml-3 h-8 w-8"} />
             </a>
           ))}
         </div>
@@ -83,22 +84,26 @@ export default function MyResponsiveCarousel({ images, renderLinks, loop, render
         []
       )}
       {renderButtons ? (
-        <div className="carousel-buttons absolute z-10 top-16 sm:top-20 md:top-24 lg:top-28 xl:top-[10rem] 2xl:top-[11rem] w-80 sm:w-96 md:w-[28rem] lg:w-[42rem] xl:w-[48rem] 2xl:w-[56rem] text-white flex justify-between opacity-30 group-hover:opacity-100 group-hover:animate-pulse">
+        <div className="carousel-buttons absolute top-16 z-10 flex w-80 justify-between text-white opacity-30 group-hover:animate-pulse group-hover:opacity-100 sm:top-20 sm:w-96 md:top-24 md:w-[28rem] lg:top-28 lg:w-[42rem] xl:top-[10rem] xl:w-[48rem] 2xl:top-[11rem] 2xl:w-[56rem]">
           <a href={"#" + (uuid || "img-") + previousIndex} onClick={handlePreviousImage}>
-            <ChevronDoubleLeftIcon className="h-10 lg:h-20 ml-3" />
+            <ChevronDoubleLeftIcon className="ml-3 h-10 lg:h-20" />
           </a>
           <a href={"#" + (uuid || "img-") + nextIndex} onClick={handleNextImage}>
-            <ChevronDoubleRightIcon className="h-10 lg:h-20 mr-3" />
+            <ChevronDoubleRightIcon className="mr-3 h-10 lg:h-20" />
           </a>
         </div>
       ) : (
         []
       )}
-      <div className="hidden-scrollbar relative max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl  flex snap-x overflow-x-auto scroll-smooth border-2 border-black bg-black">
+      <div className="hidden-scrollbar relative flex max-w-xs snap-x overflow-x-auto scroll-smooth border-2  border-black bg-black sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
         {images.map((url, index) => (
           <div key={index} id={(uuid || "img-") + index} className="snap-center">
-            <img
-              className="aspect-video max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl shadow-xl bg-white"
+            {/* <img
+              className="aspect-video max-w-xs bg-white shadow-xl sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl"
+              src={url}
+            /> */}
+            <ImageLoader
+              className="aspect-video max-w-xs bg-white shadow-xl sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl"
               src={url}
             />
           </div>

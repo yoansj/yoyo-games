@@ -45,4 +45,9 @@ export default interface IConsole extends IItem {
    * Type of console
    */
   type: "Handheld" | "Stationnary";
+
+  /**
+   * Logo of the console displayed on the console page
+   */
+  logo: string;
 }

@@ -13,6 +13,7 @@ const consoles: Array<IConsole> = [
     type: "Stationnary",
     id: "noconsole",
     typehint: "console",
+    logo: "N/A",
   },
   {
     fabricant: "Sony",
@@ -41,6 +42,7 @@ const consoles: Array<IConsole> = [
     type: "Stationnary",
     id: "cons-sony-ps5",
     typehint: "console",
+    logo: "https://cdn.mos.cms.futurecdn.net/cLf6g4KQr4FyX9ufAmxuW6.jpg",
   },
   {
     fabricant: "Nintendo",
@@ -96,6 +98,49 @@ const consoles: Array<IConsole> = [
     type: "Stationnary",
     id: "cons-nintendo-switch",
     typehint: "console",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nintendo_Switch_Logo.png",
+  },
+  {
+    fabricant: "Microsoft",
+    description: "The next generation Xbox",
+    images: [
+      "https://i.pcmag.com/imagery/reviews/02IVfjGisnI2rBYfxu9hDve-12..v1605193197.png",
+      "https://compass-ssl.xbox.com/assets/c1/22/c1224771-693d-48a3-8333-e3d6cf8dd153.jpg?n=Xbox-Series-X-and-S-Cross-Sell_Page-Hero-1084_1440x720.jpg",
+      "https://s.yimg.com/os/creatr-uploaded-images/2021-10/22b11f90-2aa0-11ec-b5dd-35997a253538",
+    ],
+    name: "Xbox Series",
+    options: [
+      {
+        name: "X",
+        price: 469.99,
+        description: `
+        Introducing Xbox Series X, the fastest, most powerful Xbox ever.
+        Play thousands of titles from four generations of consoles—all games look and play best on Xbox Series X.
+        At the heart of Series X is the Xbox Velocity Architecture, which pairs a custom SSD with integrated software for faster, streamlined gameplay with significantly reduced load times.
+        Seamlessly move between multiple games in a flash with Quick Resume.
+        Explore rich new worlds and enjoy the action like never before with the unmatched 12 teraflops of raw graphic processing power.
+        Enjoy 4K gaming at up to 120 frames per second, advanced 3D spatial sound, and more.
+        `,
+      },
+      {
+        name: "S",
+        price: 299.99,
+        description: `
+          Introducing the Xbox Series S, the smallest, sleekest Xbox console ever.
+          Experience the speed and performance of a next-gen all-digital console at an accessible price point.
+          Get started with an instant library of 100+ high quality games, including all new Xbox Game Studios titles like Halo Infinite the day they release, when you add Xbox Game Pass Ultimate (membership sold separately).
+          Seamlessly move between multiple games in a flash with Quick Resume.
+          At the heart of Series S is the Xbox Velocity Architecture, which pairs a custom-SSD with integrated software for faster, streamlined gameplay with significantly reduced load times.
+        `,
+      },
+    ],
+    price: 299.99,
+    releaseDate: "November 10 2020",
+    thumbnail: "https://images.frandroid.com/wp-content/uploads/2019/12/microsoft-xbox-series-x-frandroid.png",
+    type: "Stationnary",
+    id: "cons-xbox-x",
+    typehint: "console",
+    logo: "https://www.somagnews.com/wp-content/uploads/2020/04/39-2-e1587582488565.png",
   },
 ];
 

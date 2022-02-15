@@ -4,6 +4,7 @@ import React from "react";
 import IConsole from "../types/IConsole";
 import IGame from "../types/IGame";
 import IItem from "../types/IItem";
+import ImageLoader from "./ImageLoader";
 
 interface IProps {
   /**
@@ -49,7 +50,7 @@ export default function ItemCard({ item }: IProps) {
       className="group relative flex max-w-xs cursor-pointer flex-col border border-solid border-purple-500 text-white hover:border-purple-800"
     >
       <div className="max-w-xs lg:h-80">
-        <img src={item.thumbnail} />
+        <ImageLoader src={item.thumbnail} />
       </div>
       <div
         className="h-full origin-bottom cursor-pointer bg-purple-500 pl-3 transition-all duration-1000 group-hover:scale-y-0"

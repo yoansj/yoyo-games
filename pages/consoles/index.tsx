@@ -38,9 +38,9 @@ export default function Consoles() {
           </div>
         </div>
         <div className="grid grid-rows-1 gap-4 md:grid-cols-3">
+          <ItemCard item={consoles[2]} />
           <ItemCard item={consoles[1]} />
-          <ItemCard item={consoles[2]} />
-          <ItemCard item={consoles[2]} />
+          <ItemCard item={consoles[3]} />
         </div>
         <div className="banner-div my-5 flex flex-col justify-center space-y-2 bg-purple-500 p-6 text-white lg:px-[10%]">
           <h1 className="text-center text-3xl font-extrabold">Previous generations</h1>
