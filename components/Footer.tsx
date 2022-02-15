@@ -1,7 +1,10 @@
 import React from "react";
 
+/**
+ * Footer of the website
+ * @returns React.Component
+ */
 export default function Footer() {
-  // <div className="grid grid-rows-5 lg:grid-cols-4 gap-0 lg:gap-4">
   return (
     <footer className="max-w-full border-t-4 border-t-purple-500 bg-slate-50 p-8">
       <div className="flex flex-col lg:flex-row">

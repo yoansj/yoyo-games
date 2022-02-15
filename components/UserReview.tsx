@@ -32,6 +32,11 @@ interface IProps {
   imageAlt?: string;
 }
 
+/**
+ * Renders a user review, used on the homepage
+ * @param param0 Props
+ * @returns React.Component
+ */
 export default function UserReview({ name, title, quote, imageUrl, imageAlt, href }: IProps) {
   return (
     <li className="m-3 text-sm leading-6">

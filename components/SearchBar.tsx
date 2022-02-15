@@ -2,9 +2,12 @@ import React, { useMemo, useState } from "react";
 import consoles from "../data/consoles";
 import games, { searchableItems } from "../data/games";
 import ClickAwayListener from "react-click-away-listener";
-import CartItem from "./CartItem";
 import SearchItem from "./SearchItem";
 
+/**
+ * Search bar component used in the Header component
+ * @returns React.Component
+ */
 export default function SearchBar() {
   const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);

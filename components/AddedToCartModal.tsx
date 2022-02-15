@@ -2,12 +2,18 @@ import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment } from "react";
 
 interface IProps {
+  /**
+   * Wether the modal is opened or not
+   */
   open: boolean;
 
+  /**
+   * Called when the modal closes
+   */
   onClose: () => void;
 
   /**
-   * Image of the item added
+   * Image of the item added (url)
    */
   image: string;
 
@@ -17,6 +23,11 @@ interface IProps {
   itemName: string;
 }
 
+/**
+ * Modal opened when an item is added to the cart
+ * @param param0 - Props
+ * @returns React.Component
+ */
 export default function AddToCartModal({ onClose, open, image, itemName }: IProps) {
   return (
     <Transition appear={open} show={open} as={Fragment}>
@@ -47,25 +58,25 @@ export default function AddToCartModal({ onClose, open, image, itemName }: IProp
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <div className="inline-block w-full max-w-xl p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-2xl rounded-2xl">
-              <Dialog.Title as="h3" className="text-lg text-center font-bold leading-6 text-gray-900">
+            <div className="my-8 inline-block w-full max-w-xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-2xl transition-all">
+              <Dialog.Title as="h3" className="text-center text-lg font-bold leading-6 text-gray-900">
                 {itemName} has been added to the cart
               </Dialog.Title>
               <div className="mt-2 flex justify-center">
                 <img src={image} className="w-40" />
               </div>
               <div className="mt-4 flex flex-col justify-center">
-                <p className="text-base text-center">What would you like to do now ?</p>
+                <p className="text-center text-base">What would you like to do now ?</p>
                 <button
                   type="button"
-                  className="inline-flex mt-2 justify-center px-4 py-2 text-sm font-medium text-white bg-purple-500 border border-transparent rounded-md hover:bg-purple-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-purple-900"
+                  className="mt-2 inline-flex justify-center rounded-md border border-transparent bg-purple-500 px-4 py-2 text-sm font-medium text-white hover:bg-purple-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-900 focus-visible:ring-offset-2"
                   onClick={onClose}
                 >
                   Keep shopping
                 </button>
                 <button
                   type="button"
-                  className="inline-flex justify-center mt-2 px-4 py-2 text-sm font-medium text-white bg-purple-500 border border-transparent rounded-md hover:bg-purple-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-purple-900"
+                  className="mt-2 inline-flex justify-center rounded-md border border-transparent bg-purple-500 px-4 py-2 text-sm font-medium text-white hover:bg-purple-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-900 focus-visible:ring-offset-2"
                 >
                   <a href="/cart">Go to the cart page</a>
                 </button>

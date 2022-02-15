@@ -7,6 +7,11 @@ import { ArrowCircleDownIcon } from "@heroicons/react/outline";
 import consoles from "../../data/consoles";
 
 export default function Consoles() {
+  const onClickScroll = () => {
+    const doc = document.getElementById("header");
+    if (doc) doc.scrollIntoView();
+  };
+
   return (
     <>
       <Head>
@@ -80,10 +85,7 @@ export default function Consoles() {
         </div>
         <div
           className="banner-div my-5 flex cursor-pointer flex-col justify-center space-y-2 bg-purple-500 p-6 text-yellow-300 lg:px-[10%]"
-          onClick={() => {
-            const doc = document.getElementById("header");
-            if (doc) doc.scrollIntoView();
-          }}
+          onClick={onClickScroll}
         >
           <h1 className="text-center text-3xl font-extrabold">Seen enough ? Click me to scroll back up</h1>
           <ArrowCircleDownIcon className="h-10 rotate-180 self-center" />

@@ -6,7 +6,7 @@ interface IProps {
 }
 
 /**
- * Displays the star rating on a GameCard component
+ * Displays the star rating on a GameCard component and on a game page
  * @param param0 Props
  * @returns Magic
  */
@@ -23,11 +23,7 @@ export default function StarsDisplayer({ stars }: IProps) {
     };
 
     for (let i = 0; i !== stars; i++) arr.push(i);
-    return arr.map((r, index) => (
-      <StarIcon key={index} className={"last:mr-3 h-6 " + color(arr.length)} />
-    ));
+    return arr.map((r, index) => <StarIcon key={index} className={"h-6 last:mr-3 " + color(arr.length)} />);
   };
-  return (
-    <span className="stars-displayer flex flex-row text-xs">{Stars()}</span>
-  );
+  return <span className="stars-displayer flex flex-row text-xs">{Stars()}</span>;
 }

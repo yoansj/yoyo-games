@@ -2,6 +2,9 @@ import IGame from "../types/IGame";
 import IItem from "../types/IItem";
 import consoles, { getConsole } from "./consoles";
 
+/**
+ * Contains all the games 'sold' on the website
+ */
 const games: Array<IGame> = [
   {
     name: "Missing game",
@@ -294,6 +297,156 @@ Mount Coronet rises from the center of the Hisui region, surrounded on all sides
     stars: 4,
     thumbnail: "https://multimedia.bbycastatic.ca/multimedia/products/1500x1500/154/15493/15493203.jpg",
     id: "g4me-pkmnbotw-ns",
+    typehint: "game",
+  },
+  {
+    name: "Dying Light 2 Stay Human",
+    avaiableOn: [getConsole("Xbox Series")],
+    description: "Over twenty years ago in Harran, we fought the virus—and lost. Now, we’re losing again",
+    extendedDescription: `
+    Over twenty years ago in Harran, we fought the virus—and lost. Now, we’re losing again. The City, one of the last large human settlements, is torn by conflict. Civilization has fallen back into the Dark Ages. And yet, we still have hope.
+
+You are a wanderer with the power to change the fate of The City. But your exceptional abilities come at a price. Haunted by memories you cannot decipher, you set out to learn the truth… and find yourself in a combat zone. Hone your skills, as to defeat your enemies and make allies, you’ll need both fists and wits. Unravel the dark secrets behind the wielders of power, choose sides and decide your destiny. But wherever your actions take you, there's one thing you can never forget—stay human.
+    `,
+    images: [
+      "https://store-images.s-microsoft.com/image/apps.41588.68444863531073822.9d29c0ed-35c9-4a8a-abb5-966ada3e1828.1d24ff02-954d-4cc9-b682-9267e584aaa7",
+      "https://store-images.s-microsoft.com/image/apps.36013.68444863531073822.9d29c0ed-35c9-4a8a-abb5-966ada3e1828.2b7ab527-89fa-4566-943b-e1f5603101bb",
+      "https://store-images.s-microsoft.com/image/apps.19145.68444863531073822.9d29c0ed-35c9-4a8a-abb5-966ada3e1828.a51ed73f-4967-4142-9c59-24b310ca690b",
+      "https://store-images.s-microsoft.com/image/apps.38922.68444863531073822.9d29c0ed-35c9-4a8a-abb5-966ada3e1828.b79cdf05-c4b4-497d-81fc-5d0be2a52e65",
+    ],
+    price: 59.99,
+    releaseDate: "February 4 2022",
+    stars: 5,
+    thumbnail:
+      "https://i5.walmartimages.com/asr/945607c1-6baa-42cc-bcfc-acff014898ae.71c776a74542ea7635caaffed0d2d1a8.png?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+    id: "g4me-dl2-ms",
+    typehint: "game",
+  },
+  {
+    name: "Balan Wonderworld",
+    avaiableOn: [getConsole("Xbox Series")],
+    description: "Welcome to a wondrous all-action show, the likes of which has never been seen before!",
+    extendedDescription: `
+    BALAN WONDERWORLD is a wondrous action platformer game themed around the Balan Theatre. Led by the enigmatic maestro named Balan, the stars of the show Emma and Leo will use special abilities from a multitude of characterful costumes as they adventure in the bizarre and imaginary land of Wonderworld. Here memories and vistas from the real world mix with the things that people hold dear.
+    Twelve different tales await our stars in the Wonderworld, each with their own unique quirks. They will explore all corners of these labyrinthine stages, filled with a myriad of tricks and traps, to get to the heart of each story.
+
+    ■Wonderworld exists in people's hearts and imagination
+    The setting for thbis tale is the fantastic, bizarre land of Wonderworld; a place where people's happy and positive memories mix with their restless worries and negativity. Leo and Emma are led into Wonderworld by the mysterious clown Balan and set off on a journey to find what is important to them.
+    Before they can return to the real world, they must first restore the lost balance in their hearts...
+    (The price is a joke please don't sue me)
+    `,
+    images: [
+      "https://store-images.s-microsoft.com/image/apps.52911.14119634911250293.72264146-7107-4847-ab0c-77654cced41f.98980cad-0505-417e-85bb-b8f9158cfc4a",
+      "https://store-images.s-microsoft.com/image/apps.32262.14119634911250293.72264146-7107-4847-ab0c-77654cced41f.a8f26921-c865-42c5-944d-2d43d2de2ae4",
+      "https://store-images.s-microsoft.com/image/apps.4436.14119634911250293.72264146-7107-4847-ab0c-77654cced41f.68dfb96c-d08f-41f7-905b-b9cf862bc747",
+    ],
+    price: 1,
+    releaseDate: "March 26 2021",
+    stars: 1,
+    thumbnail: "https://media.gamestop.com/i/gamestop/11109006/Balan-Wonderworld---Xbox-One?$pdp$",
+    id: "g4me-balan-ms",
+    typehint: "game",
+  },
+  {
+    name: "Battlefield 2042",
+    avaiableOn: [getConsole("Xbox Series")],
+    description: "The new entrance of the Battlefield series",
+    extendedDescription: `
+    Battlefield™ 2042 is a first-person shooter that marks the return to the iconic all-out warfare of the franchise. In a near-future world transformed by disorder, adapt and overcome dynamically-changing battlegrounds with the help of your squad and a cutting-edge arsenal.
+
+    With support for 128 players on Xbox Series X|S, Battlefield™ 2042 brings unprecedented scale on vast battlegrounds. Players will take on several experiences comprising elevated versions of Conquest and Breakthrough, Battlefield™ Portal; a new community-driven platform where players can create, share and discover unexpected battles from Battlefield’s iconic past, present and future, and Battlefield™ Hazard Zone; a tense, squad-focused survival experience where every bullet, every skirmish, and every decision counts.
+    `,
+    images: [
+      "https://store-images.s-microsoft.com/image/apps.59729.14160631264571868.b44771ae-e872-4041-af62-171876fe1049.bd31a65c-86ae-42a0-ab32-0ba09c975d1a",
+      "https://store-images.s-microsoft.com/image/apps.33388.14160631264571868.b44771ae-e872-4041-af62-171876fe1049.251c2af0-4e58-4f7b-84d6-3efcc233986c",
+      "https://store-images.s-microsoft.com/image/apps.39002.14160631264571868.b44771ae-e872-4041-af62-171876fe1049.e8048e48-f5b1-4005-b6f0-b1f9f375ffe7",
+      "https://store-images.s-microsoft.com/image/apps.21065.14160631264571868.13fd4375-2a10-47a0-bac6-6bd12f673201.5f34328e-f9fb-4102-9acf-111142e02f3a",
+    ],
+    price: 39.99,
+    releaseDate: "June 2 2021",
+    stars: 2,
+    thumbnail: "https://media.gamestop.com/i/gamestop/11148121/Battlefield-2042---Xbox-Series-X?$pdp$",
+    id: "g4me-bf42-ms",
+    typehint: "game",
+  },
+  {
+    name: "Borderlands 3",
+    avaiableOn: [getConsole("Xbox Series")],
+    description:
+      "The original shooter-looter returns, packing bazillions of guns and an all-new mayhem-fueled adventure!",
+    extendedDescription: `
+    A MAYHEM-FUELED THRILL RIDE
+    Stop the fanatical Calypso Twins from uniting the bandit clans and claiming the galaxy’s ultimate power. Only you, a thrill-seeking Vault Hunter, have the arsenal and allies to take them down.
+
+    YOUR VAULT HUNTER, YOUR PLAYSTYLE
+    Become one of four extraordinary Vault Hunters, each with unique abilities, playstyles, deep skill trees, and tons of personalization options. All Vault Hunters are capable of awesome mayhem alone, but together they are unstoppable.
+
+    LOCK, LOAD, AND LOOT
+    With bazillions of guns and gadgets, every fight is an opportunity to score new gear. Firearms with self-propelling bullet shields? Check. Rifles that spawn fire-spewing volcanoes? Obviously. Guns that grow legs and chase down enemies while hurling verbal insults? Yeah, got that too.
+    `,
+    images: [
+      "https://store-images.s-microsoft.com/image/apps.31072.66416288418246547.8db04ed4-6710-424c-b2c7-fc1b8f89e9a2.26f4c524-1448-4f81-b1e4-7f1907e46b77",
+      "https://store-images.s-microsoft.com/image/apps.57950.66416288418246547.8db04ed4-6710-424c-b2c7-fc1b8f89e9a2.f8bede91-df22-42a8-b8a2-997749df5a09",
+      "https://store-images.s-microsoft.com/image/apps.42230.66416288418246547.8db04ed4-6710-424c-b2c7-fc1b8f89e9a2.893af313-6b18-43ed-9df4-ae3c0097a418",
+    ],
+    price: 39.99,
+    releaseDate: "September 13 2019",
+    stars: 3,
+    thumbnail: "https://media.auchan.fr/bea76f8c-b10b-43b7-99ec-ca792e435e7e_1200x1200/B2CD/",
+    id: "g4me-borderl3-ms",
+    typehint: "game",
+  },
+  {
+    name: "Chorus",
+    avaiableOn: [getConsole("Xbox Series")],
+    description: "Take control of Nara on a quest to destroy the dark cult that created her",
+    extendedDescription: `
+    Take control of Nara on a quest to destroy the dark cult that created her. Unlock devastating weapons and mind-bending abilities in a true evolution of the space-combat shooter. Along with Forsaken, her sentient starfighter, explore ancient temples, engage in exhilarating zero-g combat, and venture beyond our waking reality.
+
+    A JOURNEY OF REDEMPTION – Follow Nara as she faces her haunted past. Journey across the galaxy and beyond the boundaries of reality to unite resistance forces against the Circle and their leader, the Great Prophet, at all costs.
+
+    VENTURE BEYOND THE VOID – Enter a dark new universe, teeming with mystery and rife with conflict. Explore epic locations such as sprawling space stations and strange planes of existence. Engage in exhilarating zero-g dogfights from epic cosmic vistas to tight crystalline corridors. Chorus balances the scale and spectacle of space exploration with frenetic, fast-paced action.
+
+    ONE PILOT, ONE SHIP, ONE LIVING WEAPON – Attain powerful and distinct weapons and combat upgrades. Master your ship’s unique drift mechanic and deadly mind-bending abilities, including extra-sensory perception, teleportation and telekinesis, to overcome massive hordes of enemies and take down titanic battleships. Chain your powers together to become the ultimate living weapon.
+    `,
+    images: [
+      "https://store-images.s-microsoft.com/image/apps.12772.13751787478651765.747d9b13-75e6-4c34-a196-72624dc19de6.53e80bb4-2a6b-4d6a-b803-ae72ef365e40",
+      "https://store-images.s-microsoft.com/image/apps.31242.13751787478651765.747d9b13-75e6-4c34-a196-72624dc19de6.15aa7960-2d59-40e8-8814-888a7acc80ed",
+      "https://store-images.s-microsoft.com/image/apps.63368.13751787478651765.747d9b13-75e6-4c34-a196-72624dc19de6.286cc1e2-451a-463e-9eb4-1319eeee0126",
+      "https://store-images.s-microsoft.com/image/apps.64044.13751787478651765.747d9b13-75e6-4c34-a196-72624dc19de6.b02d08ee-ac8b-4b8e-b141-55efb620a5b6",
+    ],
+    price: 39.99,
+    releaseDate: "December 2nd 2021",
+    stars: 5,
+    thumbnail:
+      "https://target.scene7.com/is/image/Target/GUEST_2000a853-51b3-4e7f-93f9-dc4982f85d32?wid=488&hei=488&fmt=pjpeg",
+    id: "g4me-chorus-ms",
+    typehint: "game",
+  },
+  {
+    name: "Crash Bandicoot™ 4: It’s About Time",
+    avaiableOn: [getConsole("Xbox Series")],
+    description:
+      "It’s About Time - for a brand-wumping new Crash Bandicoot™ game! Crash fourward into a time shattered adventure with your favorite marsupials.",
+    extendedDescription: `
+    It’s About Time - for a brand-wumping new Crash Bandicoot™ game! Crash fourward into a time shattered adventure with your favorite marsupials.
+
+    Neo Cortex and N. Tropy are back at it again and launching an all-out assault on not just this universe, but the entire multiverse! Crash and Coco are here to save the day by reuniting the four Quantum Masks and bending the rules of reality.
+
+    New abilities? Check. More playable characters? Yep. Alternate dimensions? Obviously. Ridonkulous bosses? For sure. Same awesome sauce? You bet your sweet jorts. Wait, are they actually jorts? Not in this universe!
+    `,
+    images: [
+      "https://store-images.s-microsoft.com/image/apps.1193.14289021587791584.d452a7bd-8863-41a9-96ea-d77611bdd52c.d67df380-7309-40d7-9cc0-d90689eaeea9",
+      "https://store-images.s-microsoft.com/image/apps.32971.14289021587791584.d452a7bd-8863-41a9-96ea-d77611bdd52c.73fd7648-6ffb-4ca6-afba-48ac0fd9bde3",
+      "https://store-images.s-microsoft.com/image/apps.5532.14289021587791584.d452a7bd-8863-41a9-96ea-d77611bdd52c.5be07d4f-76b0-4161-9154-075cde184b9b",
+      "https://store-images.s-microsoft.com/image/apps.34690.14289021587791584.d452a7bd-8863-41a9-96ea-d77611bdd52c.773fa3a8-8969-44fc-9d4b-7a4b93696ce7",
+    ],
+    price: 59.99,
+    releaseDate: "November 2nd 2020",
+    stars: 4,
+    thumbnail:
+      "https://target.scene7.com/is/image/Target/GUEST_b587cb40-351b-420f-bd4c-e6a95ec9e655?wid=488&hei=488&fmt=pjpeg",
+    id: "g4me-crash4-ms",
     typehint: "game",
   },
 ];

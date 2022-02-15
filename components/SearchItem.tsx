@@ -7,6 +7,11 @@ interface IProps {
   item: IItem;
 }
 
+/**
+ * Represents an item that's inside the search window
+ * @param param0 - Props
+ * @returns React.Component
+ */
 export default function SearchItem({ item }: IProps) {
   return (
     <a

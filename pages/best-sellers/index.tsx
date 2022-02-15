@@ -35,7 +35,7 @@ export default function BestSellers() {
           <ItemCard item={getGameByName("Mario Kart 8 Deluxe")} />
           <ItemCard item={getGameByName("Ratchet & Clank: Rift Apart")} />
           <ItemCard item={getGameByName("Zelda Breath Of The Wild")} />
-          <ItemCard item={getGameByName("Returnal")} />
+          <ItemCard item={getGameByName("Crash Bandicoot™ 4: It’s About Time")} />
         </div>
         <div className="banner-div my-5 flex flex-col justify-center space-y-2 bg-purple-500 p-6 text-white lg:px-[10%]">
           <h1 className="text-center text-3xl font-extrabold">Our best consoles</h1>

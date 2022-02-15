@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * Displayed when the user has no items in its cart
+ * @returns React.Component
+ */
 export default function NoTitem() {
   return (
     <div className="flex w-full flex-col items-center bg-purple-500 p-6 text-white">

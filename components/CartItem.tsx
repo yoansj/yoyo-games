@@ -4,6 +4,9 @@ import React from "react";
 import IItem from "../types/IItem";
 import Cart from "../utils/Cart";
 
+/**
+ * Props of the component
+ */
 interface IProps {
   /**
    * Item in the cart
@@ -31,6 +34,11 @@ interface IProps {
   refreshFunction: () => any | void | undefined;
 }
 
+/**
+ * Renders an item that's in the cart
+ * @param param0 - Props
+ * @returns React.Component
+ */
 export default function CartItem({ item, index, cart, refreshFunction, quantity }: IProps) {
   const incrementItem = (index: number) => {
     if (cart) {

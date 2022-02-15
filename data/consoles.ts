@@ -1,5 +1,8 @@
 import IConsole from "../types/IConsole";
 
+/**
+ * Contains all of the consoles 'sold' on the website
+ */
 const consoles: Array<IConsole> = [
   {
     fabricant: "Missing game",

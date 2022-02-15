@@ -98,10 +98,6 @@ export default function MyResponsiveCarousel({ images, renderLinks, loop, render
       <div className="hidden-scrollbar relative flex max-w-xs snap-x overflow-x-auto scroll-smooth border-2  border-black bg-black sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
         {images.map((url, index) => (
           <div key={index} id={(uuid || "img-") + index} className="snap-center">
-            {/* <img
-              className="aspect-video max-w-xs bg-white shadow-xl sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl"
-              src={url}
-            /> */}
             <ImageLoader
               className="aspect-video max-w-xs bg-white shadow-xl sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl"
               src={url}

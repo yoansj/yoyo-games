@@ -10,9 +10,13 @@ import {
   DesktopComputerIcon,
   InformationCircleIcon,
 } from "@heroicons/react/outline";
-import { ChevronDownIcon } from "@heroicons/react/solid";
 import SearchBar from "./SearchBar";
 
+/**
+ * Header for the websited
+ * Inspired by a Tailwind component
+ * @returns React.Component
+ */
 export default function Header() {
   return (
     <Popover id="header" className="relative z-20 bg-purple-500">

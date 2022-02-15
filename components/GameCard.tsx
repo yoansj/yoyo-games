@@ -5,6 +5,7 @@ import IConsole from "../types/IConsole";
 import IGame from "../types/IGame";
 import IItem from "../types/IItem";
 import ImageLoader from "./ImageLoader";
+import StarsDisplayer from "./StarsDisplayer";
 
 interface IProps {
   /**
@@ -27,23 +28,9 @@ export default function ItemCard({ item }: IProps) {
   const handleOpenGamePage = () =>
     item.typehint === "game" ? router.push(`/games/${item.id}`) : router.push(`/consoles/${item.id}`);
 
-  const displayStars = () => {
-    let arr = [];
-
-    const color = (l: number) => {
-      if (l === 5) return "text-yellow-500";
-      if (l === 4) return "text-orange-500";
-      if (l === 3) return "text-orange-700";
-      if (l === 2) return "text-red-800";
-      if (l === 1) return "text-red-900";
-    };
-
-    for (let i = 0; i !== gameData.stars; i++) arr.push(i);
-    return arr.map((r, index) => <StarIcon key={index} className={"h-6 last:mr-3 " + color(arr.length)} />);
-  };
-
   // Relative position thingy
   // https://www.youtube.com/watch?v=jx5jmI0UlXU
+  // Helped me figure this out
   return (
     <div
       onClick={handleOpenGamePage}
@@ -70,7 +57,7 @@ export default function ItemCard({ item }: IProps) {
               For: {gameData.avaiableOn.map((c) => c.name + " ")}
             </h3>
             <span className="stars-displayer invisible flex flex-row text-xs group-hover:visible">
-              {displayStars()}
+              <StarsDisplayer stars={gameData.stars} />
             </span>
           </div>
         ) : (
