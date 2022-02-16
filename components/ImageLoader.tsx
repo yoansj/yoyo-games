@@ -41,11 +41,7 @@ export default function ImageLoader({ src, className }: IProps) {
 
   return (
     <img
-      className={
-        "transition-all duration-500 " +
-        className +
-        (loaded === false ? " blur-lg grayscale" : " blur-none grayscale-0")
-      }
+      className={"transition-all duration-700 " + className + (loaded === false ? " blur-sm" : " blur-none")}
       onLoad={onLoad}
       src={test === false ? "" : src}
       ref={imgEl}

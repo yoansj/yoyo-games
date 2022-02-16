@@ -34,8 +34,8 @@ export default function BestSellers() {
         <div className="grid grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           <ItemCard item={getGameByName("Mario Kart 8 Deluxe")} />
           <ItemCard item={getGameByName("Ratchet & Clank: Rift Apart")} />
-          <ItemCard item={getGameByName("Zelda Breath Of The Wild")} />
-          <ItemCard item={getGameByName("Crash Bandicoot™ 4: It’s About Time")} />
+          <ItemCard item={getGameByName("Pokémon Legends: Arceus")} />
+          <ItemCard item={getGameByName("Halo: The Master Chief Collection")} />
         </div>
         <div className="banner-div my-5 flex flex-col justify-center space-y-2 bg-purple-500 p-6 text-white lg:px-[10%]">
           <h1 className="text-center text-3xl font-extrabold">Our best consoles</h1>
@@ -43,17 +43,17 @@ export default function BestSellers() {
         <div className="grid grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           <ItemCard item={consoles[1]} />
           <ItemCard item={consoles[2]} />
+          <ItemCard item={consoles[3]} />
           <ItemCard item={consoles[1]} />
-          <ItemCard item={consoles[2]} />
         </div>
         <div className="banner-div my-5 flex flex-col justify-center space-y-2 bg-purple-500 p-6 text-white lg:px-[10%]">
           <h1 className="text-center text-3xl font-extrabold">Honorable mentions</h1>
         </div>
         <div className="grid grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <ItemCard item={getGameByName("Balan Wonderworld")} />
           <ItemCard item={getGameByName("Pokemon Shield")} />
-          <ItemCard item={getGameByName("Pokémon Legends: Arceus")} />
-          <ItemCard item={getGameByName("marvel's spider-man: miles morales ultimate")} />
-          <ItemCard item={getGameByName("Pokemon Sword")} />
+          <ItemCard item={getGameByName("Zelda Breath Of The Wild")} />
+          <ItemCard item={getGameByName("spider-man miles morales ultimate")} />
         </div>
         <div
           className="banner-div my-5 flex cursor-pointer flex-col justify-center space-y-2 bg-purple-500 p-6 text-yellow-300 lg:px-[10%]"

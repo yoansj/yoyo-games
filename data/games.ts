@@ -84,7 +84,7 @@ const games: Array<IGame> = [
     typehint: "game",
   },
   {
-    name: "Marvel's Spider-Man: Miles Morales Ultimate",
+    name: "Spider-Man Miles Morales Ultimate",
     avaiableOn: [getConsole("PS5")],
     description:
       "Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.",
@@ -447,6 +447,83 @@ You are a wanderer with the power to change the fate of The City. But your excep
     thumbnail:
       "https://target.scene7.com/is/image/Target/GUEST_b587cb40-351b-420f-bd4c-e6a95ec9e655?wid=488&hei=488&fmt=pjpeg",
     id: "g4me-crash4-ms",
+    typehint: "game",
+  },
+  {
+    name: "Doom Eternal",
+    avaiableOn: [getConsole("Xbox Series")],
+    description:
+      "Become the Slayer in an epic single-player campaign to conquer demons across dimensions and stop the final destruction of humanity.",
+    extendedDescription: `
+    The only thing they fear... is you.
+
+    Experience the ultimate combination of speed and power in DOOM Eternal - the next leap in push-forward, first-person combat.
+
+    SLAYER THREAT LEVEL AT MAXIMUM
+    Armed with a shoulder-mounted flamethrower, retractable wrist-mounted blade, upgraded guns and mods, and abilities, you're faster, stronger, and more versatile than ever.
+
+    UNHOLY TRINITY
+    Take what you need from your enemies: Glory kill for extra health, incinerate for armor, and chainsaw demons to stock up on ammo to become the ultimate demon-slayer.
+
+    Enter BATTLEMODE
+    A new 2 versus 1 multiplayer experience. A fully-armed DOOM Slayer faces off against two player-controlled demons, fighting it out in a best-of-five round match of intense first-person combat.
+    `,
+    images: [
+      "https://store-images.s-microsoft.com/image/apps.40576.14633846388270955.183654ce-6460-48f9-a060-3a7d8d15ff8f.bf4bceb2-709b-475a-9801-06b0d9bc94ec",
+      "https://store-images.s-microsoft.com/image/apps.30643.14633846388270955.183654ce-6460-48f9-a060-3a7d8d15ff8f.a88342e5-e212-47ff-a38e-24c3dc51e6ee",
+      "https://store-images.s-microsoft.com/image/apps.9864.14633846388270955.183654ce-6460-48f9-a060-3a7d8d15ff8f.9f389ded-f126-4ad4-9378-7b1a6e1a6cab",
+      "https://store-images.s-microsoft.com/image/apps.9268.14633846388270955.183654ce-6460-48f9-a060-3a7d8d15ff8f.a57a8d6c-1d15-4d86-b47e-a2e95034ec1e",
+    ],
+    price: 59.99,
+    releaseDate: "March 20 2020",
+    stars: 4,
+    thumbnail:
+      "https://i5.walmartimages.com/asr/c4ef831e-326f-4712-9e61-e17e7760909a_5.ec45ea5f04657307ab7db74b6d01b1a2.jpeg",
+    id: "g4me-doomet-ms",
+    typehint: "game",
+  },
+  {
+    name: "Halo Infinite (Campaign)",
+    avaiableOn: [getConsole("Xbox Series")],
+    description: "Master Chief is ready to confront the most ruthless foe he’s ever faced",
+    extendedDescription: `
+    When all hope is lost and humanity’s fate hangs in the balance, the Master Chief is ready to confront the most ruthless foe he’s ever faced. Step inside the armor of humanity’s greatest hero to experience an epic adventure and explore the massive scale of the Halo ring. To experience the campaign, purchase Halo Infinite (Campaign).
+    `,
+    images: [
+      "https://store-images.s-microsoft.com/image/apps.34937.13727851868390641.c9cc5f66-aff8-406c-af6b-440838730be0.e59bd684-5ebe-4ea4-afb6-aea74350300e",
+      "https://store-images.s-microsoft.com/image/apps.44829.13727851868390641.ccc2d91d-118b-47bc-b87a-a5cc449f8e8e.2866c0ef-c210-48f1-b4a4-ca4675ef83c9",
+      "https://store-images.s-microsoft.com/image/apps.8046.13727851868390641.ccc2d91d-118b-47bc-b87a-a5cc449f8e8e.4f075bc3-1ee9-4c8f-ae7b-b734523091b5",
+      "https://store-images.s-microsoft.com/image/apps.13680.13727851868390641.ccc2d91d-118b-47bc-b87a-a5cc449f8e8e.121ec429-b6db-4cac-a087-29907d6aa52e",
+    ],
+    price: 59.99,
+    releaseDate: "December 9 2021",
+    stars: 4,
+    thumbnail: "https://m.media-amazon.com/images/I/811QTSH5K6L._SL1500_.jpg",
+    id: "g4me-haloinf-ms",
+    typehint: "game",
+  },
+  {
+    name: "Halo: The Master Chief Collection",
+    avaiableOn: [getConsole("Xbox Series")],
+    description: "The series that changed console gaming forever",
+    extendedDescription: `
+    Campaign: Featuring Halo: Reach, Halo: Combat Evolved Anniversary, Halo 2: Anniversary, Halo 3, Halo 3: ODST Campaign, and Halo 4, The Master Chief Collection offers players their own exciting journey through the epic saga. Starting with the incredible bravery of Noble Six in Halo: Reach and ending with the rise of a new enemy in Halo 4, the Master Chief’s saga totals 67 campaign missions over six critically-acclaimed titles.
+
+    Multiplayer: Each of the six games in The Master Chief Collection brings its own multiplayer maps, modes and game types. With more than 120 multiplayer maps and countless ways to play with community-created Forge content the Collection has the most diverse and expansive Halo multiplayer experience to date.
+
+    Forge: Halo’s iconic map editor is improved, refreshed and better than ever. Build new maps with expanded functionality, increased budget, new objects and create new ways to play with custom game modes.**
+    `,
+    images: [
+      "https://store-images.s-microsoft.com/image/apps.13778.68546154403749555.3f166bda-e4c4-4b51-829c-ff4f7d715475.9775a5e3-d5a0-4cdc-9d4a-a10ed94b3fc4",
+      "https://store-images.s-microsoft.com/image/apps.12698.68546154403749555.3f166bda-e4c4-4b51-829c-ff4f7d715475.c1bfea92-681c-4b0b-b3d7-18aced1074a5",
+      "https://store-images.s-microsoft.com/image/apps.61921.68546154403749555.3f166bda-e4c4-4b51-829c-ff4f7d715475.f35a4966-4451-4ee6-8626-2efa61270d54",
+    ],
+    price: 39.99,
+    releaseDate: "December 4 2019",
+    stars: 4,
+    thumbnail:
+      "https://external-preview.redd.it/qVL0i7d3UOqDPjGnc2B4S_2e6zeRF8ljOftasarUDQk.png?auto=webp&s=0bff4c38f250dcc225da06123e615aa603a5003c",
+    id: "g4me-halocol-ms",
     typehint: "game",
   },
 ];

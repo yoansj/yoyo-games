@@ -1,4 +1,5 @@
 import IItem from "../types/IItem";
+import ImageLoader from "./ImageLoader";
 
 interface IProps {
   /**
@@ -19,7 +20,7 @@ export default function SearchItem({ item }: IProps) {
       className="mb-4 hidden flex-row border-y-[1px] border-purple-500 p-1 first:border-t-0 lg:flex"
     >
       <div className="image-div mr-4 flex w-20 flex-initial justify-center">
-        <img className="self-center object-cover" src={item.thumbnail} />
+        <ImageLoader className="self-center object-cover" src={item.thumbnail} />
       </div>
       <div className="info-div flex-auto">
         <h1 className="text-xs font-black sm:text-base">{item.name}</h1>
