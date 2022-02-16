@@ -84,18 +84,18 @@ export default function MyResponsiveCarousel({ images, renderLinks, loop, render
         []
       )}
       {renderButtons ? (
-        <div className="carousel-buttons absolute top-16 z-10 flex w-80 justify-between text-white opacity-30 group-hover:animate-pulse group-hover:opacity-100 sm:top-20 sm:w-96 md:top-24 md:w-[28rem] lg:top-28 lg:w-[42rem] xl:top-[10rem] xl:w-[48rem] 2xl:top-[11rem] 2xl:w-[56rem]">
+        <div className="carousel-buttons absolute top-[calc(50%-20px)] z-10 flex w-80 justify-between text-black opacity-100 sm:w-96 md:w-[28rem] lg:top-[calc(50%-40px)]  lg:w-[42rem]  xl:w-[48rem] 2xl:w-[56rem]">
           <a href={"#" + (uuid || "img-") + previousIndex} onClick={handlePreviousImage}>
-            <ChevronDoubleLeftIcon className="ml-3 h-10 lg:h-20" />
+            <ChevronDoubleLeftIcon className="ml-3 h-5 rounded-full border border-black bg-white lg:h-10" />
           </a>
           <a href={"#" + (uuid || "img-") + nextIndex} onClick={handleNextImage}>
-            <ChevronDoubleRightIcon className="mr-3 h-10 lg:h-20" />
+            <ChevronDoubleRightIcon className="mr-3 h-5 rounded-full border border-black bg-white lg:h-10" />
           </a>
         </div>
       ) : (
         []
       )}
-      <div className="hidden-scrollbar relative flex max-w-xs snap-x overflow-x-auto scroll-smooth border-2  border-black bg-black sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
+      <div className="hidden-scrollbar relative flex max-w-xs touch-pan-x snap-x overflow-x-auto scroll-smooth border-2  border-black bg-black sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
         {images.map((url, index) => (
           <div key={index} id={(uuid || "img-") + index} className="snap-center">
             <ImageLoader
