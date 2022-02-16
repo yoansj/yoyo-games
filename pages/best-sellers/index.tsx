@@ -44,7 +44,7 @@ export default function BestSellers() {
           <ItemCard item={consoles[1]} />
           <ItemCard item={consoles[2]} />
           <ItemCard item={consoles[3]} />
-          <ItemCard item={consoles[1]} />
+          <ItemCard item={consoles[4]} />
         </div>
         <div className="banner-div my-5 flex flex-col justify-center space-y-2 bg-purple-500 p-6 text-white lg:px-[10%]">
           <h1 className="text-center text-3xl font-extrabold">Honorable mentions</h1>
@@ -53,7 +53,7 @@ export default function BestSellers() {
           <ItemCard item={getGameByName("Balan Wonderworld")} />
           <ItemCard item={getGameByName("Pokemon Shield")} />
           <ItemCard item={getGameByName("Zelda Breath Of The Wild")} />
-          <ItemCard item={getGameByName("spider-man miles morales ultimate")} />
+          <ItemCard item={consoles[8]} />
         </div>
         <div
           className="banner-div my-5 flex cursor-pointer flex-col justify-center space-y-2 bg-purple-500 p-6 text-yellow-300 lg:px-[10%]"

@@ -48,16 +48,16 @@ export default function Consoles() {
           <ItemCard item={consoles[3]} />
         </div>
         <div className="banner-div my-5 flex flex-col justify-center space-y-2 bg-purple-500 p-6 text-white lg:px-[10%]">
-          <h1 className="text-center text-3xl font-extrabold">Previous generations</h1>
+          <h1 className="text-center text-3xl font-extrabold">Retro consoles</h1>
           <h2 className="text-center text-xl font-semibold text-white md:text-3xl">
-            Here you can find some consoles from previous generations
+            Our classics in terms of retro consoles, a special selection by Yoyo Games !
           </h2>
         </div>
         <div className="grid grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <ItemCard item={consoles[1]} />
-          <ItemCard item={consoles[2]} />
-          <ItemCard item={consoles[1]} />
-          <ItemCard item={consoles[2]} />
+          <ItemCard item={consoles[4]} />
+          <ItemCard item={consoles[5]} />
+          <ItemCard item={consoles[6]} />
+          <ItemCard item={consoles[7]} />
         </div>
         <div className="banner-div my-5 flex flex-col justify-center space-y-2 bg-purple-500 p-6 text-white lg:px-[10%]">
           <h1 className="text-center text-3xl font-extrabold">Alternative consoles</h1>
@@ -66,19 +66,7 @@ export default function Consoles() {
           </h2>
         </div>
         <div className="grid grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <ItemCard item={consoles[1]} />
-          <ItemCard item={consoles[2]} />
-          <ItemCard item={consoles[1]} />
-          <ItemCard item={consoles[2]} />
-        </div>
-        <div className="banner-div my-5 flex flex-col justify-center space-y-2 bg-purple-500 p-6 text-white lg:px-[10%]">
-          <h1 className="text-center text-3xl font-extrabold">Retro consoles</h1>
-          <h2 className="text-center text-xl font-semibold text-white md:text-3xl">
-            Our classics in terms of retro consoles, a special selection by Yoyo Games !
-          </h2>
-        </div>
-        <div className="grid grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <ItemCard item={consoles[1]} />
+          <ItemCard item={consoles[8]} />
           <ItemCard item={consoles[2]} />
           <ItemCard item={consoles[1]} />
           <ItemCard item={consoles[2]} />

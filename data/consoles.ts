@@ -97,7 +97,7 @@ const consoles: Array<IConsole> = [
     ],
     price: 199.99,
     releaseDate: "March 3 2017",
-    thumbnail: "https://www.nintendo.co.kr/hardware/img/01-hero/local-hero__pic_oled.png",
+    thumbnail: "https://www.techinn.com/f/13734/137343676_2/nintendo-%EC%BD%98%EC%86%94-switch.jpg",
     type: "Stationnary",
     id: "cons-nintendo-switch",
     typehint: "console",
@@ -144,6 +144,195 @@ const consoles: Array<IConsole> = [
     id: "cons-xbox-x",
     typehint: "console",
     logo: "https://www.somagnews.com/wp-content/uploads/2020/04/39-2-e1587582488565.png",
+  },
+  {
+    fabricant: "Nintendo",
+    description: "The most emblematic Nintendo console",
+    images: [
+      "https://i.ytimg.com/vi/wuyxrgbpThU/maxresdefault.jpg",
+      "https://www.geekgeneration.fr/wp-content/uploads/2017/02/Wii-U.jpg",
+      "https://i.ytimg.com/vi/rq5n0my-cZw/maxresdefault.jpg",
+    ],
+    name: "Nintendo Wii",
+    options: [
+      {
+        name: "Classic",
+        price: 199.99,
+        description: `
+        Wii is a home console from Nintendo. Launched in 2006, it introduced motion controlled gaming to a wide audience of Nintendo fans and people who didn't traditionally play video games. A value model of Wii, Wii mini, was launched in 2013, allowing a new audience to enjoy Wii software. Wii mini does not connect to the Internet and does not support online features.
+        `,
+      },
+      {
+        name: "U",
+        price: 299.99,
+        description: `
+        Wii U is Nintendo’s first high definition home console, a powerful system with a controller that changes the way you can play games and connect together. There are several hardware packs available – take a look at the available hardware options on our Wii U website.
+
+        A key part of Wii U is the Wii U GamePad, a controller with an in-built display that opens up new gameplay possibilities. You can experience multiplayer gameplay by using both the Wii U GamePad and the television, giving each player their own screen, and even completely different viewpoints and objectives in certain games. In supported software, if the television is in use, players can continue to enjoy games on the Wii U GamePad display thanks to off-TV play.
+
+        Wii U offers plenty of great multiplayer experiences, presenting perfect opportunities to gather and play together with everybody in the family. The system can also be used to communicate and play with other gamers via the internet. Take a look around to find out more about Wii U's features.
+        `,
+      },
+      {
+        name: "Mini",
+        price: 149.99,
+        description: `
+        The Wii Mini (also called the RVL-201 and stylized as Wii mini) is a slightly smaller revision of the Wii as well as the third and final model in the Wii family. Multiple features have been removed in order to reduce the price. It was announced by Nintendo of Canada, though it was heavily rumored before the announcement. Announced first on November 27, 2012, it was first released in Canada on December 7, 2012, in Europe and Canada in March 2013, and in North America on November 17, 2013. It comes with a red Wii Remote Plus, Mario Kart Wii, and matching Nunchuk controller. The Wii Mini was discontinued worldwide on November 13, 2017.
+        `,
+      },
+    ],
+    price: 149.99,
+    releaseDate: "November 19 2006",
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/8/83/Wii_console.png",
+    type: "Stationnary",
+    id: "cons-nintendo-wii",
+    typehint: "console",
+    logo: "https://fs-prod-cdn.nintendo-europe.com/media/images/11_square_images/systems_12/wii_26/SQ_Wii.jpg",
+  },
+  {
+    fabricant: "Sony",
+    description: "The original PlayStation, in mini format",
+    images: [
+      "https://i.insider.com/5ba273501982d88b308b5437?width=1136&format=jpeg",
+      "https://i.insider.com/5ba246d189c8a124618b5897?width=1000&format=jpeg&auto=webp",
+    ],
+    name: "PlayStation 1",
+    options: [
+      {
+        name: "Mini",
+        price: 99.99,
+        description: `
+        What is PlayStation Classic?
+
+        PlayStation Classic is a new mini-console, built to celebrate the rich heritage of the original PlayStation. It has been designed to closely resemble the design of the original console in a much smaller form factor, and is preloaded with 20 games from a wide variety of genres. It includes two wired controllers, and will be available December 3, 2018 for $99.99 ($129.99 CAD).
+
+        How big is PlayStation Classic? How much does it weigh?
+
+        PlayStation Classic measures 5.8″ x 1.3″ x 4.1″, which is a 45% reduction in size from the original console. The footprint of the mini-console is smaller than a PS4 game case. PlayStation Classic weighs approximately 6.0 ounces, and each controller weighs approximately 4.9 ounces.
+
+        Which games are pre-loaded on PlayStation Classic?
+
+        Battle Arena Toshinden*
+        Cool Boarders 2*
+        Destruction Derby*
+        Final Fantasy VII
+        Grand Theft Auto*
+        Intelligent Qube
+        Jumping Flash!*
+        Metal Gear Solid
+        Mr. Driller
+        Oddworld: Abe’s Oddysee*
+        Rayman
+        Resident Evil Director’s Cut*
+        Revelations: Persona
+        R4 Ridge Racer Type 4
+        Super Puzzle Fighter II Turbo
+        Syphon Filter
+        Tekken 3*
+        Tom Clancy’s Rainbow Six*
+        Twisted Metal
+        Wild Arms​
+        `,
+      },
+    ],
+    price: 99.99,
+    releaseDate: "December 3 2018",
+    thumbnail:
+      "https://www.mytrendyphone.nl/images/Sony-PlayStation-Classic-Retro-Gaming-Console-20-Games-0711719999492-05122019-01-p.jpg",
+    type: "Stationnary",
+    id: "cons-sony-ps1mini",
+    typehint: "console",
+    logo: "https://www.seekpng.com/png/detail/89-893528_playstation-1-logo-play-station-1-png.png",
+  },
+  {
+    fabricant: "Nintendo",
+    description: "An iconic portable console from Nintendo",
+    images: [
+      "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/f27352101923919.5f2a907faf346.jpg",
+      "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/support_9/H2x1_GameBoyAdvanceSP_support_no_logo.jpg",
+    ],
+    name: "Game Boy Advance",
+    options: [
+      {
+        name: "SP",
+        price: 199.99,
+        description: `
+        The Game Boy Advance SP(GBA SP), released in Japan on February 14, 2003, is a sixth-generation handheld game console developed, released, and marketed by Nintendo that served as an upgraded version of the original Game Boy Advance. The "SP" in the name stands for "Special". It is the penultimate console in the Game Boy Advance family before the Game Boy Micro, which was released in September 2005. The Game Boy Advance line was followed by the Nintendo DS family, starting with the release of the original Nintendo DS in November 2004.
+        `,
+      },
+    ],
+    price: 199.99,
+    releaseDate: "February 14 2003",
+    thumbnail: "https://d1eh9yux7w8iql.cloudfront.net/product_images/222977_6aefe595-ec12-40b4-8b9b-53f8d962aba2.jpg",
+    type: "Handheld",
+    id: "cons-nintendo-gba",
+    typehint: "console",
+    logo: "http://videogame-generation.com/images/gba/177-1778359_gameboy-advance-logo-png-transparent-png.png",
+  },
+  {
+    fabricant: "Sony",
+    description: "Play PlayStation games on the go",
+    images: [
+      "https://images.frandroid.com/wp-content/uploads/2021/10/playstation-vita.jpg",
+      "https://www.gamespot.com/a/uploads/original/1601/16018044/3884282-ps-vita-6.jpg",
+    ],
+    name: "PS Vita",
+    options: [
+      {
+        name: "Classic",
+        price: 119.99,
+        description: `
+        The PlayStation Vita (PS Vita, or Vita) is a handheld video game console developed and marketed by Sony Interactive Entertainment. It was first released in Japan on December 17, 2011, and in North America, Europe, and other international territories beginning on February 22, 2012. The console is the successor to the PlayStation Portable, and a part of the PlayStation brand of gaming devices; as part of the eighth generation of video game consoles, it primarily competed with the Nintendo 3DS.
+
+        The original model of the handheld includes a 5-inch (130 mm) OLED multi-touch capacitive touchscreen, two analog joysticks, and front and shoulder push-button input, and supports Bluetooth, Wi-Fi, and optional 3G. The Vita features a quad-core ARM Cortex-A9 MPCore CPU and a quad-core SGX543MP GPU. The PS Vita 2000 series, a revised version of the system, was released across 2013 and 2014. It has all of the same features with a slightly smaller size, extended battery life, and an LCD screen instead of OLED. Sony released the PlayStation TV, a short-lived, re-purposed version of the Vita that uses a television screen like a home video game console, discontinued at the end of 2015.
+        `,
+      },
+    ],
+    price: 119.99,
+    releaseDate: "December 17 2011",
+    thumbnail: "https://d1eh9yux7w8iql.cloudfront.net/product_images/247747_0a8fc8e1-de85-4fc6-b223-46c2c9e9d917.jpg",
+    type: "Handheld",
+    id: "cons-sony-psvita",
+    typehint: "console",
+    logo: "https://d1eh9yux7w8iql.cloudfront.net/product_images/247747_0a8fc8e1-de85-4fc6-b223-46c2c9e9d917.jpg",
+  },
+  {
+    fabricant: "Google",
+    description: "Stadia Premiere Edition lets you bring Stadia to the biggest screen in your home your TV",
+    images: [
+      "https://androidcommunity.com/wp-content/uploads/2020/06/Stadia-Premiere-Edition-starter-pack_170620_img1.jpg",
+      "https://cdn.mos.cms.futurecdn.net/jqwJeqqrcF6UBjNtVrEniV-1200-80.jpg",
+    ],
+    name: "Stadia",
+    options: [
+      {
+        name: "Premiere Edition",
+        price: 9.99,
+        description: `
+        Everything you need to know about Stadia.
+        Instantly play high-quality video games with Stadia. Stream your favorites on your laptop, desktop, compatible smart devices and more. Watch the video to find out more about Stadia.
+
+        Introducing the Stadia controller.
+        Purposefully designed, you can take control of your games on TVs, laptops, desktops and compatible tablets. Plus, you can record and save your favorite gaming clips and screenshots with the Capture button.
+
+        Google Chromecast Ultra.
+        Invite Stadia into your living room and stream games on your TV with the included Google Chromecast Ultra. This device works seamlessly with the Stadia controller.
+
+        Choose your favorite screens.
+        You pick the screens where you play — laptops, desktops, compatible phones and tablets. With Stadia Premiere Edition, you can also play on your TV with the Chromecast Ultra.
+
+        (Price is a joke please don't sue me oh mighty Google staff)
+        `,
+      },
+    ],
+    price: 9.99,
+    releaseDate: "November 19 2019",
+    thumbnail:
+      "https://lh3.googleusercontent.com/otS4E2kEltanpwYzVoTVz9xpGEuLRapSgw2WF1BFMuXN1tlblOiX7fHoDCadI5x8uQ=w1400-rwa",
+    type: "Stationnary",
+    id: "cons-google-stadia",
+    typehint: "console",
+    logo: "https://lh3.googleusercontent.com/otS4E2kEltanpwYzVoTVz9xpGEuLRapSgw2WF1BFMuXN1tlblOiX7fHoDCadI5x8uQ=w1400-rwa",
   },
 ];
 

@@ -36,11 +36,11 @@ export default function ItemCard({ item }: IProps) {
       onClick={handleOpenGamePage}
       className="group relative flex max-w-xs cursor-pointer flex-col border border-solid border-purple-500 text-white hover:border-purple-800"
     >
-      <div className="max-w-xs lg:h-80">
+      <div className="flex max-w-xs items-center justify-center p-3 lg:h-80">
         <ImageLoader src={item.thumbnail} />
       </div>
       <div
-        className="h-full origin-bottom cursor-pointer bg-purple-500 pl-3 transition-all duration-1000 group-hover:scale-y-0"
+        className="h-full max-h-14 origin-bottom cursor-pointer bg-purple-500 pl-3 transition-all duration-1000 group-hover:scale-y-0"
         onClick={handleOpenGamePage}
       >
         <h1 className="text-lg font-bold">$ {item.price}</h1>
@@ -61,7 +61,9 @@ export default function ItemCard({ item }: IProps) {
             </span>
           </div>
         ) : (
-          <div>{consoleData.options.length} options</div>
+          <div>
+            {consoleData.options.length} option{consoleData.options.length > 1 ? "s" : ""}
+          </div>
         )}
         <p>{item.description}</p>
       </div>
