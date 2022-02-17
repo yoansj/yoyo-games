@@ -5,9 +5,8 @@ import ItemCard from "../../components/GameCard";
 import Header from "../../components/Header";
 import { getGameByName } from "../../data/games";
 import { ArrowCircleDownIcon } from "@heroicons/react/outline";
-import consoles from "../../data/consoles";
 
-export default function BestSellers() {
+export default function MultiplayerGames() {
   const onClickScroll = () => {
     const doc = document.getElementById("header");
     if (doc) doc.scrollIntoView();
@@ -27,38 +26,27 @@ export default function BestSellers() {
       <Header />
       <main id="main" className="mt-10 flex w-full flex-col items-center justify-center px-4 lg:px-0">
         <div className="banner-div flex flex-col justify-center space-y-2 bg-purple-500 p-6 px-[10%] text-white">
-          <h1 className="text-center text-3xl font-extrabold text-yellow-300">Wanna see our B.O.A.T ?</h1>
-          <p className="text-center text-lg italic">Its not actually a boat, it means Best-sellers Of All Time</p>
-          <p className="text-center text-sm italic">(sorry for the disappointment...)</p>
-          <p className="text-center text-xl font-bold">Anyways, wanna see them ? Scroll down below !</p>
-          <ArrowCircleDownIcon className="h-10 animate-bounce self-center" />
+          <h1 className="text-center text-3xl font-extrabold ">Multiplayer games</h1>
+          <p className="text-center text-xl font-bold">A special selection by Yoyo Games !</p>
+          <p className="text-center text-xl font-bold">Play with the homies or compete against tryharders like you !</p>
         </div>
         <div className="banner-div my-5 flex flex-col justify-center space-y-2 bg-purple-500 p-6 text-white lg:px-[10%]">
-          <h1 className="text-center text-3xl font-extrabold">Our best games</h1>
+          <h1 className="text-center text-3xl font-extrabold">Competitive gaming</h1>
         </div>
         <div className="grid grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <ItemCard item={getGameByName("Mario Kart 8 Deluxe")} />
-          <ItemCard item={getGameByName("Ratchet & Clank: Rift Apart")} />
-          <ItemCard item={getGameByName("Pokémon Legends: Arceus")} />
-          <ItemCard item={getGameByName("Halo: The Master Chief Collection")} />
+          <ItemCard item={getGameByName("Super smash bros ultimate")} />
+          <ItemCard item={getGameByName("mario kart 8 deluxe")} />
+          <ItemCard item={getGameByName("Halo Infinite (campaign)")} />
+          <ItemCard item={getGameByName("Battlefield 2042")} />
         </div>
         <div className="banner-div my-5 flex flex-col justify-center space-y-2 bg-purple-500 p-6 text-white lg:px-[10%]">
-          <h1 className="text-center text-3xl font-extrabold">Our best consoles</h1>
+          <h1 className="text-center text-3xl font-extrabold">Fun and casual</h1>
         </div>
         <div className="grid grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <ItemCard item={consoles[1]} />
-          <ItemCard item={consoles[2]} />
-          <ItemCard item={consoles[3]} />
-          <ItemCard item={consoles[4]} />
-        </div>
-        <div className="banner-div my-5 flex flex-col justify-center space-y-2 bg-purple-500 p-6 text-white lg:px-[10%]">
-          <h1 className="text-center text-3xl font-extrabold">Honorable mentions</h1>
-        </div>
-        <div className="grid grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <ItemCard item={getGameByName("Balan Wonderworld")} />
-          <ItemCard item={getGameByName("Pokemon Shield")} />
-          <ItemCard item={getGameByName("Zelda Breath Of The Wild")} />
-          <ItemCard item={consoles[8]} />
+          <ItemCard item={getGameByName("doom eternal")} />
+          <ItemCard item={getGameByName("mario kart 8 deluxe")} />
+          <ItemCard item={getGameByName("Ghost of Tsushima™ Director's Cut")} />
+          <ItemCard item={getGameByName("Super smash bros ultimate")} />
         </div>
         <div
           className="banner-div my-5 flex cursor-pointer flex-col justify-center space-y-2 bg-purple-500 p-6 text-yellow-300 lg:px-[10%]"

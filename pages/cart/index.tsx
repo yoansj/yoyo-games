@@ -68,7 +68,7 @@ export default function CartPage() {
         />
       </Head>
       <Header />
-      <main className="relative my-10 mx-4 mb-20 flex flex-col lg:mx-20">
+      <main className="relative my-10 mx-4 mb-20 flex flex-col lg:mx-20 lg:mb-36">
         <p ref={ref} className="opacity-0 lg:hidden"></p>
         <h1 className="mb-8 max-w-4xl text-4xl font-bold">Your cart</h1>
         {cartItems.length === 0 ? <NoTitem /> : []}
