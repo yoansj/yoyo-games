@@ -334,6 +334,64 @@ const consoles: Array<IConsole> = [
     typehint: "console",
     logo: "https://lh3.googleusercontent.com/otS4E2kEltanpwYzVoTVz9xpGEuLRapSgw2WF1BFMuXN1tlblOiX7fHoDCadI5x8uQ=w1400-rwa",
   },
+  {
+    fabricant: "Valve",
+    description: "The most gaming power you have ever held",
+    images: [
+      "https://www.gamespot.com/a/uploads/original/1585/15855271/3856883-3856008-steam_deck.jpg",
+      "https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2021/07/steam-deck-different-sizes.jpg",
+    ],
+    name: "Steam Deck",
+    options: [
+      {
+        name: "64 GB",
+        price: 399,
+        description: `
+        The Steam Deck is an upcoming handheld gaming computer developed by Valve Corporation in cooperation with Advanced Micro Devices (AMD). Playable either on the go, connected to a monitor, or to a television in the same manner as the Nintendo Switch, it is an x86_64 handheld console-like device designed to play the full Steam library, including Windows PC games via the Linux-based Proton compatibility layer. Users will be able to modify the device's software to run non-Steam applications and games from other sources.
+
+        Specs for the 64GB version
+        - 64GB eMMC internal storage
+        - Carrying case
+        `,
+      },
+      {
+        name: "256 GB",
+        price: 529,
+        description: `
+        The Steam Deck is an upcoming handheld gaming computer developed by Valve Corporation in cooperation with Advanced Micro Devices (AMD). Playable either on the go, connected to a monitor, or to a television in the same manner as the Nintendo Switch, it is an x86_64 handheld console-like device designed to play the full Steam library, including Windows PC games via the Linux-based Proton compatibility layer. Users will be able to modify the device's software to run non-Steam applications and games from other sources.
+
+        Specs for the 256GB version
+        - 256GB NVMe SSD internal storage
+        - Faster storage
+        - Carrying case
+        - Exclusive Steam Community profile bundle
+        `,
+      },
+      {
+        name: "512 GB",
+        price: 649,
+        description: `
+        The Steam Deck is an upcoming handheld gaming computer developed by Valve Corporation in cooperation with Advanced Micro Devices (AMD). Playable either on the go, connected to a monitor, or to a television in the same manner as the Nintendo Switch, it is an x86_64 handheld console-like device designed to play the full Steam library, including Windows PC games via the Linux-based Proton compatibility layer. Users will be able to modify the device's software to run non-Steam applications and games from other sources.
+
+        Specs for the 512GB version
+        - 512GB NVMe SSD internal storage
+        - Fastest storage
+        - Premium anti-glare etched glass
+        - Exclusive carrying case
+        - Exclusive Steam Community profile bundle
+        - Exclusive virtual keyboard theme
+        `,
+      },
+    ],
+    price: 399,
+    releaseDate: "February 25 2022",
+    thumbnail:
+      "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/clans/39049601/d4e4c324c448bcc1bf43d01e170ceb832d14cc78.jpg",
+    type: "Stationnary",
+    id: "cons-steam-deck",
+    typehint: "console",
+    logo: "https://lh3.googleusercontent.com/otS4E2kEltanpwYzVoTVz9xpGEuLRapSgw2WF1BFMuXN1tlblOiX7fHoDCadI5x8uQ=w1400-rwa",
+  },
 ];
 
 /**

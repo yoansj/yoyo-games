@@ -62,13 +62,15 @@ export default function CartItem({ item, index, cart, refreshFunction, quantity 
   };
 
   return (
-    <div key={index} className="my-20 flex flex-row border-y-[1px] border-purple-500 p-1 first:my-10 lg:p-4">
+    <div key={index} className="my-8 flex flex-row border-y-[1px] border-purple-500 p-1 first:my-10 md:my-20 lg:p-4">
       <div className="image-div mr-4 mt-0 flex w-20 flex-initial justify-center sm:w-40 lg:w-60">
         <img className="self-center object-cover" src={item.thumbnail} />
       </div>
       <div className="info-div flex-auto space-y-1 sm:space-y-3 lg:space-y-6">
         <div className="flex w-full flex-row justify-between">
-          <h1 className="text-base font-black sm:text-lg">$ {(item.price * quantity).toFixed(2)}</h1>
+          <h1 className="text-base font-black md:text-lg">
+            $ {(item.price * quantity).toFixed(2)} {quantity > 1 ? " total / $ " + item.price + " unit" : ""}
+          </h1>
           <button onClick={() => removeItemFromCart(index)}>
             <XIcon className="h-5 text-gray-600 sm:h-10" />
           </button>

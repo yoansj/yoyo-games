@@ -62,14 +62,13 @@ export default function Consoles() {
         <div className="banner-div my-5 flex flex-col justify-center space-y-2 bg-purple-500 p-6 text-white lg:px-[10%]">
           <h1 className="text-center text-3xl font-extrabold">Alternative consoles</h1>
           <h2 className="text-center text-xl font-semibold text-white md:text-3xl">
-            Stadia, Steam Deck, Nvidia Sheild, you name them !
+            Stadia, Steam Deck and more to come !
           </h2>
         </div>
-        <div className="grid grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-rows-1 justify-center gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="hidden opacity-0 lg:block">aa</div>
           <ItemCard item={consoles[8]} />
-          <ItemCard item={consoles[2]} />
-          <ItemCard item={consoles[1]} />
-          <ItemCard item={consoles[2]} />
+          <ItemCard item={consoles[9]} />
         </div>
         <div
           className="banner-div my-5 flex cursor-pointer flex-col justify-center space-y-2 bg-purple-500 p-6 text-yellow-300 lg:px-[10%]"
