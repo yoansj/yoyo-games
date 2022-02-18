@@ -1,4 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
+import { useRouter } from "next/router";
 import React, { Fragment } from "react";
 
 interface IProps {
@@ -29,6 +30,8 @@ interface IProps {
  * @returns React.Component
  */
 export default function AddToCartModal({ onClose, open, image, itemName }: IProps) {
+  const router = useRouter();
+
   return (
     <Transition appear={open} show={open} as={Fragment}>
       <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" open={open} onClose={onClose}>
@@ -77,6 +80,7 @@ export default function AddToCartModal({ onClose, open, image, itemName }: IProp
                 <button
                   type="button"
                   className="mt-2 inline-flex justify-center rounded-md border border-transparent bg-purple-500 px-4 py-2 text-sm font-medium text-white hover:bg-purple-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-900 focus-visible:ring-offset-2"
+                  onClick={() => router.push("/cart")}
                 >
                   <a href="/cart">Go to the cart page</a>
                 </button>

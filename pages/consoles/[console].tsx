@@ -11,6 +11,7 @@ import MyMetaTags from "../../components/MyMetaTags";
 import { GetServerSideProps } from "next";
 import IConsole, { IOption } from "../../types/IConsole";
 import { Listbox } from "@headlessui/react";
+import PageMetaTags from "../../components/PageMetaTags";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { console } = context.query;
@@ -43,7 +44,7 @@ export default function ConsoleInspect({ consoleObject }: IProps) {
 
   const handleAddToCart = () => {
     if (cart && consoleOption !== undefined) {
-      cart.addItem(consoleObject);
+      cart.addConsoleItem(consoleObject, consoleOption);
       setAddModalOpen(true);
     }
   };
@@ -56,24 +57,13 @@ export default function ConsoleInspect({ consoleObject }: IProps) {
     <div>
       <Head>
         <MyMetaTags />
-        {/* <!-- Primary Meta Tags --> */}
-        <title>Buy the {consoleObject.name}</title>
-        <meta name="title" content={"Buy the " + consoleObject.name} />
-        <meta name="description" content={consoleObject.description} />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={"https://yoyo-games.vercel.app/consoles/" + consoleObject.id} />
-        <meta property="og:title" content={"Buy the " + consoleObject.name} />
-        <meta property="og:description" content={consoleObject.description} />
-        <meta property="og:image" content={consoleObject.images[0]} />
-
-        {/* <!-- Twitter --> */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={"https://yoyo-games.vercel.app/consoles/" + consoleObject.id} />
-        <meta property="twitter:title" content={"Buy the " + consoleObject.name} />
-        <meta property="twitter:description" content={consoleObject.description} />
-        <meta property="twitter:image" content={consoleObject.images[0]} />
+        <PageMetaTags
+          title={`Buy the ${consoleObject.name}`}
+          contentTitle={`Buy the ${consoleObject.name}`}
+          description={consoleObject.description}
+          url={"https://yoyo-games.vercel.app/consoles/" + consoleObject.id}
+          image={consoleObject.images[0]}
+        />
       </Head>
       <Header />
       <AddToCartModal

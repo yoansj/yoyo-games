@@ -4,7 +4,7 @@ import React from "react";
  * Displayed when the user has no items in its cart
  * @returns React.Component
  */
-export default function NoTitem() {
+export default function NoItem() {
   return (
     <div className="mb-20 flex w-full flex-col items-center bg-purple-500 p-6 text-white">
       <h1 className=" mb-6 text-center text-6xl font-extrabold">You currently have no items in your cart</h1>

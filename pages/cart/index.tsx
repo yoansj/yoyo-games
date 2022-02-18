@@ -7,35 +7,13 @@ import { useInView } from "react-intersection-observer";
 import Cart from "../../utils/Cart";
 import NoTitem from "../../components/NoItem";
 import CartItem from "../../components/CartItem";
+import IConsole from "../../types/IConsole";
+import PageMetaTags from "../../components/PageMetaTags";
 
 export default function CartPage() {
   const [cart, setCart] = useState<Cart>();
   const [refresh, setRefresh] = useState(true);
-  const [scrollPercent, setScrollPercent] = useState(0);
   const { ref, inView, entry } = useInView();
-
-  const onScroll = () => {
-    // Found on https://stackoverflow.com/a/9348993/16405696 👍
-    const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || 0;
-    const yScroll = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop || 0;
-    const docHeight = Math.max(
-      document.body.scrollHeight || 0,
-      document.documentElement.scrollHeight || 0,
-      document.body.offsetHeight || 0,
-      document.documentElement.offsetHeight || 0,
-      document.body.clientHeight || 0,
-      document.documentElement.clientHeight || 0
-    );
-    const percentage = ((yScroll + height) / docHeight) * 100;
-    setScrollPercent(percentage);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", onScroll, true);
-    return () => {
-      document.removeEventListener("scroll", onScroll, true);
-    };
-  }, []);
 
   useEffect(() => {
     const c = new Cart();
@@ -44,6 +22,7 @@ export default function CartPage() {
 
   const cartItems = useMemo(() => {
     if (cart) {
+      console.log(cart.getItems());
       return cart.getItems();
     }
     return [];
@@ -51,20 +30,38 @@ export default function CartPage() {
 
   const refreshFunction = () => setRefresh((r) => !r);
 
+  /**
+   * Calculates the total cost of the cart
+   * @returns Total cost of the cart as a string
+   */
+  const getTotalCost = () => {
+    return cartItems
+      .map(([q, i]) => {
+        if (i.typehint === "console") {
+          const consoleData = i as IConsole;
+          if (consoleData.selectedOption !== undefined) {
+            return consoleData.selectedOption.price * q;
+          } else {
+            return i.price * q;
+          }
+        } else {
+          return i.price * q;
+        }
+      })
+      .reduce((a, b) => a + b, 0)
+      .toFixed(2);
+  };
+
   return (
     <div className="w-full">
       <Head>
         <MyMetaTags />
-        <title>Cart</title>
-        <meta property="og:title" content="Cart" />
-        <meta
-          property="og:description"
-          content="This is the cart page where you can see all the items you're about to buy :)"
-        />
-        <meta property="og:image" content="/Facebook-cover.png" />
-        <meta
-          name="description"
-          content="This is the cart page where you can see all the items you're about to buy :)"
+        <PageMetaTags
+          title="Cart"
+          contentTitle="Cart page"
+          description="Check the items you're gonna buy on that page !"
+          url="https://yoyo-games.vercel.app/cart"
+          image="/Facebook-cover.png"
         />
       </Head>
       <Header />
@@ -73,6 +70,7 @@ export default function CartPage() {
         <h1 className="mb-8 max-w-4xl text-4xl font-bold">Your cart</h1>
         {cartItems.length === 0 ? <NoTitem /> : []}
 
+        {/* Summary displayed on mobile and tablets, verison that is on top of the articles */}
         <div
           className={
             "w-full origin-bottom transition-all duration-500 lg:hidden " +
@@ -83,13 +81,7 @@ export default function CartPage() {
             <h1 className=" mb-1 text-center text-2xl font-extrabold">Order summary</h1>
             <div className="flex flex-row justify-between">
               <h2 className=" text-xl font-extrabold">Items: {cartItems.length}</h2>
-              <h2 className=" text-xl font-extrabold">
-                Total: $
-                {cartItems
-                  .map(([q, i]) => i.price * q)
-                  .reduce((a, b) => a + b, 0)
-                  .toFixed(2)}{" "}
-              </h2>
+              <h2 className=" text-xl font-extrabold">Total: ${getTotalCost()} </h2>
             </div>
             <button className="mt-1 rounded-lg  bg-white p-1 hover:bg-slate-300">
               <a href={"games/"} className="font-bold text-purple-500">
@@ -111,9 +103,29 @@ export default function CartPage() {
               />
             ))}
           </div>
+          {/* Summary displayed on PC screens */}
+          {cartItems.length > 0 ? (
+            <div className="full-screen-order-summary ml-10 mt-10 hidden w-[25%] lg:block">
+              <div className="flex flex-col bg-purple-500 p-6 text-white">
+                <h1 className=" mb-1 text-center text-2xl font-extrabold">Order summary</h1>
+                <h2 className=" text-xl font-extrabold">Items: {cartItems.length}</h2>
+                <h2 className=" text-xl font-extrabold">Total: ${getTotalCost()} </h2>
+                <h2 className=" text-xl font-extrabold">Taxes: At checkout</h2>
+                <p className=" mt-5 text-center text-lg">Ready to get your articles ?</p>
+                <button className="mt-1 rounded-lg  bg-white p-3 hover:bg-slate-300">
+                  <a href={"games/"} className="font-bold text-purple-500">
+                    GO TO CHECKOUT
+                  </a>
+                </button>
+              </div>
+            </div>
+          ) : (
+            []
+          )}
         </div>
       </main>
 
+      {/* Floating summary displayed at the bottom of the screen on tablets / phones */}
       <div
         className={
           "scrolling-order-summary fixed bottom-0 w-full transition-all duration-500 lg:hidden " +
@@ -124,13 +136,7 @@ export default function CartPage() {
           <h1 className=" mb-1 text-center text-2xl font-extrabold">Order summary</h1>
           <div className="flex flex-row justify-between">
             <h2 className=" text-xl font-extrabold">Items: {cartItems.length}</h2>
-            <h2 className=" text-xl font-extrabold">
-              Total: $
-              {cartItems
-                .map(([q, i]) => i.price * q)
-                .reduce((a, b) => a + b, 0)
-                .toFixed(2)}{" "}
-            </h2>
+            <h2 className=" text-xl font-extrabold">Total: ${getTotalCost()} </h2>
           </div>
           <h2 className="hidden text-xl font-extrabold md:block">Taxes: At checkout</h2>
           <p className="mt-5 hidden text-center text-lg md:block">Ready to get your articles ?</p>

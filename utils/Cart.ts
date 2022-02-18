@@ -1,3 +1,4 @@
+import IConsole, { IOption } from "../types/IConsole";
 import IItem from "../types/IItem";
 
 /**
@@ -69,13 +70,34 @@ export default class Cart {
    * @param item - Actual item object added to the cart
    * @param optionName - If an option is provided adds the item and take into account the option chosen
    */
-  addItem(item: IItem, optionName?: string) {
+  addItem(item: IItem) {
     const index = this.items.findIndex(([quantity, oldItem]) => oldItem.id === item.id);
 
     if (index !== -1) {
       this.items[index][0] += 1;
     } else {
       this.items.push([1, item]);
+    }
+    this.saveCart();
+    this.getCartData();
+  }
+
+  /**
+   * Adds a console to the cart
+   * @param console - Console object
+   * @param option - Selected option
+   */
+  addConsoleItem(console: IConsole, option: IOption) {
+    const index = this.items.findIndex(
+      ([quantity, oldItem]) =>
+        oldItem.id === console.id && JSON.stringify(console.selectedOption) === JSON.stringify(option)
+    );
+
+    if (index !== -1) {
+      this.items[index][0] += 1;
+    } else {
+      console.selectedOption = option;
+      this.items.push([1, console]);
     }
     this.saveCart();
     this.getCartData();

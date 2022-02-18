@@ -2,25 +2,19 @@ import Head from "next/head";
 import MyMetaTags from "../../components/MyMetaTags";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import PageMetaTags from "../../components/PageMetaTags";
 
 export default function About() {
   return (
     <div className="w-full">
       <Head>
         <MyMetaTags />
-        <title>About Us</title>
-        <meta property="og:title" content="About Us" />
-        <meta
-          property="og:description"
-          content="This page explains our mentality at Yoyo Games and gives further information about the background of our website. Feel free to visit this page if you are curious about our project :)"
-        />
-        <meta
-          property="og:image"
-          content="https://raw.githubusercontent.com/yoansj/yoyo-games/main/public/Facebook-cover.png"
-        />
-        <meta
-          name="description"
-          content="This page explains our mentality at Yoyo Games and gives further information about the background of our website"
+        <PageMetaTags
+          title="About Us"
+          contentTitle="About Us"
+          description="This page explains our mentality at Yoyo Games and gives further information about the background of our website. Feel free to visit this page if you are curious about our project :)"
+          url={"https://yoyo-games.vercel.app/about"}
+          image="/Facebook-cover.png"
         />
       </Head>
       <Header />

@@ -15,7 +15,7 @@ export interface IOption {
   /**
    * Price of the option
    */
-  price: string | number;
+  price: number;
 
   /**
    * Description of the option
@@ -40,6 +40,11 @@ export default interface IConsole extends IItem {
    * etc..
    */
   options: Array<IOption>;
+
+  /**
+   * Index of the option that has been selected by the user
+   */
+  selectedOption?: IOption;
 
   /**
    * Type of console
