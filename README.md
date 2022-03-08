@@ -1,34 +1,177 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src="https://github.com/yoansj/yoyo-games/blob/main/.github/images/yoyogames-transparent.png?raw=true" style="width: 50%;" />
 
-## Getting Started
+Demo | Responsive demo using Responsively
+---  | --- |
+<img src="https://github.com/yoansj/yoyo-games/blob/main/.github/images/demo.gif?raw=true" /> | <img src="https://github.com/yoansj/yoyo-games/blob/main/.github/images/responsive.gif?raw=true" />
 
-First, run the development server:
+
+# What is Yoyo Games ?
+Yoyo Games is a fictive video game boutique I made to practice my front end skills.
+The website is hosted at Vercel on this address, please take a look 😄 [https://yoyo-games.vercel.app](https://yoyo-games.vercel.app)
+
+## Features
+* Daily refreshed front page 📅
+* Working cart system 🛒
+* Diaporama on product pages 🖼
+* SEO on all pages 🌐
+* Fully responsive 📱
+* A cool searchbar 🔎
+
+## Tech Stack
+* Typescript
+* React
+* Next JS
+* Tailwind CSS
+* Headless UI
+* Heroicons
+* react-click-away-listener
+* react-intersection-observer
+
+## Installation
+Clone the repository and then run 
 
 ```bash
-npm run dev
+npm install && npm run dev
 # or
-yarn dev
+yarn install && yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can also go to [https://yoyo-games.vercel.app](https://yoyo-games.vercel.app) to see the hosted version.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Code architeture
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Pages
+All of the pages for the website are stored in the `pages` directory.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Components
+All of the components used across the different pages are stored in the `components` directory.
 
-## Learn More
+### Games and consoles
+I decided to not use an API and to choose the games and the consoles I wanted to put on the website myself.
+Games and consoles are stored in the `data` directory with the files `consoles.ts` and `games.ts`.
 
-To learn more about Next.js, take a look at the following resources:
+### Types
+Types are stored in the `types` directory
+Games and consoles derive from a common interfae that describes an item sold on the website.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### IItem
+```typescript
+export default interface IItem {
+  /**
+   * Name of the item
+   */
+  name: string;
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  /**
+   * Short description for the item
+   */
+  description: string;
 
-## Deploy on Vercel
+  /**
+   * Valid URL to the thumbnail of an item
+   */
+  thumbnail: string;
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  /**
+   * More images for the item
+   */
+  images: Array<string>;
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  /**
+   * Price of the item
+   */
+  price: number;
+
+  /**
+   * Release date of the item
+   */
+  releaseDate: number | string;
+
+  /**
+   * Unique ID for the item
+   */
+  id: string;
+
+  typehint: "game" | "console";
+}
+```
+
+#### IGame
+```typescript
+export default interface IGame extends IItem {
+  /**
+   * Rating of the game
+   */
+  stars: 1 | 2 | 3 | 4 | 5;
+
+  /**
+   * On where can you play the game
+   */
+  avaiableOn: [IConsole];
+
+  /**
+   * Extended description for the game
+   */
+  extendedDescription: string;
+}
+```
+#### IConsole
+```typescript
+export interface IOption {
+  /**
+   * Name of the option
+   */
+  name: string;
+
+  /**
+   * Price of the option
+   */
+  price: number;
+
+  /**
+   * Description of the option
+   */
+  description: string;
+}
+
+/**
+ * Represents a console
+ * PS4, XBOX, GameCube...
+ */
+export default interface IConsole extends IItem {
+  /**
+   * Sony, Nintendo, Microsoft...
+   */
+  fabricant: string;
+
+  /**
+   * For PS4
+   * PS4 Pro 500gb
+   * PS4 Pro 1Tto
+   * etc..
+   */
+  options: Array<IOption>;
+
+  /**
+   * Index of the option that has been selected by the user
+   */
+  selectedOption?: IOption;
+
+  /**
+   * Type of console
+   */
+  type: "Handheld" | "Stationnary";
+
+  /**
+   * Logo of the console displayed on the console page
+   */
+  logo: string;
+}
+ ```
+
+## Thanks
+Thanks for reading this far !
+If you're interested at what I do you can follow me on Twitter [https://twitter.com/yoansj](https://twitter.com/yoansj)
+I'm currently looking for a part-time job 💼
+Want to work with me ? Email me at 📧 yoansjpro@gmail.com 📧
