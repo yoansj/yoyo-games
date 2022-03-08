@@ -56,6 +56,7 @@ export default function ConsoleInspect({ consoleObject }: IProps) {
   return (
     <div>
       <Head>
+        <title>{`Buy the ${consoleObject.name}`}</title>
         <MyMetaTags />
         <PageMetaTags
           title={`Buy the ${consoleObject.name}`}

@@ -5,6 +5,7 @@ import ItemCard from "../../components/GameCard";
 import Header from "../../components/Header";
 import { ArrowCircleDownIcon } from "@heroicons/react/outline";
 import consoles from "../../data/consoles";
+import PageMetaTags from "../../components/PageMetaTags";
 
 export default function Consoles() {
   const onClickScroll = () => {
@@ -15,13 +16,15 @@ export default function Consoles() {
   return (
     <>
       <Head>
+        <title>Consoles</title>
         <MyMetaTags />
-        <title>Yoyo Games</title>
-        <meta property="og:title" content="Yoyo Games" />
-        <meta property="og:description" content="Here at Yoyo Games we provide the best games for the best players" />
-        <meta property="og:image" content="/Facebook-cover.png" />
-        <meta name="description" content="Here at Yoyo Games we provide the best games for the best players" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <PageMetaTags
+          title="Consoles"
+          contentTitle="Consoles page"
+          description="Our page dedicated to hardware"
+          url="https://yoyo-games.vercel.app/consoles"
+          image="/Facebook-cover.png"
+        />
       </Head>
       <Header />
       <main id="main" className="mt-10 flex w-full flex-col items-center justify-center px-4 lg:px-0">

@@ -34,7 +34,7 @@ interface IProps {
  */
 export default function PageMetaTags({ title, contentTitle, description, url, image }: IProps) {
   return (
-    <>
+    <React.Fragment>
       {/* <!-- Primary Meta Tags --> */}
       <title>{title}</title>
       <meta name="title" content={contentTitle} />
@@ -53,6 +53,6 @@ export default function PageMetaTags({ title, contentTitle, description, url, im
       <meta property="twitter:title" content={contentTitle} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={image} />
-    </>
+    </React.Fragment>
   );
 }

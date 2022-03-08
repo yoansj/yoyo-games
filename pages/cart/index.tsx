@@ -55,6 +55,7 @@ export default function CartPage() {
   return (
     <div className="w-full">
       <Head>
+        <title>Cart</title>
         <MyMetaTags />
         <PageMetaTags
           title="Cart"

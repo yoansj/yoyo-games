@@ -5,6 +5,7 @@ import ItemCard from "../../components/GameCard";
 import Header from "../../components/Header";
 import { getGameByName } from "../../data/games";
 import { ArrowCircleDownIcon } from "@heroicons/react/outline";
+import PageMetaTags from "../../components/PageMetaTags";
 
 export default function MultiplayerGames() {
   const onClickScroll = () => {
@@ -15,13 +16,15 @@ export default function MultiplayerGames() {
   return (
     <>
       <Head>
+        <title>Multiplayer games</title>
         <MyMetaTags />
-        <title>Yoyo Games</title>
-        <meta property="og:title" content="Yoyo Games" />
-        <meta property="og:description" content="Here at Yoyo Games we provide the best games for the best players" />
-        <meta property="og:image" content="/Facebook-cover.png" />
-        <meta name="description" content="Here at Yoyo Games we provide the best games for the best players" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <PageMetaTags
+          title="Multiplayer games"
+          contentTitle="Multiplayer games page"
+          description="Our games playable online 🌐"
+          url="https://yoyo-games.vercel.app/multiplayer-games"
+          image="/Facebook-cover.png"
+        />
       </Head>
       <Header />
       <main id="main" className="mt-10 flex w-full flex-col items-center justify-center px-4 lg:px-0">

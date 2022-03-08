@@ -8,7 +8,7 @@ export default function About() {
   return (
     <div className="w-full">
       <Head>
-        <MyMetaTags />
+        <title>About Us</title>
         <PageMetaTags
           title="About Us"
           contentTitle="About Us"
@@ -16,6 +16,7 @@ export default function About() {
           url={"https://yoyo-games.vercel.app/about"}
           image="/Facebook-cover.png"
         />
+        <MyMetaTags />
       </Head>
       <Header />
       <main className="my-10 mx-20 flex flex-col">
