@@ -43,16 +43,10 @@ export default function About() {
               to grab my resume below and contact me :)
             </p>
             <a
-              href="https://hilarious-hyacinth-61f.notion.site/Yoan-Saint-Juste-CV-24ee091f666d4406a6a768519d183c49"
-              className="mb-4 text-2xl text-purple-500 underline decoration-purple-500 underline-offset-1"
-            >
-              English Resume (online)
-            </a>
-            <a
-              href="https://hilarious-hyacinth-61f.notion.site/Yoan-Saint-Juste-CV-24ee091f666d4406a6a768519d183c49"
+              href="https://pdfhost.io/v/uVJyT5H6f_CV_Yoan_Saint_Juste_2022"
               className="mb-8 text-2xl text-purple-500 underline decoration-purple-500 underline-offset-1"
             >
-              French Resume (online)
+              French Resume (March 9 2022)
             </a>
           </div>
           <div className="flex flex-col items-center justify-center lg:ml-10 xl:ml-20 2xl:ml-32">

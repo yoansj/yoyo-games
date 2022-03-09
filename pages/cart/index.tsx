@@ -9,8 +9,10 @@ import NoTitem from "../../components/NoItem";
 import CartItem from "../../components/CartItem";
 import IConsole from "../../types/IConsole";
 import PageMetaTags from "../../components/PageMetaTags";
+import { useRouter } from "next/router";
 
 export default function CartPage() {
+  const router = useRouter();
   const [cart, setCart] = useState<Cart>();
   const [refresh, setRefresh] = useState(true);
   const { ref, inView, entry } = useInView();
@@ -29,6 +31,7 @@ export default function CartPage() {
   }, [cart, refresh]);
 
   const refreshFunction = () => setRefresh((r) => !r);
+  const handleGoToCheckout = () => router.push("/checkout");
 
   /**
    * Calculates the total cost of the cart
@@ -84,8 +87,8 @@ export default function CartPage() {
               <h2 className=" text-xl font-extrabold">Items: {cartItems.length}</h2>
               <h2 className=" text-xl font-extrabold">Total: ${getTotalCost()} </h2>
             </div>
-            <button className="mt-1 rounded-lg  bg-white p-1 hover:bg-slate-300">
-              <a href={"games/"} className="font-bold text-purple-500">
+            <button onClick={handleGoToCheckout} className="mt-1 rounded-lg  bg-white p-1 hover:bg-slate-300">
+              <a href="checkout" className="font-bold text-purple-500">
                 GO TO CHECKOUT
               </a>
             </button>
@@ -113,8 +116,8 @@ export default function CartPage() {
                 <h2 className=" text-xl font-extrabold">Total: ${getTotalCost()} </h2>
                 <h2 className=" text-xl font-extrabold">Taxes: At checkout</h2>
                 <p className=" mt-5 text-center text-lg">Ready to get your articles ?</p>
-                <button className="mt-1 rounded-lg  bg-white p-3 hover:bg-slate-300">
-                  <a href={"games/"} className="font-bold text-purple-500">
+                <button onClick={handleGoToCheckout} className="mt-1 rounded-lg  bg-white p-3 hover:bg-slate-300">
+                  <a href="checkout" className="font-bold text-purple-500">
                     GO TO CHECKOUT
                   </a>
                 </button>
@@ -141,8 +144,8 @@ export default function CartPage() {
           </div>
           <h2 className="hidden text-xl font-extrabold md:block">Taxes: At checkout</h2>
           <p className="mt-5 hidden text-center text-lg md:block">Ready to get your articles ?</p>
-          <button className="mt-1 rounded-lg  bg-white p-3 hover:bg-slate-300">
-            <a href={"games/"} className="font-bold text-purple-500">
+          <button onClick={handleGoToCheckout} className="mt-1 rounded-lg  bg-white p-3 hover:bg-slate-300">
+            <a href="checkout" className="font-bold text-purple-500">
               GO TO CHECKOUT
             </a>
           </button>

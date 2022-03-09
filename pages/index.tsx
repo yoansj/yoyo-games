@@ -9,6 +9,7 @@ import { GetServerSideProps } from "next";
 import seedrandom from "seedrandom";
 import IItem from "../types/IItem";
 import getRandomInt from "../utils/getRandomInt";
+import PageMetaTags from "../components/PageMetaTags";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   /**
@@ -55,27 +56,15 @@ export default function Home({ firstItemLine, secondItemLine }: IProps) {
   return (
     <>
       <Head>
-        <MyMetaTags />
-        {/* New meta tags */}
         <title>Yoyo Games</title>
-        <meta name="title" content="Yoyo Games" />
-        <meta name="description" content="Here at Yoyo Games we provide the best games for the best players" />
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={"https://yoyo-games.vercel.app"} />
-        <meta property="og:title" content="Yoyo Games" />
-        <meta property="og:description" content="Here at Yoyo Games we provide the best games for the best players" />
-        <meta property="og:image" content="/Facebook-cover.png" />
-
-        {/* <!-- Twitter --> */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={"https://yoyo-games.vercel.app"} />
-        <meta property="twitter:title" content="Yoyo Games" />
-        <meta
-          property="twitter:description"
-          content="Here at Yoyo Games we provide the best games for the best players"
+        <MyMetaTags />
+        <PageMetaTags
+          title="Yoyo Games"
+          contentTitle="Homepage"
+          description="Our daily refreshed homepage"
+          url="https://yoyo-games.vercel.app"
+          image="/Facebook-cover.png"
         />
-        <meta property="twitter:image" content="/Facebook-cover.png" />
       </Head>
       <Header />
       <main className="mt-10 flex w-full flex-col items-center justify-center px-4 lg:px-0">
