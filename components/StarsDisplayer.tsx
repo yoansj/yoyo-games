@@ -23,7 +23,7 @@ export default function StarsDisplayer({ stars }: IProps) {
     };
 
     for (let i = 0; i !== stars; i++) arr.push(i);
-    return arr.map((r, index) => <StarIcon key={index} className={"h-6" + color(arr.length)} />);
+    return arr.map((r, index) => <StarIcon key={index} className={"h-6 " + color(arr.length)} />);
   };
   return <span className="stars-displayer flex flex-row text-xs">{Stars()}</span>;
 }
