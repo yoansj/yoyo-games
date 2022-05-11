@@ -43,10 +43,10 @@ export default function About() {
               to grab my resume below and contact me :)
             </p>
             <a
-              href="https://pdfhost.io/v/uVJyT5H6f_CV_Yoan_Saint_Juste_2022"
+              href="https://www.figma.com/file/fRn8UsrWWEgBVovG6bLoSs/CV-Yoan-Saint-Juste?node-id=2%3A2"
               className="mb-8 text-2xl text-purple-500 underline decoration-purple-500 underline-offset-1"
             >
-              French Resume (March 9 2022)
+              French Resume (May 9 2022)
             </a>
           </div>
           <div className="flex flex-col items-center justify-center lg:ml-10 xl:ml-20 2xl:ml-32">
@@ -58,9 +58,8 @@ export default function About() {
         </div>
         <h1 className="mb-8 max-w-4xl whitespace-pre-line text-3xl font-bold underline">What's next for Yoyo Games</h1>
         <p className="mb-8 max-w-4xl whitespace-pre-line text-2xl">
-          As Yoyo Games is still in developpment the website will continue to change and evolve. If you want to see
-          where is the website going you can click the link belows that will lead you to the Notion page I use to manage
-          this project. The project is also open source so you can check the GitHub link below.
+          As Yoyo Games is not really in development anymore so I don't really think it will change that much. It's just
+          a fun project I was working on.
         </p>
         <a
           href="https://hilarious-hyacinth-61f.notion.site/Yoyo-Games-4f5be1586f9547dd920ec393bad4f19e"
